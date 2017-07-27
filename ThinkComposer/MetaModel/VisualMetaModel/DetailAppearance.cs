@@ -2,7 +2,7 @@
 // Instrumind ThinkComposer
 //
 // Copyright (C) Néstor Marcel Sánchez Ahumada. Santiago, Chile.
-// http://thinkcomposer.codeplex.com
+// https://github.com/nmarcel/ThinkComposer
 //
 // This file is part of ThinkComposer, which is free software licensed under the GNU General Public License.
 // It is provided without any warranty. You should find a copy of the license in the root directory of this software product.
