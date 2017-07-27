@@ -1,0 +1,88 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--NOTE: This Resource-Dictionary will be merged into that of the application (See the "App.xaml" file).-->
+    <!--IMPORTANT: The prefix "DEC_" is added to avoid mix/clash with other resources.-->
+    <!--IMPORTANT: For coloring... The first geometry will be used as Background and the second as Shape.-->
+
+    <!--********************************************************************************-->
+    <GeometryGroup x:Key="DEC_Composite">
+        <EllipseGeometry Center="10,10" RadiusX="10" RadiusY="10" />
+        <PathGeometry>
+            <PathFigure StartPoint="10,2" IsClosed="False">
+                <LineSegment Point="17,6" />
+                <LineSegment Point="17,14" />
+                <LineSegment Point="10,18" />
+                <LineSegment Point="3,14" />
+                <LineSegment Point="3,6" />
+                <LineSegment Point="10,2" />
+                <LineSegment Point="10,18" />
+            </PathFigure>
+        </PathGeometry>
+        <LineGeometry StartPoint="3,6" EndPoint="10,10" />
+        <LineGeometry StartPoint="10,10" EndPoint="17,6" />
+        <LineGeometry StartPoint="17,6" EndPoint="3,6" />
+    </GeometryGroup>
+
+    <!--********************************************************************************-->
+    <GeometryGroup x:Key="DEC_Related">
+        <EllipseGeometry Center="10,10" RadiusX="10" RadiusY="10" />
+        <PathGeometry>
+            <PathFigure StartPoint="7,3" IsClosed="True">
+                <LineSegment Point="10,5" />
+                <LineSegment Point="10,9" />
+                <LineSegment Point="7,11" />
+                <LineSegment Point="4,9" />
+                <LineSegment Point="4,5" />
+            </PathFigure>
+        </PathGeometry>
+        <RectangleGeometry Rect="4,14,2.5,2.5" />
+        <RectangleGeometry Rect="13.5,5,2.5,2.5" />
+        <RectangleGeometry Rect="13.5,14,2.5,2.5" />
+        <LineGeometry StartPoint="5.5,10" EndPoint="5.5,14" />
+        <LineGeometry StartPoint="9,10" EndPoint="13.5,14" />
+        <LineGeometry StartPoint="10,6.5" EndPoint="13.5,6.5" />
+    </GeometryGroup>
+
+    <!--********************************************************************************-->
+    <GeometryGroup x:Key="DEC_Properties">
+        <EllipseGeometry Center="10,10" RadiusX="10" RadiusY="10" />
+        <PathGeometry>
+            <PathFigure StartPoint="4,3" IsClosed="True">
+                <LineSegment Point="4,17" />
+                <LineSegment Point="16,17" />
+                <LineSegment Point="16,7" />
+                <LineSegment Point="12,3" />
+            </PathFigure>
+        </PathGeometry>
+        <LineGeometry StartPoint="6,6" EndPoint="12,6" />
+        <LineGeometry StartPoint="6,9" EndPoint="14,9" />
+        <LineGeometry StartPoint="6,12" EndPoint="14,12" />
+        <LineGeometry StartPoint="6,15" EndPoint="14,15" />
+        <LineGeometry StartPoint="12,3" EndPoint="12,7" />
+        <LineGeometry StartPoint="12,7" EndPoint="16,7" />
+    </GeometryGroup>
+
+    <!--********************************************************************************-->
+    <GeometryGroup x:Key="DEC_Details">
+        <EllipseGeometry Center="10,10" RadiusX="10" RadiusY="10" />
+        <PathGeometry>
+            <PathFigure StartPoint="3,6" IsClosed="True">
+                <LineSegment Point="17,6" />
+                <LineSegment Point="10,18" />
+            </PathFigure>
+        </PathGeometry>
+    </GeometryGroup>
+
+    <!--********************************************************************************-->
+    <GeometryGroup x:Key="DEC_DetailExpander" FillRule="EvenOdd">
+        <RectangleGeometry Rect="0,0,9,9" />
+        <PathGeometry>
+            <PathFigure StartPoint="1,2" IsClosed="True">
+                <LineSegment Point="8,2" />
+                <LineSegment Point="4.5,8" />
+            </PathFigure>
+        </PathGeometry>
+    </GeometryGroup>
+
+    <!--********************************************************************************-->
+</ResourceDictionary>

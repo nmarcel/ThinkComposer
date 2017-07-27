@@ -1,0 +1,23 @@
+﻿--------------------------------------------------------------------------------
+RELATIONSHIP-SPECIFIC PROPERTIES
+
+Origin-Links...
+{%- for Link in OriginLinks -%}
+    * Assoc-Idea / Role-Def / Descr: {{ Link.AssociatedIdea.Name }} / {{ Link.RoleDefinitor.Name }} / {{ Link.Descriptor.Name }}
+{%- endfor -%}
+
+Target-Links...
+{%- for Link in TargetLinks -%}
+    * Assoc-Idea / Role-Def / Descr: {{ Link.AssociatedIdea.Name }} / {{ Link.RoleDefinitor.Name }} / {{ Link.Descriptor.Name }}
+{%- endfor -%}
+
+----------------------------------------------------
+ORIGIN-IDEAS...
+{%- for Idea in OriginIdeas -%}
+    * {{ Idea.Name }} -- {{ Idea.Summary }}
+{%- endfor -%}
+
+TARGET-IDEAS...
+{%- for Idea in TargetIdeas -%}
+    * {{ Idea.Name }} -- {{ Idea.Summary }}
+{%- endfor -%}

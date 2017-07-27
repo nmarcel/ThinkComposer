@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="Instrumind.Common.Visualization.Widgets.CollectionEditingToolPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:imvw="clr-namespace:Instrumind.Common.Visualization.Widgets"
+             mc:Ignorable="d" d:DesignWidth="700">
+    <DockPanel>
+        <TextBlock x:Name="TitleTextBlock" DockPanel.Dock="Left" Text="ToolPanel Title..."
+                   FontWeight="700" Width="120" Margin="2" />
+        <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+            <imvw:PaletteButton x:Name="BtnMoveTop" x:FieldModifier="public"
+                                ToolTip="Move item to Top" ButtonText="" ButtonImage="/Instrumind.Common;component/Visualization/Images/item_move_top.png"
+                                Click="BtnMoveTop_Click" IsManipulationEnabled="True" />
+            <imvw:PaletteButton x:Name="BtnMoveUp" x:FieldModifier="public"
+                                ToolTip="Move item Up" ButtonText="" ButtonImage="/Instrumind.Common;component/Visualization/Images/item_move_up.png"
+                                Click="BtnMoveUp_Click" />
+            <imvw:PaletteButton x:Name="BtnMoveDown" x:FieldModifier="public"
+                                ToolTip="Move item Down" ButtonText="" ButtonImage="/Instrumind.Common;component/Visualization/Images/item_move_down.png"
+                                Click="BtnMoveDown_Click" />
+            <imvw:PaletteButton x:Name="BtnMoveBottom" x:FieldModifier="public"
+                                ToolTip="Move item to Bottom" ButtonText="" ButtonImage="/Instrumind.Common;component/Visualization/Images/item_move_bottom.png"
+                                Click="BtnMoveBottom_Click" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <imvw:PaletteButton x:Name="BtnEdit" x:FieldModifier="public"
+                                ButtonText="Edit" ToolTip="Edit/change the selected item" ButtonImage="/Instrumind.Common;component/Visualization/Images/page_white_edit.png"
+                                Click="BtnEdit_Click" />
+            <imvw:PaletteButton x:Name="BtnAdd" x:FieldModifier="public"
+                                ButtonText="Add" ToolTip="Create a new item" ButtonImage="/Instrumind.Common;component/Visualization/Images/add.png"
+                                Click="BtnAdd_Click" />
+            <imvw:PaletteButton x:Name="BtnDelete" x:FieldModifier="public"
+                                ButtonText="Delete" ToolTip="Delete selected item" ButtonImage="/Instrumind.Common;component/Visualization/Images/delete.png"
+                                Click="BtnDelete_Click" />
+            <imvw:PaletteButton x:Name="BtnDefine" x:FieldModifier="public"
+                                ButtonText="Define" ToolTip="Alter the definition of the selected item (if possible)" ButtonImage="/Instrumind.Common;component/Visualization/Images/page_definition.png"
+                                Click="BtnDefine_Click" />
+        </StackPanel>
+    </DockPanel>
+</UserControl>

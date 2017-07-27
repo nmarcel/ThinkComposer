@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Instrumind.ThinkComposer.Definitor.DefinitorUI.Widgets.DomainTemplatingSubform"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:imcv="clr-namespace:Instrumind.Common.Visualization.Widgets;assembly=Instrumind.Common"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <StackPanel>
+        <!--NOTE: See the assigned ToolTips in the constructor-->
+        <imcv:PaletteButton x:Name="BtnCompositionTemplate" ButtonText="Composition templates..." Margin="4"
+                            ButtonImage="/Instrumind.ThinkComposer;component/ApplicationProduct/Images/book.png"
+                            Click="BtnCompositionTemplate_Click"/>
+
+        <imcv:PaletteButton x:Name="BtnConceptsTemplate" ButtonText="Concepts base templates..." Margin="4"
+                            ButtonImage="/Instrumind.ThinkComposer;component/ApplicationProduct/Images/imtc_concept.png"
+                            Click="BtnConceptsTemplate_Click"/>
+
+        <imcv:PaletteButton x:Name="BtnRelationshipsTemplate" ButtonText="Relationships base templates..." Margin="4"
+                            ButtonImage="/Instrumind.ThinkComposer;component/ApplicationProduct/Images/imtc_relationship.png"
+                            Click="BtnRelationshipsTemplate_Click"/>
+    </StackPanel>
+</UserControl>

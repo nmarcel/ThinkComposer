@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="Instrumind.Common.Visualization.Widgets.ImagePicker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             HorizontalAlignment="Left" VerticalAlignment="Top">
+    <Border x:Name="GeneralPanel" DockPanel.Dock="Right">
+        <DockPanel>
+
+            <StackPanel DockPanel.Dock="Right" Orientation="Vertical" Margin="0">
+                
+                <Image x:Name="ImageSelectFile" Source="/Instrumind.Common;component/Visualization/Images/folder_image.png"
+                       ToolTip="Select file..." Cursor="Hand" Width="16" Height="16" Margin="1"
+                       MouseLeftButtonDown="ImageSelect_MouseLeftButtonDown" MouseLeftButtonUp="ImageSelect_MouseLeftButtonUp" />
+
+                <Image x:Name="ImageSelectInternal" Source="/Instrumind.Common;component/Visualization/Images/application_view_icons.png"
+                       ToolTip="Select internal..." Cursor="Hand" Width="16" Height="16" Margin="1"
+                       MouseLeftButtonDown="ImageSelect_MouseLeftButtonDown" MouseLeftButtonUp="ImageSelect_MouseLeftButtonUp" />
+
+                <Image x:Name="ImageSetEmpty" Source="/Instrumind.Common;component/Visualization/Images/cross.png"
+                       ToolTip="Set empty" Cursor="Hand" Width="16" Height="16" Opacity="0.5" Margin="1"
+                       MouseLeftButtonDown="ImageSelect_MouseLeftButtonDown" MouseLeftButtonUp="ImageSelect_MouseLeftButtonUp" />
+
+            </StackPanel>
+
+            <Border BorderBrush="LightGray" BorderThickness="2" Background="Transparent" Margin="0"
+                    Visibility="Visible">
+                <Grid>
+                    <Image x:Name="Presenter" Stretch="Uniform" Width="48" Height="48" />
+
+                    <ComboBox x:Name="InternalImagesCombo" Visibility="Hidden" Width="42" Height="24"
+                              SelectionChanged="InternalImagesCombo_SelectionChanged" HorizontalContentAlignment="Stretch" 
+                              DropDownClosed="InternalImagesCombo_DropDownClosed">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding Mode=OneWay}" Width="16" Height="16" Margin="1"
+                                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                        <ComboBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel MaxWidth="110" />
+                            </ItemsPanelTemplate>
+                        </ComboBox.ItemsPanel>
+                    </ComboBox>
+                </Grid>
+            </Border>
+        </DockPanel>
+    </Border>
+</UserControl>

@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="Instrumind.ThinkComposer.Composer.ComposerUI.Widgets.DetailLinkEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:imvw="clr-namespace:Instrumind.Common.Visualization.Widgets;assembly=Instrumind.Common"
+             mc:Ignorable="d" 
+             MinWidth="400" MinHeight="40" Padding="4"
+             Background="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type imvw:DialogOptionsWindow}, ResourceId=DialogFrameBrush}}"
+             Loaded="UserControl_Loaded" >
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" x:Name="Title" Text="Title..." FontWeight="Bold" Margin="4" />
+        <TabControl x:Name="TabLink" DockPanel.Dock="Top" Height="150"
+                    Background="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type imvw:EntitledPanel}, ResourceId=ExpositorBrush}}">
+            <TabItem x:Name="TabLinkExternal" Header="External" IsSelected="True">
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                        <imvw:PaletteButton x:Name="BtnGetUrl" Margin="2" ButtonText="Web" ToolTip="Gets the last typed Web URL address"
+                                    ButtonImage="/Instrumind.ThinkComposer;component/ApplicationProduct/Images/world_link.png"
+                                    Click="BtnGetUrl_Click"/>
+                        <imvw:PaletteButton x:Name="BtnSelectFolder" Margin="2" ButtonText="Folder" ToolTip="Select a local Folder"
+                                    ButtonImage="/Instrumind.ThinkComposer;component/ApplicationProduct/Images/folder_link.png"
+                                    Click="BtnSelectFolder_Click"/>
+                        <imvw:PaletteButton x:Name="BtnSelectFile" Margin="2" ButtonText="File" ToolTip="Select a local File"
+                                    ButtonImage="/Instrumind.ThinkComposer;component/ApplicationProduct/Images/page_white_link.png"
+                                    Click="BtnSelectFile_Click"/>
+                    </StackPanel>
+                    <StackPanel DockPanel.Dock="Top" Margin="2,20,2,2">
+                        <DockPanel >
+                            <TextBlock DockPanel.Dock="Left" Text="Location:" Margin="4"
+                                   Foreground="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type imvw:EntitledPanel}, ResourceId=ExpositorTextBrush}}"/>
+                            <Button x:Name="BtnGo" DockPanel.Dock="Right" Margin="4" ToolTip="Go!"
+                                    Click="BtnGo_Click">
+                                <Image Stretch="None" Source="/Instrumind.ThinkComposer;component/ApplicationProduct/Images/arrow_right.png" />
+                            </Button>
+                            <!--<TextBox x:Name="Location" Margin="4" TextWrapping="Wrap" />-->
+                            <imvw:ExtendedEditText x:Name="Location" Margin="4" />
+                        </DockPanel>
+                        <!--<CheckBox DockPanel.Dock="Bottom" Content="Relative to the Composition location" Margin="4"
+                                  x:Name="CbxIsRelative"/>-->
+                    </StackPanel>
+                </DockPanel>
+            </TabItem>
+            <TabItem x:Name="TabLinkInternal" Header="Internal">
+                <DockPanel Margin="2,20,2,48">
+                    <TextBlock DockPanel.Dock="Left" Text="Property:" Margin="4"
+                               Foreground="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type imvw:EntitledPanel}, ResourceId=ExpositorTextBrush}}"/>
+                    <ComboBox x:Name="ComboPropertySelector" Margin="4" HorizontalContentAlignment="Stretch"
+                              MaxHeight="24" VerticalAlignment="Top"
+                              ItemsSource="{Binding AvailableProperties}"
+                              SelectionChanged="ComboPropertySelector_SelectionChanged"/>
+                </DockPanel>
+            </TabItem>
+        </TabControl>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" Margin="2">
+            <imvw:PaletteButton x:Name="BtnOK" ButtonText="OK" TabIndex="1000" IsDefault="True" Click="BtnOK_Click"
+                                                MinWidth="70" Margin="2,0,2,0" ButtonImage="/Instrumind.Common;component/Visualization/Images/accept.png" />
+            <imvw:PaletteButton x:Name="BtnCancel" ButtonText="Cancel" TabIndex="1001" IsCancel="True" Click="BtnCancel_Click"
+                                                MinWidth="70" Margin="2,0,2,0" ButtonImage="/Instrumind.Common;component/Visualization/Images/cancel.png" />
+
+            <!--<Button x:Name="BtnOK" Text="OK" IsDefault="True" FontWeight="Bold" Width="70" Margin="4"
+                    Click="BtnOK_Click"/>
+            <Button x:Name="BtnCancel" Text="Cancel" IsCancel="True" Width="70" Margin="4"
+                    Click="BtnCancel_Click"/>-->
+        </StackPanel>
+    </DockPanel>
+</UserControl>

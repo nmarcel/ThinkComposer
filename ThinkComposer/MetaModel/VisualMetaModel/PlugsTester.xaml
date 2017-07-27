@@ -1,0 +1,32 @@
+﻿<Window x:Class="Instrumind.ThinkComposer.MetaModel.VisualMetaModel.PlugsTester"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="GeometriesTester" 
+         Height="80" Width="100" >
+        <Grid Width="28" Height="28">
+        <Image Source="/Instrumind.ThinkComposer;component/ApplicationProduct/Images/Scalimeter_21x21.png" Width="28" Height="28" />
+        <Image Width="21" Height="21" Margin="3" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Image.Source>
+                <DrawingImage>
+                    <DrawingImage.Drawing>
+                        <GeometryDrawing Brush="Silver">
+                            <GeometryDrawing.Pen>
+                                <Pen Brush="Black" Thickness="1" LineJoin="Bevel" EndLineCap="Round" StartLineCap="Round" />
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Geometry>
+                                <GeometryGroup>
+                                    <LineGeometry StartPoint="14,10"  EndPoint="20,10" />
+                                    <EllipseGeometry Center="6,10" RadiusX="8" RadiusY="8" />
+                                    <LineGeometry StartPoint="6,5"  EndPoint="6,15" />
+                                    <LineGeometry StartPoint="1,10"  EndPoint="11,10" />
+                                    <LineGeometry StartPoint="3,7"  EndPoint="9,13" />
+                                    <LineGeometry StartPoint="3,13"  EndPoint="9,7" />
+                                </GeometryGroup>
+                            </GeometryDrawing.Geometry>
+                        </GeometryDrawing>
+                    </DrawingImage.Drawing>
+                </DrawingImage>
+            </Image.Source>
+        </Image>
+    </Grid>
+</Window>

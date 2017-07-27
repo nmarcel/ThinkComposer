@@ -1,0 +1,1585 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{325A7865-E1DB-490E-97D6-C6D570BE952A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Instrumind.ThinkComposer</RootNamespace>
+    <AssemblyName>Instrumind.ThinkComposer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ApplicationIcon>ApplicationProduct\Images\Instrumind_ThinkComposer.ico</ApplicationIcon>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>Publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://instrumind.blob.core.windows.net/thinkcomposer/</InstallUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.5.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>False</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsBuildReferenceAssembly>False</CodeContractsBuildReferenceAssembly>
+    <CodeContractsNonNullObligations>False</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>False</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
+    <CodeContractsLibPaths />
+    <CodeContractsPlatformPath />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsBaseLineFile />
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>False</CodeContractsShowSquigglies>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>7F77489E3767E0232BA387016298903D505DBAB1</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ApplicationProduct\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationProduct\AppOptions.xaml.cs">
+      <DependentUpon>AppOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationProduct\AppHelp.xaml.cs">
+      <DependentUpon>AppHelp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationProduct\AppVersionUpdate.xaml.cs">
+      <DependentUpon>AppVersionUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationProduct\AppRegistration.xaml.cs">
+      <DependentUpon>AppRegistration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationProduct\DomainSelector.xaml.cs">
+      <DependentUpon>DomainSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationProduct\LicensingConfig.cs" />
+    <Compile Include="ApplicationProduct\ProductDirector.cs" />
+    <Compile Include="ApplicationProduct\Widgets\WidgetDocumentVisualizer.xaml.cs">
+      <DependentUpon>WidgetDocumentVisualizer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationProduct\Widgets\WidgetItemsPalette.xaml.cs">
+      <DependentUpon>WidgetItemsPalette.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationProduct\Widgets\WidgetItemsPaletteGroup.xaml.cs">
+      <DependentUpon>WidgetItemsPaletteGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationProduct\Widgets\WidgetVisualSampleSelector.xaml.cs">
+      <DependentUpon>WidgetVisualSampleSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationProduct\Widgets\WidgetMessenger.xaml.cs">
+      <DependentUpon>WidgetMessenger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationProduct\Widgets\WidgetNavMap.xaml.cs">
+      <DependentUpon>WidgetNavMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationProduct\Widgets\WidgetNavTree.xaml.cs">
+      <DependentUpon>WidgetNavTree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationProduct\Widgets\WidgetPalette.xaml.cs">
+      <DependentUpon>WidgetPalette.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationProduct\Widgets\WidgetInterrelationsPanel.xaml.cs">
+      <DependentUpon>WidgetInterrelationsPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationProduct\Widgets\WidgetsHelper.cs" />
+    <Compile Include="ApplicationProduct\Widgets\WidgetStatusBar.xaml.cs">
+      <DependentUpon>WidgetStatusBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Composer\ComposerUI\ComplementCreationCommand.cs" />
+    <Compile Include="Composer\ComposerUI\ShortcutCreationCommand.cs" />
+    <Compile Include="Composer\ComposerUI\ViewComplementManipulationAdorner.cs" />
+    <Compile Include="Composer\ComposerUI\EComplementManipulationAction.cs" />
+    <Compile Include="Composer\ComposerUI\Widgets\FindAndReplaceDialog.xaml.cs">
+      <DependentUpon>FindAndReplaceDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Composer\Generation\FileGenerator.cs" />
+    <Compile Include="Composer\Generation\GenerationManager.cs" />
+    <Compile Include="Composer\Generation\TemplateFilters.cs" />
+    <Compile Include="Composer\Generation\Widgets\GeneratorSelectionEditor.xaml.cs">
+      <DependentUpon>GeneratorSelectionEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Composer\Generation\Widgets\FileGenerationPreviewer.xaml.cs">
+      <DependentUpon>FileGenerationPreviewer.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ApplicationProduct\BaseTemplates\Text_Propositions.tct" />
+    <None Include="Composer\Merging\CompositionMerger.cs" />
+    <None Include="Composer\Merging\MergingManager.cs" />
+    <None Include="Composer\Merging\SchemaMemberGroup.cs" />
+    <None Include="Composer\Merging\SchemaMemberSelection.cs" />
+    <None Include="Composer\Merging\Widgets\MergePreparer.xaml.cs">
+      <DependentUpon>MergePreparer.xaml</DependentUpon>
+    </None>
+    <None Include="Composer\Merging\Widgets\MergerCompositionBrowser.xaml.cs">
+      <DependentUpon>MergerCompositionBrowser.xaml</DependentUpon>
+    </None>
+    <None Include="Composer\Merging\Widgets\MergerPropertiesComparer.xaml.cs">
+      <DependentUpon>MergerPropertiesComparer.xaml</DependentUpon>
+    </None>
+    <Compile Include="Definitor\DefinitorMaintenance\DomainMaintainer.RelationshipDefClusters.cs" />
+    <Compile Include="Definitor\DefinitorMaintenance\DomainMaintainer.ConceptDefClusters.cs" />
+    <Compile Include="Definitor\DefinitorMaintenance\DomainMaintainer.ExternalLanguages.cs" />
+    <Compile Include="Definitor\DefinitorUI\Widgets\TemplateEditor.xaml.cs">
+      <DependentUpon>TemplateEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Definitor\DefinitorUI\Widgets\TemplateTester.xaml.cs">
+      <DependentUpon>TemplateTester.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MetaModel\Configurations\TextTemplate.cs" />
+    <Compile Include="MetaModel\Configurations\IdeaSelection.cs" />
+    <Compile Include="Composer\Generation\GenerationResult.cs" />
+    <Compile Include="Composer\ModelFixes.cs" />
+    <Compile Include="Composer\CompositionEngine.Search.cs" />
+    <Compile Include="Composer\ComposerUI\Widgets\SingleTableRecordEditor.xaml.cs">
+      <DependentUpon>SingleTableRecordEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Composer\ComposerUI\Widgets\RecordFieldExpositor.xaml.cs">
+      <DependentUpon>RecordFieldExpositor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Composer\ComposerUI\MarkerAssignmentCommand.cs" />
+    <Compile Include="Composer\ComposerUI\Widgets\DetailInternalPropertyEditor.xaml.cs">
+      <DependentUpon>DetailInternalPropertyEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Composer\ComposerUI\Widgets\MarkingsEditor.xaml.cs">
+      <DependentUpon>MarkingsEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Composer\CompositionsManager.ProjectCommands.cs" />
+    <Compile Include="Composer\CompositionsManager.EditingCommands.cs" />
+    <Compile Include="Composer\CompositionsManager.ExtrasCommands.cs" />
+    <Compile Include="Composer\CompositionEngine.Transfer.cs" />
+    <Compile Include="Composer\CompositionEngine.ContextMenuOptions.cs" />
+    <Compile Include="Composer\Reporting\ReportHtmlGenerator.IdeaDetails.cs" />
+    <Compile Include="Composer\Reporting\ReportHtmlGenerator.StyleSheet.cs" />
+    <Compile Include="Composer\Reporting\ReportHtmlPage.cs" />
+    <Compile Include="Composer\Reporting\ReportHtmlGenerator.Content.cs" />
+    <Compile Include="Composer\Reporting\ReportHtmlGenerator.ContentCard.cs" />
+    <Compile Include="Composer\Reporting\ReportHtmlGenerator.ContentList.cs" />
+    <Compile Include="Composer\Reporting\ReportHtmlGenerator.IdeaMembers.cs" />
+    <Compile Include="Composer\Reporting\ReportingManager.cs" />
+    <Compile Include="Composer\Reporting\ReportHtmlGenerator.cs" />
+    <Compile Include="Composer\Reporting\ReportStandardGenerator.IdeaDetails.cs" />
+    <Compile Include="Composer\Reporting\ReportStandardGenerator.ContentList.cs" />
+    <Compile Include="Composer\Reporting\ReportStandardGenerator.ContentCard.cs" />
+    <Compile Include="Composer\Reporting\ReportStandardPagesMaker.cs" />
+    <Compile Include="Composer\Reporting\Widgets\DisplayListEditor.xaml.cs">
+      <DependentUpon>DisplayListEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Composer\Reporting\Widgets\DisplayCardEditor.xaml.cs">
+      <DependentUpon>DisplayCardEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Composer\Reporting\Widgets\ReportConfigurationEditor.xaml.cs">
+      <DependentUpon>ReportConfigurationEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Composer\Reporting\ReportStandardGenerator.IdeaMembers.cs" />
+    <Compile Include="Definitor\DefinitorUI\Widgets\ArrangeTabForConceptDef.xaml.cs">
+      <DependentUpon>ArrangeTabForConceptDef.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Definitor\DefinitorUI\Widgets\ArrangeTabForRelationshipDef.xaml.cs">
+      <DependentUpon>ArrangeTabForRelationshipDef.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Definitor\DefinitorUI\Widgets\DomainTemplatingSubform.xaml.cs">
+      <DependentUpon>DomainTemplatingSubform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Definitor\DefinitorUI\Widgets\TableDetailDesignatorStructSubform.xaml.cs">
+      <DependentUpon>TableDetailDesignatorStructSubform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Definitor\DefinitorUI\Widgets\VisualElementPreviewer.xaml.cs">
+      <DependentUpon>VisualElementPreviewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MetaModel\Configurations\DisplayCard.cs" />
+    <Compile Include="MetaModel\Configurations\DisplayList.cs" />
+    <Compile Include="MetaModel\Configurations\ExternalLanguageDeclaration.cs" />
+    <Compile Include="MetaModel\Configurations\ReportConfiguration.cs" />
+    <Compile Include="Composer\Reporting\ReportStandardGenerator.Content.cs" />
+    <Compile Include="Composer\Reporting\ReportStandardGenerator.cs" />
+    <Compile Include="Definitor\DefinitorMaintenance\DomainMaintainer.VariantDefinitions.cs" />
+    <Compile Include="Definitor\DefinitorMaintenance\DomainMaintainer.MarkerDefinitions.cs" />
+    <Compile Include="Definitor\DefinitorMaintenance\DomainMaintainer.TableDefinitions.cs" />
+    <Compile Include="Definitor\DefinitorMaintenance\TableDefinitionMaintainer.StructureDefinitions.cs" />
+    <Compile Include="Definitor\DefinitorMaintenance\DomainMaintainer.RelationshipDefinitions.cs" />
+    <Compile Include="Definitor\DefinitorMaintenance\DomainMaintainer.ConceptDefinitions.cs" />
+    <Compile Include="Definitor\DefinitorUI\Widgets\LinkRoleDefSpecSubform.xaml.cs">
+      <DependentUpon>LinkRoleDefSpecSubform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Definitor\DefinitorUI\Widgets\TextFormatsMaintainer.xaml.cs">
+      <DependentUpon>TextFormatsMaintainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Definitor\DefinitorUI\Widgets\VisualConnectorFormatSubform.xaml.cs">
+      <DependentUpon>VisualConnectorFormatSubform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Definitor\DefinitorUI\Widgets\VisualElementFormatSubform.xaml.cs">
+      <DependentUpon>VisualElementFormatSubform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Definitor\DefinitorUI\Widgets\TableStructureSubform.xaml.cs">
+      <DependentUpon>TableStructureSubform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Definitor\DetailBaseCard.cs" />
+    <Compile Include="Definitor\DefinitorUI\Widgets\DetailsDefinitorMaintainer.xaml.cs">
+      <DependentUpon>DetailsDefinitorMaintainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Definitor\DefinitorUI\Widgets\VisualSymbolFormatSubform.xaml.cs">
+      <DependentUpon>VisualSymbolFormatSubform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Definitor\DefinitorUI\Widgets\GlobalDetailsDefinitor.xaml.cs">
+      <DependentUpon>GlobalDetailsDefinitor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Definitor\DetailDefinitionCard.cs" />
+    <Compile Include="Definitor\DefinitorMaintenance\TableDefinitionMaintainer.cs" />
+    <Compile Include="Composer\ComposerUI\ConceptCreationCommand.cs" />
+    <Compile Include="Composer\ComposerUI\DetailEditingCard.cs" />
+    <Compile Include="Composer\ComposerUI\EConnectorManipulationAction.cs" />
+    <Compile Include="Composer\ComposerUI\ViewConnectorManipulationAdorner.cs" />
+    <Compile Include="Composer\ComposerUI\ESymbolManipulationAction.cs" />
+    <Compile Include="Composer\ComposerUI\EManipulationDirection.cs" />
+    <Compile Include="Composer\ComposerUI\RelationshipCreationCommand.cs" />
+    <Compile Include="Composer\ComposerUI\ViewManipulationAdorner.cs" />
+    <Compile Include="Composer\ComposerUI\ViewManipulationManager.cs" />
+    <Compile Include="Composer\ComposerUI\ViewSymbolManipulationAdorner.cs" />
+    <Compile Include="Composer\ComposerUI\Widgets\DetailAttachmentEditor.cs" />
+    <Compile Include="Composer\ComposerUI\Widgets\DetailsEditorMaintainer.xaml.cs">
+      <DependentUpon>DetailsEditorMaintainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Composer\ComposerUI\Widgets\DetailTableEditor.xaml.cs">
+      <DependentUpon>DetailTableEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Composer\ComposerUI\Widgets\DetailLinkEditor.xaml.cs">
+      <DependentUpon>DetailLinkEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Composer\ComposerUI\Widgets\LocalDetailsEditor.xaml.cs">
+      <DependentUpon>LocalDetailsEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Composer\CompositionEngine.Core.cs" />
+    <Compile Include="Composer\CompositionsManager.cs" />
+    <Compile Include="Composer\CompositionEngine.Interaction.cs" />
+    <Compile Include="Composer\CompositionEngine.Editing.cs" />
+    <Compile Include="Definitor\DomainServices.cs" />
+    <Compile Include="Definitor\DomainsManager.cs" />
+    <Compile Include="MetaModel\Configurations\FileGenerationConfiguration.cs" />
+    <Compile Include="MetaModel\Domain.cs" />
+    <Compile Include="MetaModel\EAlterability.cs" />
+    <Compile Include="MetaModel\GraphMetaModel\ConceptDefinition.cs" />
+    <Compile Include="MetaModel\GraphMetaModel\ITableDesignator.cs" />
+    <Compile Include="MetaModel\GraphMetaModel\LinkDetailDesignator.cs" />
+    <Compile Include="MetaModel\GraphMetaModel\AttachmentDetailDesignator.cs" />
+    <Compile Include="MetaModel\GraphMetaModel\DetailDesignator.cs" />
+    <Compile Include="MetaModel\GraphMetaModel\ERoleType.cs" />
+    <Compile Include="MetaModel\GraphMetaModel\IdeaDefinition.cs" />
+    <Compile Include="MetaModel\GraphMetaModel\TableDetailDesignator.cs" />
+    <Compile Include="MetaModel\GraphMetaModel\LinkRoleDefinition.cs" />
+    <Compile Include="MetaModel\GraphMetaModel\RelationshipDefinition.cs" />
+    <Compile Include="MetaModel\IClusterableDef.cs" />
+    <Compile Include="MetaModel\IDefined.cs" />
+    <Compile Include="MetaModel\InformationMetaModel\BasicDataType.cs" />
+    <Compile Include="MetaModel\InformationMetaModel\ChoiceType.cs" />
+    <Compile Include="MetaModel\InformationMetaModel\PictureType.cs" />
+    <Compile Include="MetaModel\InformationMetaModel\TableType.cs" />
+    <Compile Include="MetaModel\InformationMetaModel\IdeaLinkType.cs" />
+    <Compile Include="MetaModel\InformationMetaModel\InternalLinkType.cs" />
+    <Compile Include="MetaModel\InformationMetaModel\DataType.cs" />
+    <Compile Include="MetaModel\InformationMetaModel\DateTimeType.cs" />
+    <Compile Include="MetaModel\InformationMetaModel\FileDataType.cs" />
+    <Compile Include="MetaModel\InformationMetaModel\FieldDefinition.cs" />
+    <Compile Include="MetaModel\InformationMetaModel\LinkDataType.cs" />
+    <Compile Include="MetaModel\InformationMetaModel\NumberType.cs" />
+    <Compile Include="MetaModel\InformationMetaModel\TableDefinition.cs" />
+    <Compile Include="MetaModel\InformationMetaModel\TableRecordLinkType.cs" />
+    <Compile Include="MetaModel\InformationMetaModel\TextType.cs" />
+    <Compile Include="MetaModel\InformationMetaModel\ResourceLinkType.cs" />
+    <Compile Include="MetaModel\MarkerDefinition.cs" />
+    <Compile Include="MetaModel\MetaCategory.cs" />
+    <Compile Include="MetaModel\MetaDefinition.cs" />
+    <Compile Include="MetaModel\VisualMetaModel\AttachmentAppearance.cs" />
+    <Compile Include="MetaModel\VisualMetaModel\EPlacementOnBorderHorizontal.cs" />
+    <Compile Include="MetaModel\VisualMetaModel\EAutoPositioningMode.cs" />
+    <Compile Include="MetaModel\VisualMetaModel\ESymbolPart.cs" />
+    <Compile Include="MetaModel\VisualMetaModel\EVecinityQuadrant.cs" />
+    <Compile Include="MetaModel\VisualMetaModel\EVisualDispositionBidimensional.cs" />
+    <Compile Include="MetaModel\VisualMetaModel\EVisualDispositionMonodimensional.cs" />
+    <Compile Include="MetaModel\VisualMetaModel\LinkAppearance.cs" />
+    <Compile Include="MetaModel\VisualMetaModel\ETextPurpose.cs" />
+    <Compile Include="MetaModel\VisualMetaModel\TableAppearance.cs" />
+    <Compile Include="MetaModel\VisualMetaModel\EHorizontalPlacement.cs" />
+    <Compile Include="MetaModel\VisualMetaModel\EPathCorner.cs" />
+    <Compile Include="MetaModel\VisualMetaModel\EPathStyle.cs" />
+    <Compile Include="MetaModel\VisualMetaModel\Plugs.cs" />
+    <Compile Include="MetaModel\VisualMetaModel\Shapes.cs" />
+    <Compile Include="MetaModel\VisualMetaModel\EVerticalPlacement.cs" />
+    <Compile Include="Definitor\DefinitorUI\MasterDrawer.cs" />
+    <Compile Include="Definitor\DefinitorUI\PathDrawer.cs" />
+    <Compile Include="Definitor\DefinitorUI\PlugDrawer.cs" />
+    <Compile Include="Definitor\DefinitorUI\SymbolDrawer.cs" />
+    <Compile Include="MetaModel\VisualMetaModel\VisualConnectorsFormat.cs" />
+    <Compile Include="MetaModel\VisualMetaModel\VisualElementFormat.cs" />
+    <Compile Include="Model\GraphModel\MarkerAssignment.cs" />
+    <Compile Include="Model\GraphModel\RoleBasedLink.cs" />
+    <Compile Include="Model\InformationModel\ContainedDetail.cs" />
+    <Compile Include="Model\InformationModel\Attachment.cs" />
+    <Compile Include="Model\InformationModel\TableRecord.cs" />
+    <Compile Include="Model\InformationModel\InternalLink.cs" />
+    <Compile Include="Model\InformationModel\ResourceLink.cs" />
+    <Compile Include="Model\InformationModel\Table.cs" />
+    <Compile Include="MetaModel\VisualMetaModel\ETableLayoutStyle.cs" />
+    <Compile Include="Model\InformationModel\Link.cs" />
+    <Compile Include="Model\VisualModel\ConceptVisualRepresentation.cs" />
+    <Compile Include="Model\VisualModel\VisualComplement.GenerateLegend.cs" />
+    <Compile Include="Model\VisualModel\VisualComplement.GenerateInfoCard.cs" />
+    <Compile Include="Model\VisualModel\VisualComplement.cs" />
+    <Compile Include="Model\VisualModel\EVisualLevel.cs" />
+    <Compile Include="Model\VisualModel\ViewChild.cs" />
+    <Compile Include="Model\VisualModel\RelationshipVisualRepresentation.cs" />
+    <Compile Include="Model\VisualModel\VisualSymbol.DrawDetails.cs" />
+    <Compile Include="Model\VisualModel\VisualConnector.cs" />
+    <Compile Include="Model\VisualModel\VisualInert.cs" />
+    <Compile Include="Model\VisualModel\VisualRepresentation.cs" />
+    <Compile Include="MetaModel\VisualMetaModel\VisualSymbolFormat.cs" />
+    <Compile Include="Model\Composition.cs" />
+    <Compile Include="Model\GraphModel\Concept.cs" />
+    <Compile Include="Model\GraphModel\EConceptType.cs" />
+    <Compile Include="Model\GraphModel\Idea.cs" />
+    <Compile Include="Model\GraphModel\Relationship.cs" />
+    <Compile Include="Model\VisualModel\EVisualRepresentationPart.cs" />
+    <Compile Include="Model\VisualModel\View.cs" />
+    <Compile Include="Model\VisualModel\ViewPresenter.cs" />
+    <Compile Include="Model\VisualModel\VisualShape.cs" />
+    <Compile Include="Model\VisualModel\VisualElement.cs" />
+    <Compile Include="Model\VisualModel\VisualObject.cs" />
+    <Compile Include="Model\VisualModel\VisualSymbol.cs" />
+    <Compile Include="MetaModel\VisualMetaModel\DetailAppearance.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="ApplicationShell\MainWindowHeader.xaml.cs">
+      <DependentUpon>MainWindowHeader.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ApplicationProduct\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ApplicationProduct\AppOptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ApplicationProduct\AppHelp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ApplicationProduct\AppVersionUpdate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ApplicationProduct\AppRegistration.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ApplicationProduct\DomainSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ApplicationProduct\Cursors\AppCursors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ApplicationProduct\Widgets\WidgetDocumentVisualizer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ApplicationProduct\Widgets\WidgetItemsPalette.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ApplicationProduct\Widgets\WidgetItemsPaletteGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ApplicationProduct\Widgets\WidgetVisualSampleSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ApplicationProduct\Widgets\WidgetMessenger.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ApplicationProduct\Widgets\WidgetNavMap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ApplicationProduct\Widgets\WidgetNavTree.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ApplicationProduct\Widgets\WidgetPalette.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ApplicationProduct\Widgets\WidgetInterrelationsPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ApplicationProduct\Widgets\WidgetStatusBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Composer\ComposerUI\Widgets\FindAndReplaceDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Composer\ComposerUI\Widgets\SingleTableRecordEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Composer\ComposerUI\Widgets\RecordFieldExpositor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ApplicationShell\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ApplicationShell\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ApplicationShell\MainWindowHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Composer\ComposerUI\Widgets\DetailInternalPropertyEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Composer\ComposerUI\Widgets\DetailsEditorMaintainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Composer\ComposerUI\Widgets\DetailTableEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Composer\ComposerUI\Widgets\DetailLinkEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Composer\ComposerUI\Widgets\MarkingsEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Composer\Generation\Widgets\GeneratorSelectionEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Composer\Generation\Widgets\FileGenerationPreviewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <None Include="Composer\Merging\Widgets\MergePreparer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Composer\Merging\Widgets\MergerCompositionBrowser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Composer\Merging\Widgets\MergerPropertiesComparer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </None>
+    <Page Include="Composer\Reporting\Widgets\DisplayListEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Composer\Reporting\Widgets\DisplayCardEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Composer\Reporting\Widgets\ReportConfigurationEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Definitor\DefinitorUI\Widgets\ArrangeTabForConceptDef.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Definitor\DefinitorUI\Widgets\ArrangeTabForRelationshipDef.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Definitor\DefinitorUI\Widgets\DomainTemplatingSubform.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Definitor\DefinitorUI\Widgets\LinkRoleDefSpecSubform.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Definitor\DefinitorUI\Widgets\TableDetailDesignatorStructSubform.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Definitor\DefinitorUI\Widgets\TemplateEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Definitor\DefinitorUI\Widgets\TemplateTester.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Definitor\DefinitorUI\Widgets\TextFormatsMaintainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Definitor\DefinitorUI\Widgets\VisualConnectorFormatSubform.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Definitor\DefinitorUI\Widgets\VisualElementFormatSubform.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Definitor\DefinitorUI\Widgets\DetailsDefinitorMaintainer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Definitor\DefinitorUI\Widgets\VisualElementPreviewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Definitor\DefinitorUI\Widgets\VisualSymbolFormatSubform.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Definitor\DefinitorUI\Widgets\GlobalDetailsDefinitor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Composer\ComposerUI\Widgets\LocalDetailsEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Definitor\DefinitorUI\Widgets\TableStructureSubform.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MetaModel\VisualMetaModel\DecoratorGeometries.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MetaModel\VisualMetaModel\PlugsTester.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MetaModel\VisualMetaModel\SymbolsTester.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MetaModel\VisualMetaModel\PlugGeometries.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MetaModel\VisualMetaModel\SymbolGeometries.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.log">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <EmbeddedResource Include="ApplicationProduct\LanguageSyntaxes\TcTemplate.xshd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationProduct\BaseTemplates\Text_RelationshipExtension.tct" />
+    <EmbeddedResource Include="ApplicationProduct\BaseTemplates\Text_Composition.tct" />
+    <EmbeddedResource Include="ApplicationProduct\BaseTemplates\XML_Composition.tct">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationProduct\BaseTemplates\XML_IdeaBase.tct" />
+    <EmbeddedResource Include="ApplicationProduct\BaseTemplates\XML_RelationshipExtension.tct" />
+    <EmbeddedResource Include="ApplicationProduct\BaseTemplates\CSharp_Class.tct" />
+    <EmbeddedResource Include="ApplicationProduct\BaseTemplates\SQL_Table.tct" />
+    <EmbeddedResource Include="ApplicationProduct\BaseTemplates\CSharp_Interface.tct" />
+    <None Include="Properties\app.manifest" />
+    <Resource Include="Fonts\VENUSRIS.ttf" />
+    <Resource Include="Fonts\VOX.TTF" />
+    <Resource Include="ApplicationProduct\Fonts\VENUSRIS.ttf" />
+    <Resource Include="ApplicationProduct\Fonts\VOX.TTF" />
+    <None Include="ApplicationProduct\Images\Instrumind_ThinkComposer.pdn" />
+    <None Include="Properties\InstrumindThinkComposer_Key.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <SplashScreen Include="ApplicationShell\Images\Instrumind_ThinkComposer_Splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{2BE2B928-B692-44AB-A90B-38BB8154BBA0}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DotLiquid\DotLiquid-2010.csproj">
+      <Project>{429C3908-6AEA-4EE6-9450-06A196DC87DB}</Project>
+      <Name>DotLiquid-2010</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSharpCode.AvalonEdit\ICSharpCode.AvalonEdit.csproj">
+      <Project>{6C55B776-26D4-4DB3-A6AB-87E783B2F3D1}</Project>
+      <Name>ICSharpCode.AvalonEdit</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\folder_image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\application.png" />
+    <Resource Include="ApplicationProduct\Images\application_form_edit.png" />
+    <Resource Include="ApplicationProduct\Images\application_home.png" />
+    <Resource Include="ApplicationProduct\Images\application_lightning.png" />
+    <Resource Include="ApplicationProduct\Images\application_view_gallery.png" />
+    <Resource Include="ApplicationProduct\Images\application_view_icons.png" />
+    <Resource Include="ApplicationProduct\Images\application_view_tile.png" />
+    <Resource Include="ApplicationProduct\Images\arrow_redo.png" />
+    <Resource Include="ApplicationProduct\Images\arrow_undo.png" />
+    <Resource Include="ApplicationProduct\Images\attach.png" />
+    <Resource Include="ApplicationProduct\Images\book.png" />
+    <Resource Include="ApplicationProduct\Images\book_add.png" />
+    <Resource Include="ApplicationProduct\Images\book_back.png" />
+    <Resource Include="ApplicationProduct\Images\book_edit.png" />
+    <Resource Include="ApplicationProduct\Images\book_go.png" />
+    <Resource Include="ApplicationProduct\Images\book_open.png" />
+    <Resource Include="ApplicationProduct\Images\book_save.png" />
+    <Resource Include="ApplicationProduct\Images\book_saveas.png" />
+    <Resource Include="ApplicationProduct\Images\bricks.png" />
+    <Resource Include="ApplicationProduct\Images\chart_line.png" />
+    <Resource Include="ApplicationProduct\Images\chart_organisation.png" />
+    <Resource Include="ApplicationProduct\Images\color_swatch.png" />
+    <Resource Include="ApplicationProduct\Images\comment.png" />
+    <Resource Include="ApplicationProduct\Images\cut.png" />
+    <Resource Include="ApplicationProduct\Images\cut_red.png" />
+    <Resource Include="ApplicationProduct\Images\block.png" />
+    <Resource Include="ApplicationProduct\Images\block_check.png" />
+    <Resource Include="ApplicationProduct\Images\block_edit.png" />
+    <Resource Include="ApplicationProduct\Images\block_prefs.png" />
+    <Resource Include="ApplicationProduct\Images\email_attach.png" />
+    <Resource Include="ApplicationProduct\Images\eye.png" />
+    <Resource Include="ApplicationProduct\Images\find.png" />
+    <Resource Include="ApplicationProduct\Images\font.png" />
+    <Resource Include="ApplicationProduct\Images\graph_layout.png" />
+    <Resource Include="ApplicationProduct\Images\help.png" />
+    <Resource Include="ApplicationProduct\Images\images.png" />
+    <Resource Include="ApplicationProduct\Images\information.png" />
+    <Resource Include="ApplicationProduct\Images\key.png" />
+    <Resource Include="ApplicationProduct\Images\layers.png" />
+    <Resource Include="ApplicationProduct\Images\layout_content.png" />
+    <Resource Include="ApplicationProduct\Images\lightbulb.png" />
+    <Resource Include="ApplicationProduct\Images\lightning.png" />
+    <Resource Include="ApplicationProduct\Images\magnifier.png" />
+    <Resource Include="ApplicationProduct\Images\mouse.png" />
+    <Resource Include="ApplicationProduct\Images\note.png" />
+    <Resource Include="ApplicationProduct\Images\package_green.png" />
+    <Resource Include="ApplicationProduct\Images\page_copy.png" />
+    <Resource Include="ApplicationProduct\Images\page_find.png" />
+    <Resource Include="ApplicationProduct\Images\page_paste.png" />
+    <Resource Include="ApplicationProduct\Images\page_white_copy.png" />
+    <Resource Include="ApplicationProduct\Images\palette.png" />
+    <Resource Include="ApplicationProduct\Images\paste_plain.png" />
+    <Resource Include="ApplicationProduct\Images\report.png" />
+    <Resource Include="ApplicationProduct\Images\rosette.png" />
+    <Resource Include="ApplicationProduct\Images\script_back.png" />
+    <Resource Include="ApplicationProduct\Images\script_edit.png" />
+    <Resource Include="ApplicationProduct\Images\script_gear.png" />
+    <Resource Include="ApplicationProduct\Images\script_go.png" />
+    <Resource Include="ApplicationProduct\Images\script_lightning.png" />
+    <Resource Include="ApplicationProduct\Images\shapes.png" />
+    <Resource Include="ApplicationProduct\Images\shape_align_middle.png" />
+    <Resource Include="ApplicationProduct\Images\sitemap_color.png" />
+    <Resource Include="ApplicationProduct\Images\spellcheck.png" />
+    <Resource Include="ApplicationProduct\Images\table.png" />
+    <Resource Include="ApplicationProduct\Images\table_relationship.png" />
+    <Resource Include="ApplicationProduct\Images\tag_red.png" />
+    <Resource Include="ApplicationProduct\Images\text_bold.png" />
+    <Resource Include="ApplicationProduct\Images\text_italic.png" />
+    <Resource Include="ApplicationProduct\Images\text_replace.png" />
+    <Resource Include="ApplicationProduct\Images\text_underline.png" />
+    <Resource Include="ApplicationProduct\Images\vcard_edit.png" />
+    <Resource Include="ApplicationProduct\Images\vector_add.png" />
+    <Resource Include="ApplicationProduct\Images\wand.png" />
+    <Resource Include="ApplicationProduct\Images\world.png" />
+    <Resource Include="ApplicationProduct\Images\wrench_orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\Scalimeter_21x21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\Scalimeter_126x42.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\details_close.png" />
+    <Resource Include="ApplicationProduct\Images\details_open.png" />
+    <Resource Include="ApplicationProduct\Images\page_white_edit.png" />
+    <Resource Include="ApplicationProduct\Images\related_close.png" />
+    <Resource Include="ApplicationProduct\Images\related_collapsed.png" />
+    <Resource Include="ApplicationProduct\Images\related_expanded.png" />
+    <Resource Include="ApplicationProduct\Images\related_open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_white_paint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\show_composite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Instrumind_48x48.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\table_sort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\table_add.png" />
+    <Resource Include="ApplicationProduct\Images\table_delete.png" />
+    <Resource Include="ApplicationProduct\Images\table_edit.png" />
+    <Resource Include="ApplicationProduct\Images\table_error.png" />
+    <Resource Include="ApplicationProduct\Images\table_gear.png" />
+    <Resource Include="ApplicationProduct\Images\table_go.png" />
+    <Resource Include="ApplicationProduct\Images\table_key.png" />
+    <Resource Include="ApplicationProduct\Images\table_lightning.png" />
+    <Resource Include="ApplicationProduct\Images\table_link.png" />
+    <Resource Include="ApplicationProduct\Images\table_multiple.png" />
+    <Resource Include="ApplicationProduct\Images\table_refresh.png" />
+    <Resource Include="ApplicationProduct\Images\table_row_delete.png" />
+    <Resource Include="ApplicationProduct\Images\table_row_insert.png" />
+    <Resource Include="ApplicationProduct\Images\table_save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\add.png" />
+    <Resource Include="ApplicationProduct\Images\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_white_ruby.png" />
+    <Resource Include="ApplicationProduct\Images\tag_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\eye_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\lightbulb_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_white_star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\own_exclusive.png" />
+    <Resource Include="ApplicationProduct\Images\own_shared.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_attach.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_definition.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_designate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\sound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_word.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\film.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\music.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\picture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_white_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\link.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\folder_link.png" />
+    <Resource Include="ApplicationProduct\Images\page_white_link.png" />
+    <Resource Include="ApplicationProduct\Images\world_link.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_white_acrobat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\arrow_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\block_open.png" />
+    <Resource Include="ApplicationProduct\Images\block_save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_star_link.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\composite_view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\detail_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\table_alter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\table_clone.png" />
+    <Resource Include="ApplicationProduct\Images\table_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\imtc_concept.png" />
+    <Resource Include="ApplicationProduct\Images\imtc_relationship.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\brush_fill.png" />
+    <Resource Include="ApplicationProduct\Images\brush_lines.png" />
+    <Resource Include="ApplicationProduct\Images\brush_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_white_delete.png" />
+    <Resource Include="ApplicationProduct\Images\page_white_lightning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\flag_blue.png" />
+    <Resource Include="ApplicationProduct\Images\flag_green.png" />
+    <Resource Include="ApplicationProduct\Images\flag_orange.png" />
+    <Resource Include="ApplicationProduct\Images\flag_pink.png" />
+    <Resource Include="ApplicationProduct\Images\flag_purple.png" />
+    <Resource Include="ApplicationProduct\Images\flag_red.png" />
+    <Resource Include="ApplicationProduct\Images\flag_yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\flag_black.png" />
+    <Resource Include="ApplicationProduct\Images\flag_gray.png" />
+    <Resource Include="ApplicationProduct\Images\flag_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\tag_blue.png" />
+    <Resource Include="ApplicationProduct\Images\tag_orange.png" />
+    <Resource Include="ApplicationProduct\Images\tag_pink.png" />
+    <Resource Include="ApplicationProduct\Images\tag_purple.png" />
+    <Resource Include="ApplicationProduct\Images\tag_yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\tag_black.png" />
+    <Resource Include="ApplicationProduct\Images\tag_gray.png" />
+    <Resource Include="ApplicationProduct\Images\tag_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\text_ellipsis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\anchor.png" />
+    <Resource Include="ApplicationProduct\Images\arrow_branch.png" />
+    <Resource Include="ApplicationProduct\Images\arrow_divide.png" />
+    <Resource Include="ApplicationProduct\Images\arrow_down.png" />
+    <Resource Include="ApplicationProduct\Images\arrow_in.png" />
+    <Resource Include="ApplicationProduct\Images\arrow_inout.png" />
+    <Resource Include="ApplicationProduct\Images\arrow_join.png" />
+    <Resource Include="ApplicationProduct\Images\arrow_left.png" />
+    <Resource Include="ApplicationProduct\Images\arrow_merge.png" />
+    <Resource Include="ApplicationProduct\Images\arrow_out.png" />
+    <Resource Include="ApplicationProduct\Images\arrow_refresh.png" />
+    <Resource Include="ApplicationProduct\Images\arrow_refresh_small.png" />
+    <Resource Include="ApplicationProduct\Images\arrow_rotate_anticlockwise.png" />
+    <Resource Include="ApplicationProduct\Images\arrow_rotate_clockwise.png" />
+    <Resource Include="ApplicationProduct\Images\arrow_switch.png" />
+    <Resource Include="ApplicationProduct\Images\arrow_turn_left.png" />
+    <Resource Include="ApplicationProduct\Images\arrow_turn_right.png" />
+    <Resource Include="ApplicationProduct\Images\arrow_up.png" />
+    <Resource Include="ApplicationProduct\Images\asterisk_orange.png" />
+    <Resource Include="ApplicationProduct\Images\asterisk_yellow.png" />
+    <Resource Include="ApplicationProduct\Images\award_star_bronze_1.png" />
+    <Resource Include="ApplicationProduct\Images\award_star_bronze_2.png" />
+    <Resource Include="ApplicationProduct\Images\award_star_bronze_3.png" />
+    <Resource Include="ApplicationProduct\Images\award_star_gold_1.png" />
+    <Resource Include="ApplicationProduct\Images\award_star_gold_2.png" />
+    <Resource Include="ApplicationProduct\Images\award_star_gold_3.png" />
+    <Resource Include="ApplicationProduct\Images\award_star_silver_1.png" />
+    <Resource Include="ApplicationProduct\Images\award_star_silver_2.png" />
+    <Resource Include="ApplicationProduct\Images\award_star_silver_3.png" />
+    <Resource Include="ApplicationProduct\Images\basket.png" />
+    <Resource Include="ApplicationProduct\Images\bell.png" />
+    <Resource Include="ApplicationProduct\Images\bomb.png" />
+    <Resource Include="ApplicationProduct\Images\book_addresses.png" />
+    <Resource Include="ApplicationProduct\Images\box.png" />
+    <Resource Include="ApplicationProduct\Images\brick.png" />
+    <Resource Include="ApplicationProduct\Images\briefcase.png" />
+    <Resource Include="ApplicationProduct\Images\bug.png" />
+    <Resource Include="ApplicationProduct\Images\cake.png" />
+    <Resource Include="ApplicationProduct\Images\calculator.png" />
+    <Resource Include="ApplicationProduct\Images\calendar.png" />
+    <Resource Include="ApplicationProduct\Images\camera.png" />
+    <Resource Include="ApplicationProduct\Images\car.png" />
+    <Resource Include="ApplicationProduct\Images\cart.png" />
+    <Resource Include="ApplicationProduct\Images\chart_pie.png" />
+    <Resource Include="ApplicationProduct\Images\clock.png" />
+    <Resource Include="ApplicationProduct\Images\clock_red.png" />
+    <Resource Include="ApplicationProduct\Images\cog.png" />
+    <Resource Include="ApplicationProduct\Images\coins.png" />
+    <Resource Include="ApplicationProduct\Images\color_wheel.png" />
+    <Resource Include="ApplicationProduct\Images\connect.png" />
+    <Resource Include="ApplicationProduct\Images\controller.png" />
+    <Resource Include="ApplicationProduct\Images\cross.png" />
+    <Resource Include="ApplicationProduct\Images\cup.png" />
+    <Resource Include="ApplicationProduct\Images\date.png" />
+    <Resource Include="ApplicationProduct\Images\disconnect.png" />
+    <Resource Include="ApplicationProduct\Images\disk.png" />
+    <Resource Include="ApplicationProduct\Images\disk_multiple.png" />
+    <Resource Include="ApplicationProduct\Images\door.png" />
+    <Resource Include="ApplicationProduct\Images\door_in.png" />
+    <Resource Include="ApplicationProduct\Images\door_open.png" />
+    <Resource Include="ApplicationProduct\Images\door_out.png" />
+    <Resource Include="ApplicationProduct\Images\drink.png" />
+    <Resource Include="ApplicationProduct\Images\drink_empty.png" />
+    <Resource Include="ApplicationProduct\Images\email.png" />
+    <Resource Include="ApplicationProduct\Images\emoticon_evilgrin.png" />
+    <Resource Include="ApplicationProduct\Images\emoticon_grin.png" />
+    <Resource Include="ApplicationProduct\Images\emoticon_happy.png" />
+    <Resource Include="ApplicationProduct\Images\emoticon_smile.png" />
+    <Resource Include="ApplicationProduct\Images\emoticon_surprised.png" />
+    <Resource Include="ApplicationProduct\Images\emoticon_tongue.png" />
+    <Resource Include="ApplicationProduct\Images\emoticon_unhappy.png" />
+    <Resource Include="ApplicationProduct\Images\emoticon_waii.png" />
+    <Resource Include="ApplicationProduct\Images\emoticon_wink.png" />
+    <Resource Include="ApplicationProduct\Images\error.png" />
+    <Resource Include="ApplicationProduct\Images\exclamation.png" />
+    <Resource Include="ApplicationProduct\Images\female.png" />
+    <Resource Include="ApplicationProduct\Images\group.png" />
+    <Resource Include="ApplicationProduct\Images\heart.png" />
+    <Resource Include="ApplicationProduct\Images\hourglass.png" />
+    <Resource Include="ApplicationProduct\Images\house.png" />
+    <Resource Include="ApplicationProduct\Images\keyboard.png" />
+    <Resource Include="ApplicationProduct\Images\lightbulb_off.png" />
+    <Resource Include="ApplicationProduct\Images\lock.png" />
+    <Resource Include="ApplicationProduct\Images\lorry.png" />
+    <Resource Include="ApplicationProduct\Images\lorry_flatbed.png" />
+    <Resource Include="ApplicationProduct\Images\male.png" />
+    <Resource Include="ApplicationProduct\Images\map.png" />
+    <Resource Include="ApplicationProduct\Images\medal_bronze_1.png" />
+    <Resource Include="ApplicationProduct\Images\medal_bronze_2.png" />
+    <Resource Include="ApplicationProduct\Images\medal_bronze_3.png" />
+    <Resource Include="ApplicationProduct\Images\medal_gold_1.png" />
+    <Resource Include="ApplicationProduct\Images\medal_gold_2.png" />
+    <Resource Include="ApplicationProduct\Images\medal_gold_3.png" />
+    <Resource Include="ApplicationProduct\Images\medal_silver_1.png" />
+    <Resource Include="ApplicationProduct\Images\medal_silver_2.png" />
+    <Resource Include="ApplicationProduct\Images\medal_silver_3.png" />
+    <Resource Include="ApplicationProduct\Images\money.png" />
+    <Resource Include="ApplicationProduct\Images\money_dollar.png" />
+    <Resource Include="ApplicationProduct\Images\money_euro.png" />
+    <Resource Include="ApplicationProduct\Images\money_pound.png" />
+    <Resource Include="ApplicationProduct\Images\money_yen.png" />
+    <Resource Include="ApplicationProduct\Images\monitor.png" />
+    <Resource Include="ApplicationProduct\Images\new.png" />
+    <Resource Include="ApplicationProduct\Images\newspaper.png" />
+    <Resource Include="ApplicationProduct\Images\paintbrush.png" />
+    <Resource Include="ApplicationProduct\Images\paintcan.png" />
+    <Resource Include="ApplicationProduct\Images\pencil.png" />
+    <Resource Include="ApplicationProduct\Images\phone.png" />
+    <Resource Include="ApplicationProduct\Images\photo.png" />
+    <Resource Include="ApplicationProduct\Images\pill.png" />
+    <Resource Include="ApplicationProduct\Images\rainbow.png" />
+    <Resource Include="ApplicationProduct\Images\ruby.png" />
+    <Resource Include="ApplicationProduct\Images\server.png" />
+    <Resource Include="ApplicationProduct\Images\shading.png" />
+    <Resource Include="ApplicationProduct\Images\shape_square.png" />
+    <Resource Include="ApplicationProduct\Images\sport_8ball.png" />
+    <Resource Include="ApplicationProduct\Images\sport_basketball.png" />
+    <Resource Include="ApplicationProduct\Images\sport_football.png" />
+    <Resource Include="ApplicationProduct\Images\sport_golf.png" />
+    <Resource Include="ApplicationProduct\Images\sport_raquet.png" />
+    <Resource Include="ApplicationProduct\Images\sport_shuttlecock.png" />
+    <Resource Include="ApplicationProduct\Images\sport_soccer.png" />
+    <Resource Include="ApplicationProduct\Images\sport_tennis.png" />
+    <Resource Include="ApplicationProduct\Images\star.png" />
+    <Resource Include="ApplicationProduct\Images\sum.png" />
+    <Resource Include="ApplicationProduct\Images\telephone.png" />
+    <Resource Include="ApplicationProduct\Images\television.png" />
+    <Resource Include="ApplicationProduct\Images\thumb_down.png" />
+    <Resource Include="ApplicationProduct\Images\thumb_up.png" />
+    <Resource Include="ApplicationProduct\Images\tick.png" />
+    <Resource Include="ApplicationProduct\Images\time.png" />
+    <Resource Include="ApplicationProduct\Images\time_add.png" />
+    <Resource Include="ApplicationProduct\Images\time_delete.png" />
+    <Resource Include="ApplicationProduct\Images\user.png" />
+    <Resource Include="ApplicationProduct\Images\user_comment.png" />
+    <Resource Include="ApplicationProduct\Images\user_female.png" />
+    <Resource Include="ApplicationProduct\Images\user_gray.png" />
+    <Resource Include="ApplicationProduct\Images\user_green.png" />
+    <Resource Include="ApplicationProduct\Images\user_orange.png" />
+    <Resource Include="ApplicationProduct\Images\user_red.png" />
+    <Resource Include="ApplicationProduct\Images\user_suit.png" />
+    <Resource Include="ApplicationProduct\Images\vcard.png" />
+    <Resource Include="ApplicationProduct\Images\weather_clouds.png" />
+    <Resource Include="ApplicationProduct\Images\weather_cloudy.png" />
+    <Resource Include="ApplicationProduct\Images\weather_lightning.png" />
+    <Resource Include="ApplicationProduct\Images\weather_rain.png" />
+    <Resource Include="ApplicationProduct\Images\weather_snow.png" />
+    <Resource Include="ApplicationProduct\Images\weather_sun.png" />
+    <Resource Include="ApplicationProduct\Images\webcam.png" />
+    <Resource Include="ApplicationProduct\Images\wrench.png" />
+    <Resource Include="ApplicationProduct\Images\zoom.png" />
+    <Resource Include="ApplicationProduct\Images\zoom_in.png" />
+    <Resource Include="ApplicationProduct\Images\zoom_out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\creditcards.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\disk_saveas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\book_prefs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\book_check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\priority_1_blue.png" />
+    <Resource Include="ApplicationProduct\Images\priority_1_red.png" />
+    <Resource Include="ApplicationProduct\Images\priority_2_blue.png" />
+    <Resource Include="ApplicationProduct\Images\priority_2_red.png" />
+    <Resource Include="ApplicationProduct\Images\priority_3_blue.png" />
+    <Resource Include="ApplicationProduct\Images\priority_3_red.png" />
+    <Resource Include="ApplicationProduct\Images\priority_4_blue.png" />
+    <Resource Include="ApplicationProduct\Images\priority_4_red.png" />
+    <Resource Include="ApplicationProduct\Images\task_25pc.png" />
+    <Resource Include="ApplicationProduct\Images\task_25pc_orange.png" />
+    <Resource Include="ApplicationProduct\Images\task_33pc.png" />
+    <Resource Include="ApplicationProduct\Images\task_33pc_orange.png" />
+    <Resource Include="ApplicationProduct\Images\task_50pc.png" />
+    <Resource Include="ApplicationProduct\Images\task_50pc_yellow.png" />
+    <Resource Include="ApplicationProduct\Images\task_66pc.png" />
+    <Resource Include="ApplicationProduct\Images\task_66pc_blue.png" />
+    <Resource Include="ApplicationProduct\Images\task_75pc.png" />
+    <Resource Include="ApplicationProduct\Images\task_75pc_blue.png" />
+    <Resource Include="ApplicationProduct\Images\task_cancelled_blue.png" />
+    <Resource Include="ApplicationProduct\Images\task_cancelled_red.png" />
+    <Resource Include="ApplicationProduct\Images\task_comp.png" />
+    <Resource Include="ApplicationProduct\Images\task_init.png" />
+    <Resource Include="ApplicationProduct\Images\task_paused_blue.png" />
+    <Resource Include="ApplicationProduct\Images\task_paused_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\tasks_control.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\task_paused.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\arrow_nw_ne_sw_se.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\control_remove_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\shape_align_bottom.png" />
+    <Resource Include="ApplicationProduct\Images\shape_align_center.png" />
+    <Resource Include="ApplicationProduct\Images\shape_align_left.png" />
+    <Resource Include="ApplicationProduct\Images\shape_align_right.png" />
+    <Resource Include="ApplicationProduct\Images\shape_align_top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\shape_spacing_horiz.png" />
+    <Resource Include="ApplicationProduct\Images\shape_spacing_verti.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\shape_same_height.png" />
+    <Resource Include="ApplicationProduct\Images\shape_same_size.png" />
+    <Resource Include="ApplicationProduct\Images\shape_same_width.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\diagram_export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\view_globally.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\book_tabs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\control_power_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\app_options.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\brush_connector_lines.png" />
+    <Resource Include="ApplicationProduct\Images\brush_symbol_lines.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\type_choice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_white_star_book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\control_power_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_white_stack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\folder_page_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\folder_book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\book_star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\detail_poster.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\arrow_cycle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\record_ref.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Instrumind_ThinkComposer.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\Instrumind_ThinkComposer.ico" />
+    <Resource Include="ApplicationProduct\Images\Instrumind_ThinkComposer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\TC_Composition.png" />
+    <Resource Include="ApplicationProduct\Images\TC_Domain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\TC_Composition.ico" />
+    <Resource Include="ApplicationProduct\Images\TC_Domain.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\style_getter.png" />
+    <Resource Include="ApplicationProduct\Images\style_setter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\detail_view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\application_form_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\folder_table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\shortcut_big.png" />
+    <Resource Include="ApplicationProduct\Images\shortcut_lit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\bg_paper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\paste_shortcut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\actconn_cycle.png" />
+    <Resource Include="ApplicationProduct\Images\actconn_delete.png" />
+    <Resource Include="ApplicationProduct\Images\actconn_displace_main.png" />
+    <Resource Include="ApplicationProduct\Images\actconn_displace_part.png" />
+    <Resource Include="ApplicationProduct\Images\actconn_straighten.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\rel_sources.png" />
+    <Resource Include="ApplicationProduct\Images\rel_targets.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\view_presen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\zoom_actual.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\zoom_alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\shape_move_back.png" />
+    <Resource Include="ApplicationProduct\Images\shape_move_backwards.png" />
+    <Resource Include="ApplicationProduct\Images\shape_move_forwards.png" />
+    <Resource Include="ApplicationProduct\Images\shape_move_front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\comp_callout.png" />
+    <Resource Include="ApplicationProduct\Images\comp_infocard.png" />
+    <Resource Include="ApplicationProduct\Images\comp_legend.png" />
+    <Resource Include="ApplicationProduct\Images\comp_note.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Cursors\arrow_idea.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Cursors\arrow_complement.cur" />
+    <Resource Include="ApplicationProduct\Cursors\arrow_marker.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\picture_tree.png" />
+    <Resource Include="ApplicationProduct\Images\text_label.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\comp_region.png" />
+    <Resource Include="ApplicationProduct\Images\comp_stamp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\world_go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\disk_black_magnify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="License.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\link_role_variants.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\folder_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\folder_magnify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_view_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\shapes_many_select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\image_star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\image_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\shape_spacing_both.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\shape_flip_horizontal.png" />
+    <Resource Include="ApplicationProduct\Images\shape_flip_vertical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\view_select_all.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\actconn_relink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_white_findreplace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_white_find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Cursors\arrow_shortcut.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\web_update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\user_key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\report_start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\rep_dis_card.png" />
+    <Resource Include="ApplicationProduct\Images\rep_dis_list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\award_star_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\wand_convert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\actconn_repos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\comp_quote.png" />
+    <Resource Include="ApplicationProduct\Images\comp_rod.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\detail_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\disk_download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\rod_change_axis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\line_dashstyle.png" />
+    <Resource Include="ApplicationProduct\Images\line_thickness.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\ref_concept.png" />
+    <Resource Include="ApplicationProduct\Images\ref_idea.png" />
+    <Resource Include="ApplicationProduct\Images\ref_relationship.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\gen_html.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\xps_pdf_report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\flowchart.png" />
+    <Resource Include="ApplicationProduct\Images\uml_class.png" />
+    <Resource Include="ApplicationProduct\Images\uml_sequence.png" />
+    <Resource Include="ApplicationProduct\Images\uml_usecase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\cog_go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\fgen_go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_white_gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_white_code_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_code.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\select_all_concepts.png" />
+    <Resource Include="ApplicationProduct\Images\select_all_ideas.png" />
+    <Resource Include="ApplicationProduct\Images\select_all_relationships.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_white_save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_white_wrench.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\page_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ApplicationProduct\BaseTemplates\Text_IdeaBase.tct" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\fgen_prev.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\def_clusters.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\book_merge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationProduct\Images\shape_multiple.png" />
+    <Resource Include="ApplicationProduct\Images\shape_tilt.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="9,00"
+	Name="PdfSharp.Resources"
+	ProjectGUID="{EB658532-0D55-4F7C-92FB-E33279869851}"
+	RootNamespace="PdfSharp"
+	TargetFrameworkVersion="131072"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="."
+			IntermediateDirectory="."
+			ConfigurationType="10"
+			DeleteExtensionsOnClean="*.resources,*.obj;*.ilk;*.pdb;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.bat;$(TargetPath)"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				CommandLine="resgen Messages.resources Messages.resx&#x0D;&#x0A;resgen Messages.de.resources Messages.de.resx&#x0D;&#x0A;"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="."
+			IntermediateDirectory="."
+			ConfigurationType="10"
+			DeleteExtensionsOnClean="*.resources,*.obj;*.ilk;*.pdb;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.bat;$(TargetPath)"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				CommandLine="resgen Messages.resources Messages.resx&#x0D;&#x0A;resgen Messages.de.resources Messages.de.resx&#x0D;&#x0A;"
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<File
+			RelativePath=".\Messages.de.txt"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="Compiling $(InputFileName)"
+					CommandLine="resgen &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+					Outputs="$(ProjectDir)$(InputName)"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="Compiling $(InputFileName)"
+					CommandLine="resgen &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+					Outputs="$(ProjectDir)$(InputName)"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath=".\Messages.txt"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="Compiling $(InputFileName)"
+					CommandLine="resgen &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+					Outputs="$(ProjectDir)$(InputName)"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="Compiling $(InputFileName)"
+					CommandLine="resgen &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+					Outputs="$(ProjectDir)$(InputName)"
+				/>
+			</FileConfiguration>
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

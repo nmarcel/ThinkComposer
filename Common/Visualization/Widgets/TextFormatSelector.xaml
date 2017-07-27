@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="Instrumind.Common.Visualization.Widgets.TextFormatSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:imcv="clr-namespace:Instrumind.Common.Visualization"
+             xmlns:this="clr-namespace:Instrumind.Common.Visualization.Widgets"
+             MinWidth="350" MinHeight="350" MaxHeight="700"
+             Loaded="UserControl_Loaded">
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Bottom">
+            <this:PaletteButton x:Name="BtnOK" DockPanel.Dock="Right" Click="BtnOK_Click" VerticalAlignment="Center"
+                                ButtonText="OK" Margin="8" ToolTip="Apply selected brush." IsDefault="True"
+                                ButtonImage="/Instrumind.Common;component/Visualization/Images/tick.png" />
+
+            <StackPanel>
+                <TextBlock Text="Preview" FontWeight="700" Foreground="Black" Padding="2,0,2,0" Margin="2" />
+                <this:TextFormatSampler x:Name="FormatSampler" MinWidth="200" MaxWidth="500" MinHeight="50" MaxHeight="200" />
+            </StackPanel>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Bottom">
+            <StackPanel DockPanel.Dock="Left">
+                <TextBlock Text="Style" FontWeight="700" Foreground="Black" Padding="2,0,2,0" Margin="2" />
+                <this:TextStyleSelector x:Name="StyleSelector" />
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Left" >
+                <TextBlock Text="Alignment" FontWeight="700" Foreground="Black" Padding="2,0,2,0" Margin="2" />
+                <this:TextAlignmentSelector x:Name="AlignmentSelector" />
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Color brush" FontWeight="700" Foreground="Black" Padding="2,0,2,0" Margin="2" />
+                <DockPanel>
+                    <this:PaletteButton x:Name="ColorSelector" DockPanel.Dock="Right" ButtonText="" Click="ColorSelector_Click"
+                                        ButtonImage="/Instrumind.Common;component/Visualization/Images/palette.png" />
+                    <Border x:Name="ColorBorder" Background="Black" Margin="2" BorderThickness="1" BorderBrush="LightGray"
+                            MouseLeftButtonDown="ColorBorder_MouseLeftButtonDown" />
+                </DockPanel>
+            </StackPanel>
+        </DockPanel>
+        <DockPanel>
+            <DockPanel DockPanel.Dock="Right">
+                <TextBlock DockPanel.Dock="Top" Text="Size" FontWeight="700" Foreground="Black" Padding="2,0,2,0" Margin="2" />
+                <TextBox x:Name="FontSizeText" DockPanel.Dock="Top" Margin="2"
+                         TextChanged="FontSizeText_TextChanged" />
+                <ListBox x:Name="FontSizeSelector" MinWidth="50" MinHeight="100" Margin="2"
+                         ItemsSource="{Binding}" MouseDoubleClick="FontSizeSelector_MouseDoubleClick" />
+            </DockPanel>
+            <DockPanel>
+                <TextBlock DockPanel.Dock="Top" Text="Font" FontWeight="700" Foreground="Black" Padding="2,0,2,0" Margin="2" />
+                <TextBox x:Name="FontNameText" DockPanel.Dock="Top" MinWidth="100" Margin="2"
+                         TextChanged="FontNameText_TextChanged" />
+                <ListBox x:Name="FontFamilySelector" MinWidth="50" MinHeight="100" Margin="2"
+                         ItemsSource="{Binding}" MouseDoubleClick="FontFamilySelector_MouseDoubleClick">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" FontFamily="{Binding}" FontSize="15" Height="20"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </DockPanel>
+        </DockPanel>
+    </DockPanel>
+</UserControl>

@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="Instrumind.ThinkComposer.Composer.Merging.Widgets.MergerPropertiesComparer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="600">
+
+    <DockPanel>
+        <Grid DockPanel.Dock="Top" Background="WhiteSmoke">
+            <Grid.ColumnDefinitions>
+                <!--NOTE: The column defs must have the same width as the body-grid columns-->
+                <ColumnDefinition Width="250" />
+                <ColumnDefinition MinWidth="50px" />
+                <!-- Supressed while not allowing Property level merge
+                <ColumnDefinition Width="18" />
+                <ColumnDefinition Width="18" /> -->
+                <ColumnDefinition MinWidth="50px" />
+                <!--This column uses the space of the scollbar-->
+                <ColumnDefinition Width="16px" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" FontWeight="Bold" Margin="4"
+                       Text="Property Name" />
+            <TextBlock Grid.Column="1" FontWeight="Bold" Margin="4"
+                       Text="From (external origin)" />
+            <!-- Supressed while not allowing Property level merge
+            <TextBlock Grid.Column="2" FontWeight="Bold" Margin="4"
+                       Text="?" />
+            <TextBlock Grid.Column="3" FontWeight="Bold" Margin="4,6,4,2"
+                       Text="ü" FontFamily="Wingdings" FontSize="14" /> -->
+            <TextBlock Grid.Column="2" FontWeight="Bold" Margin="4"
+                       Text="To (this target)" />
+        </Grid>
+
+        <ScrollViewer>
+            <Grid x:Name="PropertiesGrid">
+                <Grid.ColumnDefinitions>
+                    <!--NOTE: The columns must have the same width as the header-grid column defs-->
+                    <ColumnDefinition Width="250" />
+                    <ColumnDefinition MinWidth="50px" />
+                    <!-- Supressed while not allowing Property level merge
+                    <ColumnDefinition Width="18" />
+                    <ColumnDefinition Width="18" /> -->
+                    <ColumnDefinition MinWidth="50px" />
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </ScrollViewer>
+    </DockPanel>
+
+    <!--<ListView >
+        <ListView.View>
+            <GridView>
+                <GridViewColumn Header="Property" Width="Auto"
+                      DisplayMemberBinding="{Binding XPath=FirstName}" />
+                <GridViewColumn Header="From (external origin)"  Width="200"
+                      DisplayMemberBinding="{Binding XPath=LastName}" />
+                <GridViewColumn Header="To (this target)" Width="200"
+                      DisplayMemberBinding="{Binding XPath=FavoriteCity}"/>
+            </GridView>
+        </ListView.View>
+    </ListView>-->
+
+</UserControl>

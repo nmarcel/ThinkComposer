@@ -1,0 +1,23 @@
+﻿<ToggleButton x:Class="Instrumind.Common.Visualization.Widgets.PaletteToggleButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:this="clr-namespace:Instrumind.Common.Visualization.Widgets"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             Width="Auto" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top"
+             BorderThickness="0" BorderBrush="Transparent"
+             Background="Transparent"
+             Click="Button_Click">
+    <!-- Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"-->
+    <StackPanel x:Name="BackPanel" Orientation="Horizontal">
+        <this:ImprovedImage x:Name="BtnImage" HorizontalAlignment="Center" Margin="2,0,2,0"
+                            Source="/Instrumind.Common;component/Visualization/Images/Instrumind_16x16.png" Stretch="None" >
+            <!--<Image.Effect>
+                <DropShadowEffect Color="Gray" Opacity="0.5" ShadowDepth="3" />
+            </Image.Effect>-->
+        </this:ImprovedImage>
+        <!-- Padding="2,0,2,0" -->
+        <AccessText x:Name="BtnText" FontSize="10" TextAlignment="Center" VerticalAlignment="Center" Margin="2,0,2,0"
+                    TextWrapping="Wrap">Button</AccessText>
+    </StackPanel>
+</ToggleButton>

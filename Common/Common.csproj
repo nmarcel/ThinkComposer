@@ -1,0 +1,754 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2BE2B928-B692-44AB-A90B-38BB8154BBA0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Instrumind.Common</RootNamespace>
+    <AssemblyName>Instrumind.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PlatformTarget>x86</PlatformTarget>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Instrumind_48x48.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>InstrumindThinkComposer_Key.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationFramework.Luna" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assignment.cs" />
+    <Compile Include="BusinessAnomaly.cs" />
+    <Compile Include="BytesHandling.cs" />
+    <Compile Include="Capsule.cs" />
+    <Compile Include="CentralizedTextWriter.cs" />
+    <Compile Include="ClassificationCard.cs" />
+    <Compile Include="Company.cs" />
+    <Compile Include="ConstrainedArray.cs" />
+    <Compile Include="EntityBase\DocumentEngine.Search.cs" />
+    <Compile Include="EntityBase\FoundObjectHint.cs" />
+    <Compile Include="ITechSpecifier.cs" />
+    <Compile Include="ThreadWorker.cs" />
+    <Compile Include="Visualization\BooleanToDoubleConverter.cs" />
+    <Compile Include="Visualization\BooleanToBrushConverter.cs" />
+    <Compile Include="Visualization\ECommandExpositorStyle.cs" />
+    <Compile Include="Visualization\DocumentPaginatorWrapper.cs" />
+    <Compile Include="Licensing.cs" />
+    <Compile Include="IVersionUpdater.cs" />
+    <Compile Include="StandardBinarySerializer.Deserialize.cs" />
+    <Compile Include="StandardBinarySerializer.Serialize.cs" />
+    <Compile Include="EditableCollection.cs" />
+    <Compile Include="EditableDictionary.cs" />
+    <Compile Include="EditableList.cs" />
+    <Compile Include="EExecutionStatus.cs" />
+    <Compile Include="EMessageType.cs" />
+    <Compile Include="EntityBase\CollectionVariation.cs" />
+    <Compile Include="EntityBase\DocumentFileInfo.cs" />
+    <Compile Include="EntityBase\ECloneOperationScope.cs" />
+    <Compile Include="EntityBase\EEntityMembership.cs" />
+    <Compile Include="EntityBase\ICopyable.cs" />
+    <Compile Include="EntityBase\IDynamicStore.cs" />
+    <Compile Include="EntityBase\MModelCollectionDefinitor.cs" />
+    <Compile Include="EntityBase\MModelMemberDefinitor.cs" />
+    <Compile Include="EntityDefinition\MMemberController.cs" />
+    <Compile Include="EntityDefinition\MEntityInstanceController.cs" />
+    <Compile Include="EntityDefinition\EntityInstanceController.cs" />
+    <Compile Include="EntityDefinition\DictionaryController.cs" />
+    <Compile Include="EntityDefinition\EPropertyKind.cs" />
+    <Compile Include="EntityDefinition\IEntityViewChild.cs" />
+    <Compile Include="EntityDefinition\ListController.cs" />
+    <Compile Include="EntityDefinition\MCollectionController.cs" />
+    <Compile Include="EntityDefinition\ModelDictionaryDefinitor.cs" />
+    <Compile Include="EntityDefinition\ModelListDefinitor.cs" />
+    <Compile Include="EntityDefinition\MPropertyController.cs" />
+    <Compile Include="FieldNameAttribute.cs" />
+    <Compile Include="General.Collections.cs" />
+    <Compile Include="General.Specials.cs" />
+    <Compile Include="General.Strings.cs" />
+    <Compile Include="GenericConverter.cs" />
+    <Compile Include="IFormalizedElement.cs" />
+    <Compile Include="IIndicatesAlteration.cs" />
+    <Compile Include="IUniqueElement.cs" />
+    <Compile Include="IVersionChanger.cs" />
+    <Compile Include="MAssignment.cs" />
+    <Compile Include="General.MetaAccess.cs" />
+    <Compile Include="MOwnership.cs" />
+    <Compile Include="MultiDictionary.cs" />
+    <Compile Include="ExtendedEnumerable.cs" />
+    <Compile Include="OperationResult.cs" />
+    <Compile Include="Ownership.cs" />
+    <Compile Include="SimpleSynthTextSerializer.cs" />
+    <Compile Include="StandardBinarySerializer.cs" />
+    <Compile Include="UnifiedCollectionsView.cs" />
+    <Compile Include="Visualization\BooleanToVisibilityHiddenConverter.cs" />
+    <Compile Include="Visualization\BooleanToInverseConverter.cs" />
+    <Compile Include="Visualization\Widgets\ApplicationErrorReporter.xaml.cs">
+      <DependentUpon>ApplicationErrorReporter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\ComboMaintainer.xaml.cs">
+      <DependentUpon>ComboMaintainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\ImagePickerSimple.xaml.cs">
+      <DependentUpon>ImagePickerSimple.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\FindAndReplacePanel.xaml.cs">
+      <DependentUpon>FindAndReplacePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\ProgressiveThreadedExecutor.cs" />
+    <Compile Include="Visualization\XamlFlowDocumentToHtmlConverter.cs" />
+    <Compile Include="Visualization\IRecognizableComposite.cs" />
+    <Compile Include="Visualization\ObjectNotNullToVisibilityConverter.cs" />
+    <Compile Include="Visualization\EmptyStringToNullConverter.cs" />
+    <Compile Include="Visualization\EnumToDescriptionConverter.cs" />
+    <Compile Include="Visualization\ISelectable.cs" />
+    <Compile Include="Visualization\ImageAssignment.cs" />
+    <Compile Include="Visualization\SimpleAdorner.cs" />
+    <Compile Include="Visualization\StringExistentToBoolConverter.cs" />
+    <Compile Include="Visualization\StringToVisibilityConverter.cs" />
+    <Compile Include="Visualization\ItemTemplateSelector.cs" />
+    <Compile Include="Visualization\TextFormat.cs" />
+    <Compile Include="Visualization\Widgets\ProgressiveThreadedExecutorControl.xaml.cs">
+      <DependentUpon>ProgressiveThreadedExecutorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\ProgressiveBackgroundExecutor.xaml.cs">
+      <DependentUpon>ProgressiveBackgroundExecutor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\TreeItemSelector.xaml.cs">
+      <DependentUpon>TreeItemSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\SyntaxTextEditor.xaml.cs">
+      <DependentUpon>SyntaxTextEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\FlowDocumentViewer.xaml.cs">
+      <DependentUpon>FlowDocumentViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\ExtendedEditComboBox.xaml.cs">
+      <DependentUpon>ExtendedEditComboBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\ExtendedEditCheckBox.xaml.cs">
+      <DependentUpon>ExtendedEditCheckBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\ExtendedDataGridTemplateColumn.cs" />
+    <Compile Include="Visualization\Widgets\ExtendedEditText.xaml.cs">
+      <DependentUpon>ExtendedEditText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\IAlternativeRecordEditor.cs" />
+    <Compile Include="Visualization\Widgets\IDynamicStoreDataGridEditor.cs" />
+    <Compile Include="Visualization\Widgets\ImprovedImage.cs" />
+    <Compile Include="Visualization\Widgets\BrushKindSelector.xaml.cs">
+      <DependentUpon>BrushKindSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\BrushTypeSelector.xaml.cs">
+      <DependentUpon>BrushTypeSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\ColorSelector.xaml.cs">
+      <DependentUpon>ColorSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Display.Windows.cs" />
+    <Compile Include="Visualization\Display.Drawings.cs" />
+    <Compile Include="Visualization\Widgets\ExtensionPanel.xaml.cs">
+      <DependentUpon>ExtensionPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\GenericCommand.cs" />
+    <Compile Include="Visualization\PointingAssistant.cs" />
+    <Compile Include="StoreBox.cs" />
+    <Compile Include="Visualization\ConsoleRollPublisher.cs" />
+    <Compile Include="ConstrainedStack.cs" />
+    <Compile Include="ControlledAnomaly.cs" />
+    <Compile Include="DataWagon.cs" />
+    <Compile Include="Visualization\Display.cs" />
+    <Compile Include="EntityBase\AtomicVariation.cs" />
+    <Compile Include="EntityBase\AssignmentVariation.cs" />
+    <Compile Include="EntityBase\CommandVariation.cs" />
+    <Compile Include="EntityBase\DocumentEngine.cs" />
+    <Compile Include="EExistenceStatus.cs" />
+    <Compile Include="EntityBase\EntityEditEngine.cs" />
+    <Compile Include="EntityBase\EEditOperationAction.cs" />
+    <Compile Include="EntityBase\IMModelClass.cs" />
+    <Compile Include="EntityBase\IModelEntity.cs" />
+    <Compile Include="EntityBase\ModelDefinition.cs" />
+    <Compile Include="EntityBase\MModelClassDefinitor.cs" />
+    <Compile Include="EntityBase\MModelPropertyDefinitor.cs" />
+    <Compile Include="EntityBase\Variation.cs" />
+    <Compile Include="EntityDefinition\IEntityView.cs" />
+    <Compile Include="EntityDefinition\IModelClass.cs" />
+    <Compile Include="EntityDefinition\ModelClassDefinitor.cs" />
+    <Compile Include="EntityDefinition\ModelPropertyDefinitor.cs" />
+    <Compile Include="EntityDefinition\PropertyController.cs" />
+    <Compile Include="Visualization\DragDropAssistant.cs" />
+    <Compile Include="Visualization\ECursorIndicator.cs" />
+    <Compile Include="Visualization\EShellCommandCategory.cs" />
+    <Compile Include="Visualization\EShellVisualContentType.cs" />
+    <Compile Include="Visualization\FormalPresentationElement.cs" />
+    <Compile Include="AppExec.cs" />
+    <Compile Include="ExternalAnomaly.cs" />
+    <Compile Include="FormalElement.cs" />
+    <Compile Include="General.cs" />
+    <Compile Include="IdentificationController.cs" />
+    <Compile Include="IIdentificationScope.cs" />
+    <Compile Include="IStorageLocation.cs" />
+    <Compile Include="ReadOnlyDictionary.cs" />
+    <Compile Include="IIdentifiableElement.cs" />
+    <Compile Include="InternalAnomaly.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleElement.cs" />
+    <Compile Include="SimpleList.cs" />
+    <Compile Include="SimpleNode.cs" />
+    <Compile Include="UniqueElement.cs" />
+    <Compile Include="UsageAnomaly.cs" />
+    <Compile Include="VersionCard.cs" />
+    <Compile Include="Visualization\ETargetIndicator.cs" />
+    <Compile Include="Visualization\IDocumentView.cs" />
+    <Compile Include="Visualization\IDocumentVisualizer.cs" />
+    <Compile Include="Visualization\IFormalizedRecognizableElement.cs" />
+    <Compile Include="Visualization\IRecognizableElement.cs" />
+    <Compile Include="Visualization\IShellProvider.cs" />
+    <Compile Include="Visualization\IShellVisualContent.cs" />
+    <Compile Include="Visualization\ISphereModel.cs" />
+    <Compile Include="Visualization\SimplePresentationElement.cs" />
+    <Compile Include="Visualization\Widgets\CollectionEditingToolPanel.xaml.cs">
+      <DependentUpon>CollectionEditingToolPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\BrushSelector.xaml.cs">
+      <DependentUpon>BrushSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\ItemsGridMaintainer.cs" />
+    <Compile Include="Visualization\Widgets\PaletteDropColorizerButton.xaml.cs">
+      <DependentUpon>PaletteDropColorizerButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\MaskEditDateTime.xaml.cs">
+      <DependentUpon>MaskEditDateTime.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\MaskEditNumber.xaml.cs">
+      <DependentUpon>MaskEditNumber.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\PrintPreviewer.xaml.cs">
+      <DependentUpon>PrintPreviewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\RichTextBoxImproved.xaml.cs">
+      <DependentUpon>RichTextBoxImproved.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\SelectionListBox.xaml.cs">
+      <DependentUpon>SelectionListBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\TextFormatSampler.xaml.cs">
+      <DependentUpon>TextFormatSampler.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\TextStyleSelector.xaml.cs">
+      <DependentUpon>TextStyleSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\DialogItemsWindow.xaml.cs">
+      <DependentUpon>DialogItemsWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Visualization\Widgets\ImagePicker.xaml.cs">
+      <DependentUpon>ImagePicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\OrientationSelector.xaml.cs">
+      <DependentUpon>OrientationSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\PaletteButtonGroup.xaml.cs">
+      <DependentUpon>PaletteButtonGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\PaletteDropButton.xaml.cs">
+      <DependentUpon>PaletteDropButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\TextAlignmentSelector.xaml.cs">
+      <DependentUpon>TextAlignmentSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\TextFormatSelector.xaml.cs">
+      <DependentUpon>TextFormatSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\TransparencySelector.xaml.cs">
+      <DependentUpon>TransparencySelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\VersionCardSubform.xaml.cs">
+      <DependentUpon>VersionCardSubform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\SelectionButton.xaml.cs">
+      <DependentUpon>SelectionButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\PaletteToggleButton.xaml.cs">
+      <DependentUpon>PaletteToggleButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\RichTextEditor.xaml.cs">
+      <DependentUpon>RichTextEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\DialogOptionsWindow.xaml.cs">
+      <DependentUpon>DialogOptionsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\DocumentPanel.xaml.cs">
+      <DependentUpon>DocumentPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\FormalElementGeneralSubform.xaml.cs">
+      <DependentUpon>FormalElementGeneralSubform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\ItemsGridControl.xaml.cs">
+      <DependentUpon>ItemsGridControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\NavigationBar.xaml.cs">
+      <DependentUpon>NavigationBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\NavigationButton.xaml.cs">
+      <DependentUpon>NavigationButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\TabbedEditPanel.xaml.cs">
+      <DependentUpon>TabbedEditPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\WorkCommand.cs" />
+    <Compile Include="Visualization\WorkCommandExpositor.cs" />
+    <Compile Include="Visualization\WorkCommandInteractive.cs" />
+    <Compile Include="Visualization\WorkspaceManager.cs" />
+    <Compile Include="Visualization\WorkSphere.cs" />
+    <Compile Include="WarningAnomaly.cs" />
+    <Compile Include="Visualization\Widgets\AutoCollapsePanel.xaml.cs">
+      <DependentUpon>AutoCollapsePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\BasicWindow.xaml.cs">
+      <DependentUpon>BasicWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\EntitledPanel.xaml.cs">
+      <DependentUpon>EntitledPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\EntityEditPanel.xaml.cs">
+      <DependentUpon>EntityEditPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\PaletteButton.xaml.cs">
+      <DependentUpon>PaletteButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\EntityPropertyExpositor.xaml.cs">
+      <DependentUpon>EntityPropertyExpositor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\Widgets\StateButton.xaml.cs">
+      <DependentUpon>StateButton.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Visualization\Images\page_white_star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\BrushKindSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualization\Widgets\BrushTypeSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualization\Widgets\ColorSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualization\Widgets\ApplicationErrorReporter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\ComboMaintainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualization\Widgets\ImagePickerSimple.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\FindAndReplacePanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\ProgressiveThreadedExecutorControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\ProgressiveBackgroundExecutor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualization\Widgets\TreeItemSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\SyntaxTextEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\FlowDocumentViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\ExtensionPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualization\Widgets\CollectionEditingToolPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualization\Widgets\BrushSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualization\Widgets\ExtendedEditComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\ExtendedEditCheckBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\ExtendedEditText.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\PaletteDropColorizerButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\MaskEditDateTime.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualization\Widgets\MaskEditNumber.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualization\Widgets\PrintPreviewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualization\Widgets\RichTextBoxImproved.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualization\Widgets\SelectionListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualization\Widgets\TextFormatSampler.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualization\Widgets\TextStyleSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\DialogItemsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualization\Widgets\ImagePicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualization\Widgets\OrientationSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualization\Widgets\PaletteButtonGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualization\Widgets\PaletteDropButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\TextAlignmentSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualization\Widgets\TextFormatSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualization\Widgets\TransparencySelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualization\Widgets\VersionCardSubform.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\SelectionButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\PaletteToggleButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\RichTextEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\FormalElementGeneralSubform.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\ItemsGridControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\TabbedEditPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Resource Include="Visualization\Images\accept.png" />
+    <Page Include="Visualization\Widgets\AutoCollapsePanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\BasicWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\DialogOptionsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\DocumentPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualization\Widgets\EntitledPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\EntityEditPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\NavigationBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualization\Widgets\NavigationButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visualization\Widgets\PaletteButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\EntityPropertyExpositor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Visualization\Widgets\StateButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Visualization\Images\arrow_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Visualization\Images\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Visualization\Images\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Visualization\Images\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Visualization\Images\Instrumind_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Visualization\Images\lightning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Visualization\Images\page_white_wrench.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Visualization\Images\tick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Visualization\Images\wrench.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Visualization\Images\wrench_orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Visualization\Images\type_choice.png" />
+    <Resource Include="Visualization\Images\select_all.png" />
+    <Resource Include="Visualization\Images\unselect_all.png" />
+    <Resource Include="Visualization\Images\type_switch.png" />
+    <Resource Include="Visualization\Images\palette.png" />
+    <Resource Include="Visualization\Images\page_white_edit.png" />
+    <Resource Include="Visualization\Images\page_definition.png" />
+    <Resource Include="Visualization\Images\type_any.png" />
+    <Resource Include="Visualization\Images\type_date.png" />
+    <Resource Include="Visualization\Images\type_datetime.png" />
+    <Resource Include="Visualization\Images\type_numsigdec.png" />
+    <Resource Include="Visualization\Images\type_numsigint.png" />
+    <Resource Include="Visualization\Images\type_numunsdec.png" />
+    <Resource Include="Visualization\Images\type_numunsint.png" />
+    <Resource Include="Visualization\Images\type_text.png" />
+    <Resource Include="Visualization\Images\type_textlong.png" />
+    <Resource Include="Visualization\Images\type_time.png" />
+    <Resource Include="Visualization\Images\text_align_center.png" />
+    <Resource Include="Visualization\Images\text_align_justify.png" />
+    <Resource Include="Visualization\Images\text_align_left.png" />
+    <Resource Include="Visualization\Images\text_align_right.png" />
+    <Resource Include="Visualization\Images\text_bold.png" />
+    <Resource Include="Visualization\Images\text_indent.png" />
+    <Resource Include="Visualization\Images\text_indent_remove.png" />
+    <Resource Include="Visualization\Images\text_italic.png" />
+    <Resource Include="Visualization\Images\text_list_bullets.png" />
+    <Resource Include="Visualization\Images\text_list_numbers.png" />
+    <Resource Include="Visualization\Images\text_strikethrough.png" />
+    <Resource Include="Visualization\Images\text_underline.png" />
+    <Resource Include="Visualization\Images\item.png" />
+    <Resource Include="Visualization\Images\item_add.png" />
+    <Resource Include="Visualization\Images\item_attach.png" />
+    <Resource Include="Visualization\Images\item_clone.png" />
+    <Resource Include="Visualization\Images\item_delete.png" />
+    <Resource Include="Visualization\Images\item_edit.png" />
+    <Resource Include="Visualization\Images\item_error.png" />
+    <Resource Include="Visualization\Images\item_find.png" />
+    <Resource Include="Visualization\Images\item_gear.png" />
+    <Resource Include="Visualization\Images\item_go.png" />
+    <Resource Include="Visualization\Images\item_green.png" />
+    <Resource Include="Visualization\Images\item_insert.png" />
+    <Resource Include="Visualization\Images\item_key.png" />
+    <Resource Include="Visualization\Images\item_lightning.png" />
+    <Resource Include="Visualization\Images\item_move_bottom.png" />
+    <Resource Include="Visualization\Images\item_move_down.png" />
+    <Resource Include="Visualization\Images\item_move_top.png" />
+    <Resource Include="Visualization\Images\item_move_up.png" />
+    <Resource Include="Visualization\Images\item_red.png" />
+    <Resource Include="Visualization\Images\item_refresh.png" />
+    <Resource Include="Visualization\Images\item_save.png" />
+    <Resource Include="Visualization\Images\page_white_copy.png" />
+    <Resource Include="Visualization\Images\paste_plain.png" />
+    <Resource Include="Visualization\Images\pencil.png" />
+    <Resource Include="Visualization\Images\resultset_first.png" />
+    <Resource Include="Visualization\Images\resultset_last.png" />
+    <Resource Include="Visualization\Images\resultset_next.png" />
+    <Resource Include="Visualization\Images\resultset_previous.png" />
+    <Resource Include="Visualization\Images\application_double.png" />
+    <Resource Include="Visualization\Images\application_form_edit.png" />
+    <Resource Include="Visualization\Images\application_lightning.png" />
+    <Resource Include="Visualization\Images\add.png" />
+    <Resource Include="Visualization\Images\cut.png" />
+    <Resource Include="Visualization\Images\Instrumind_16x16.png" />
+    <Resource Include="Visualization\Images\delete.png" />
+    <Resource Include="Visualization\Images\brush_fill.png" />
+    <Resource Include="Visualization\Images\brush_lines.png" />
+    <Resource Include="Visualization\Images\brush_text.png" />
+    <Resource Include="Visualization\Images\brush_colorizer.png" />
+    <Resource Include="Visualization\Images\folder_image.png" />
+    <Resource Include="Visualization\Images\application_view_icons.png" />
+    <Resource Include="Visualization\Images\Instrumind_48x48.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Visualization\Images\page_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Visualization\Images\application_form_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Visualization\Images\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Visualization\Images\spellcheck.png" />
+    <Resource Include="Visualization\Images\page_white_find.png" />
+    <Resource Include="Visualization\Images\page_white_findreplace.png" />
+    <Resource Include="Visualization\Images\folder_page.png" />
+    <Content Include="Instrumind_48x48.ico" />
+    <Resource Include="Visualization\Images\page_save.png" />
+    <Resource Include="Visualization\Images\email_go.png" />
+    <Resource Include="Visualization\Images\disk_edit.png" />
+    <Content Include="Visualization\Images\imtc_watermark.png" />
+    <Resource Include="Visualization\Images\page_white_acrobat.png" />
+    <Resource Include="Visualization\Images\page_white_xps.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="InstrumindThinkComposer_Key.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICSharpCode.AvalonEdit\ICSharpCode.AvalonEdit.csproj">
+      <Project>{6C55B776-26D4-4DB3-A6AB-87E783B2F3D1}</Project>
+      <Name>ICSharpCode.AvalonEdit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PdfSharpXps\PdfSharp.Xps\PdfSharp.Xps.csproj">
+      <Project>{0BC3964B-A3BC-49D5-9B7C-463299B5A166}</Project>
+      <Name>PdfSharp.Xps</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

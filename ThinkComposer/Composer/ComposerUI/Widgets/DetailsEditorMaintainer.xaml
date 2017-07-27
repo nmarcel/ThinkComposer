@@ -1,0 +1,128 @@
+﻿<UserControl x:Class="Instrumind.ThinkComposer.Composer.ComposerUI.Widgets.DetailsEditorMaintainer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:imcv="clr-namespace:Instrumind.Common.Visualization;assembly=Instrumind.Common"
+             xmlns:imvw="clr-namespace:Instrumind.Common.Visualization.Widgets;assembly=Instrumind.Common"
+             xmlns:tccu="clr-namespace:Instrumind.ThinkComposer.Composer.ComposerUI"
+             xmlns:tcxv="clr-namespace:Instrumind.ThinkComposer.MetaModel.VisualMetaModel"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:my="clr-namespace:Instrumind.ThinkComposer.Composer.ComposerUI.Widgets"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="700"
+             Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="TableLayoutStyles" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="tcxv:ETableLayoutStyle" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <imcv:EmptyStringToNullConverter x:Key="EmptyTextToNullConverter" />
+        <BooleanToVisibilityConverter x:Key="BoolToVisCollConverter" />
+        <imcv:BooleanToVisibilityHiddenConverter x:Key="BoolToVisHiddConverter" />
+        <imcv:BooleanToInverseConverter x:Key="BoolToInverseConverter" />
+        <Style x:Key="ListboxStyle">
+            <Style.Resources>
+                <!-- Background of selected item when focussed -->
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#FFBFD2DB" />
+                <!-- Background of selected item when not focussed -->
+                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="#FFBFD2DB" />
+            </Style.Resources>
+        </Style>
+        <DataTemplate x:Key="DetailDataTemplate" DataType="{x:Type tccu:DetailEditingCard}">
+            <DockPanel>
+                <Polygon x:Name="CurrentRowArrow" DockPanel.Dock="Left" Points="2,4 18,10 2,16" Visibility="Hidden"
+                         Fill="#FFE9F2F2" />
+                <Border x:Name="RowBorder" CornerRadius="3" Margin="22,1,1,1" Height="24"
+                        Background="Transparent" BorderBrush="Transparent" BorderThickness="0">
+                    <DockPanel>
+                        <DockPanel x:Name="CustomLookZone" DockPanel.Dock="Right"
+                                   Visibility="{Binding Converter={StaticResource BoolToVisCollConverter}, Path=ShowCustomLookZone, RelativeSource={RelativeSource FindAncestor, AncestorType=my:DetailsEditorMaintainer, AncestorLevel=1}}">
+                            <CheckBox DockPanel.Dock="Right" IsChecked="{Binding TableShowFieldTitles}" ToolTip="{Binding TableShowFieldTitlesTip}"
+                                      HorizontalContentAlignment="Center" Width="20" Margin="22,4,12,2"
+                                      Visibility="{Binding IsTableDetail, Converter={StaticResource BoolToVisHiddConverter}}" />
+                            <ComboBox x:Name="ComboTableLayout" DockPanel.Dock="Right" ItemsSource="{Binding Source={StaticResource TableLayoutStyles}}"
+                                      Loaded="ComboTableLayout_Loaded"
+                                      SelectionChanged="ComboTableLayout_SelectionChanged"
+                                      ToolTip="{Binding TableLayoutTip}"
+                                      HorizontalContentAlignment="Stretch" Width="85" Margin="1" FontSize="10"
+                                      Visibility="{Binding IsTableDetail, Converter={StaticResource BoolToVisHiddConverter}}"/>
+                            <CheckBox DockPanel.Dock="Right" IsChecked="{Binding TableIsMultiRecord}" ToolTip="{Binding TableIsMultiRecordTip}"
+                                      HorizontalContentAlignment="Center" Width="20" Margin="22,4,20,2"
+                                      Visibility="{Binding IsTableDetail, Converter={StaticResource BoolToVisHiddConverter}}"/>
+
+                            <CheckBox DockPanel.Dock="Right" IsChecked="{Binding ShowTitle}" ToolTip="{Binding ShowTitleTip}"
+                                      HorizontalContentAlignment="Center" Width="20" Margin="18,4,16,2" />
+                            <CheckBox DockPanel.Dock="Right" IsChecked="{Binding IsDisplayed}" ToolTip="{Binding IsDisplayedTip}"
+                                      HorizontalContentAlignment="Center" Width="20" Margin="18,4,16,2" />
+                        </DockPanel>
+
+                        <!--<Image DockPanel.Dock="Right" Source="{Binding KindPictogram}" Margin="2"
+                                   ToolTip="{Binding KindTitleAndSummary}" Width="18" />-->
+                        <TextBlock DockPanel.Dock="Right" TextAlignment="Center"
+                                   Text="{Binding KindTitle}" ToolTip="{Binding KindSummary}"
+                                   FontSize="10" Foreground="Black" Margin="2,0,2,0" Width="80"/>
+
+                        <!--MinWidth="198"-->
+                        <DockPanel MinWidth="240">
+                            <Button x:Name="BtnEditDesignator" DockPanel.Dock="Right" Click="BtnEditDesignator_Click"
+                                    BorderThickness="0" BorderBrush="Transparent" Background="Transparent" Padding="0" Margin="1" Width="20" Cursor="Hand"
+                                    ToolTip="Edit the designation of this detail (how it is named, and for what is used in this Idea)"
+                                    Visibility="{Binding Path=CanEditDesignator, Converter={StaticResource BoolToVisCollConverter}}">
+                                <Image Source="/Instrumind.ThinkComposer;component/ApplicationProduct/Images/page_designate.png" Height="16" Width="16" />
+                            </Button>
+                            <Button x:Name="BtnAccessContent" DockPanel.Dock="Right" Click="BtnAccessContent_Click"
+                                    BorderThickness="0" BorderBrush="Transparent" Background="Transparent" Padding="0" Margin="1" Width="20" Cursor="Hand"
+                                    ToolTip="Access the referenced Content."
+                                    Visibility="{Binding Path=CanAccessContent, Converter={StaticResource BoolToVisCollConverter}}">
+                                <Image Source="/Instrumind.ThinkComposer;component/ApplicationProduct/Images/arrow_right.png" Height="16" Width="16" />
+                            </Button>
+                            <Button x:Name="BtnExtractContent" DockPanel.Dock="Right" Click="BtnExtractContent_Click"
+                                    BorderThickness="0" BorderBrush="Transparent" Background="Transparent" Padding="0" Margin="1" Width="20" Cursor="Hand"
+                                    ToolTip="Extract the Content into a file."
+                                    Visibility="{Binding Path=CanExtractContent, Converter={StaticResource BoolToVisCollConverter}}">
+                                <Image Source="/Instrumind.ThinkComposer;component/ApplicationProduct/Images/disk_download.png" Height="16" Width="16" />
+                            </Button>
+
+                            <!-- Notice that Background and BorderThickness are changed within a DataTrigger -->
+                            <TextBox x:Name="TxtName" Text="{Binding Name}" IsReadOnly="{Binding Path=CanEditDesignator, Converter={StaticResource BoolToInverseConverter}}"
+                                     ToolTip="{Binding Summary, Converter={StaticResource EmptyTextToNullConverter}}" FontSize="10" FontWeight="700" Margin="2" BorderThickness="0" MinWidth="165" />
+                        </DockPanel>
+                    </DockPanel>
+                </Border>
+            </DockPanel>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding Path=CanEditDesignator}" Value="False">
+                    <Setter TargetName="TxtName" Property="Background" Value="Transparent" />
+                    <Setter TargetName="TxtName" Property="BorderThickness" Value="0" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ListBoxItem}},Path=IsSelected}" Value="True">
+                    <Setter TargetName="CurrentRowArrow" Property="Visibility" Value="Visible" />
+                    <Setter TargetName="RowBorder" Property="Background"
+                            Value="#FFBFD2DB" />
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+    </UserControl.Resources>
+    <DockPanel x:Name="DetailsPanel" DockPanel.Dock="Top" >
+        <Border DockPanel.Dock="Top" CornerRadius="10,10,0,0" Padding="7,0,7,0"
+                Background="#FFE9F2F2">
+            <!--Notice that Define is no longer allowed-->
+            <imvw:CollectionEditingToolPanel x:Name="DetailsToolPanel" Title="Details..." TitleBrush="Black" CanDefine="False"
+                                             EditClicked="DetailsToolPanel_EditClicked" AddClicked="DetailsToolPanel_AddClicked"
+                                             DeleteClicked="DetailsToolPanel_DeleteClicked"/>
+        </Border>
+        <ListBox x:Name="DetailsListBox" HorizontalContentAlignment="Stretch" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                 Background="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type imvw:EntitledPanel}, ResourceId=PanelBrush}}"
+                 ItemTemplate="{StaticResource DetailDataTemplate}" Style="{StaticResource ListboxStyle}"
+                 SelectionChanged="DetailsListBox_SelectionChanged" IsSynchronizedWithCurrentItem="True">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <EventSetter Event="PreviewGotKeyboardFocus" Handler="ListBoxItem_GotKeyboardFocus"/>
+                    <EventSetter Event="MouseDoubleClick" Handler="ListBoxItem_DoubleClick" />
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+    </DockPanel>
+</UserControl>

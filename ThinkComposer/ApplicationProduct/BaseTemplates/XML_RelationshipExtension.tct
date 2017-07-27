@@ -1,0 +1,24 @@
+﻿{%- comment -%} RELATIONSHIP-SPECIFIC PROPERTIES {%- endcomment -%}
+<OriginLinks Count="{{ OriginLinks.Size }}">
+{%- for Link in OriginLinks -%}
+    <Link><Idea>{{ Link.AssociatedIdea.Name }}</Idea><RoleDef>{{ Link.RoleDefinitor.Name }}</RoleDef><Descriptor>{{ Link.Descriptor.Name }}</Descriptor></Link>
+{%- endfor -%}
+</OriginLinks>
+
+<TargetLinks Count="{{ TargetLinks.Size }}">
+{%- for Link in TargetLinks -%}
+    <Link><Idea>{{ Link.AssociatedIdea.Name }}</Idea><RoleDef>{{ Link.RoleDefinitor.Name }}</RoleDef><Descriptor>{{ Link.Descriptor.Name }}</Descriptor></Link>
+{%- endfor -%}
+</TargetLinks>
+
+<OriginIdeas Count="{{ OriginIdeas.Size }}">
+{%- for Idea in OriginIdeas -%}
+    <Idea><Name>{{ Idea.Name }}</Name><Summary>{{ Idea.Summary }}</Summary></Idea>
+{%- endfor -%}
+</OriginIdeas>
+
+<TargetIdeas Count="{{ TargetIdeas.Size }}">
+{%- for Idea in TargetIdeas -%}
+    <Idea><Name>{{ Idea.Name }}</Name><Summary>{{ Idea.Summary }}</Summary></Idea>
+{%- endfor -%}
+</TargetIdeas>

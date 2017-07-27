@@ -1,0 +1,13 @@
+﻿%%:FileName={{ TechName }}.Propositions.txt
+{%- inject 'RelPropositionsReader' with This noindent -%}
+%%:SubTemplate=RelPropositionsReader
+{%- for Idea in CompositeIdeas -%}
+{%- if Idea.SelfKind.TechName == 'Relationship' -%}
+{%- for Origin in Idea.OriginIdeas -%}
+{%- for Target in Idea.TargetIdeas -%}
+{{ Origin.NameCaption }}{{ 'tab' | AsChar }}{{ Idea.NameCaption }}{{ 'tab' | AsChar }}{{ Target.NameCaption }}
+{%- endfor -%}
+{%- endfor -%}
+{%- endif -%}
+{%- inject 'RelPropositionsReader' with Idea -%}
+{%- endfor -%}

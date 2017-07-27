@@ -1,0 +1,76 @@
+﻿<ListBox x:Class="Instrumind.ThinkComposer.ApplicationProduct.Widgets.WidgetItemsPalette"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+         xmlns:imcv="clr-namespace:Instrumind.Common.Visualization;assembly=Instrumind.Common"
+         xmlns:wg="clr-namespace:Instrumind.Common.Visualization.Widgets;assembly=Instrumind.Common"
+         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+         mc:Ignorable="d" Height="Auto" Width="Auto"
+         d:DesignHeight="300" d:DesignWidth="500"
+         HorizontalContentAlignment="Stretch"
+         BorderBrush="Transparent" Background="Transparent"
+         ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+         Loaded="ListBox_Loaded">
+    <ListBox.Resources>
+        <imcv:EmptyStringToNullConverter x:Key="EmptyTextToNullConverter" />
+    </ListBox.Resources>
+
+    <ListBox.ItemsPanel>
+        <ItemsPanelTemplate>
+            <WrapPanel IsItemsHost="True" Orientation="Horizontal" ItemWidth="128"/>
+        </ItemsPanelTemplate>
+    </ListBox.ItemsPanel>
+
+    <ListBox.ItemTemplate>
+            <DataTemplate>
+                <!--OLD Style
+                    <Border x:Name="ItemBorder" CornerRadius="5" Margin="-1,1,0,1" Padding="2" HorizontalAlignment="Stretch" ToolTip="{Binding Summary}" Cursor="Hand"
+                            Background="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type wg:EntitledPanel}, ResourceId=ItemBrush}}"
+                            BorderBrush="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type wg:EntitledPanel}, ResourceId=ItemBorderBrush}}" BorderThickness="2">-->
+            <!--Cursor="Hand" // Test: Cursor="/ApplicationProduct/Cursors/arrow_idea.cur"-->
+            <!--ToolTip="{Binding Summary, Converter={StaticResource EmptyTextToNullConverter}}"-->
+            <Border x:Name="ItemBorder" CornerRadius="5" Margin="0,0,0,0" Padding="2" HorizontalAlignment="Stretch"
+                        Background="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type wg:EntitledPanel}, ResourceId=ItemBrush}}"
+                        BorderThickness="2" BorderBrush="Transparent">
+                <Border.ToolTip>
+                    <!--NOTE: Multibinding does not work because produces a string and the ToolTip expects an object-->
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}" FontWeight="Bold" />
+                        <TextBlock Text="{Binding Summary}"/>
+                    </StackPanel>
+                </Border.ToolTip>
+                    <!--Makes a too crowded vision
+                    <Border.Effect>
+                        <DropShadowEffect Color="Gray" Opacity="0.2" />
+                    </Border.Effect>-->
+                    <!--DOES NOT WORK FOR VISUAL SELECTION
+                    <Border.Style>
+                        <Style TargetType="Border">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ListBoxItem}},Path=IsSelected}" Value="True">
+                                    <Setter Property="BorderBrush" Value="Black" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>-->
+                    <DockPanel>
+                        <Image DockPanel.Dock="Left" Source="{Binding Pictogram}" Width="48" Height="16" Margin="0,0,3,0"
+                               Stretch="Uniform" VerticalAlignment="Stretch">
+                            <Image.Effect>
+                                <DropShadowEffect Color="DarkGray" Opacity="0.5" ShadowDepth="3" />
+                            </Image.Effect>
+                        </Image>
+                        <TextBlock Text="{Binding Name}" FontWeight="400" FontSize="10" FontFamily="Tahoma"
+                                       Foreground="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type wg:EntitledPanel}, ResourceId=ItemTextBrush}}">
+                                <!--difficult to read
+                                <TextBlock.Effect>
+                                    <DropShadowEffect ShadowDepth="2" Direction="330" Color="Gray"
+                                                        Opacity="0.3" BlurRadius="3"/>
+                                </TextBlock.Effect>-->
+                        </TextBlock>
+                </DockPanel>
+            </Border>
+        </DataTemplate>
+    </ListBox.ItemTemplate>
+
+</ListBox>

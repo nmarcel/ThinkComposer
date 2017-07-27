@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Instrumind.Common.Visualization.Widgets.BrushTypeSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             Width="32" Height="32"
+             MouseLeftButtonDown="SelectionPanel_MouseLeftButtonDown"
+             ToolTip="Brush Type: Single-Color, Double-Gradient, Tripe-Gradient." >
+    <Canvas x:Name="BackPanel">
+        <!--Solid Color (no gradient)-->
+        <Rectangle x:Name="BrushTypeSolid" Canvas.Left="0" Canvas.Top="0" Width="32" Height="11" Stroke="Black" Fill="LightGray" />
+        <Ellipse Canvas.Left="12.5" Canvas.Top="2" Width="7" Height="7" Fill="Black" />
+        <!--Double Gradient-->
+        <Rectangle x:Name="BrushTypeGradientDouble" Canvas.Left="0" Canvas.Top="10" Width="32" Height="11" Stroke="Black" Fill="Transparent" />
+        <Ellipse Canvas.Left="6" Canvas.Top="12" Width="7" Height="7" Fill="Black" />
+        <Ellipse Canvas.Left="19" Canvas.Top="12" Width="7" Height="7" Fill="Black" />
+        <!--Triple Gradient-->
+        <Rectangle x:Name="BrushTypeGradientTriple" Canvas.Left="0" Canvas.Top="20" Width="32" Height="12" Stroke="Black" Fill="Transparent" />
+        <Ellipse Canvas.Left="12.5" Canvas.Top="23" Width="7" Height="7" Fill="Black" />
+        <Ellipse Canvas.Left="3" Canvas.Top="23" Width="7" Height="7" Fill="Black" />
+        <Ellipse Canvas.Left="22" Canvas.Top="23" Width="7" Height="7" Fill="Black" />
+
+    </Canvas>
+</UserControl>

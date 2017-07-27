@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Instrumind.Common.Visualization.Widgets.StateButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:this="clr-namespace:Instrumind.Common.Visualization.Widgets"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Template>
+        <ControlTemplate  TargetType="{x:Type UserControl}">
+            <Border CornerRadius="3" Background="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type this:BasicWindow}, ResourceId=WindowFrameBrush}}" Padding="8">
+                <StackPanel>
+                    <TextBlock Text="Alpha" Background="Silver" />
+                    <TextBlock Text="Bravo" Background="LightGray" />
+                    <TextBlock Text="Charlie" Background="Gainsboro" />
+                    <TextBlock Text="Delta" Background="GhostWhite" />
+                    <TextBlock Text="Echo" Background="LightSteelBlue" />
+                    <TextBlock Text="Fox-Trot" Background="LightSlateGray" />
+                </StackPanel>
+                <!--<ContentPresenter />-->
+            </Border>
+        </ControlTemplate>
+    </UserControl.Template>
+    Content will be placed here
+</UserControl>

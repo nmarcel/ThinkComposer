@@ -1,0 +1,45 @@
+PUBLICATION PROCEDURE
+=====================
+
+I.- PREPARATION
+
+** REVIEW/TEST EVERY LAMBDA/METHOD CHANGE TO ProductDirector
+
+- Check previous backup (for a fast eventual go-back)
+- Documentation PDF (website + local-help)
+- Internal License info/control
+- Readme.txt
+- License.txt	// IMPORTANT: This must be updated in the Webiste 'Terms and Conditions' when changed!
+- ThinkComposer.ver
+- Update PAD file (Recent changes, version, size, location in website)
+   - EXPORT and Upload
+
+II.- BUILD
+- Note: AssemblyInfo.cs (OF .EXE AND ANY REFERENCED .DLL) must have VersionNumber with "x.0.*" in order to auto-increment version build-no. (FileNumber must be supressed)
+- Note: Update Code must be always: {3E7D1ABB-B658-4CDD-8BC7-D850AA6AB94C}
+- Increase version number in Setup Project (will generate a new Product Code)
+- Update "Title" from "vN.old" to "vN.new"
+- Update Version Number and Product Code in ProductDirector.cs *** Required for license trial control
+- Update Product Code in uninstall.bat *** Required for uninstall
+- Include PDF manual
+- Ensure DOTLIQUID and AVALON-EDIT are properly referenced in the assembly (and updated) <<<
+- Update License EXPIRATION/LOCKING
+- Ensure XpsToPdf and other externals are properly included.
+- DO NOT! Sign Assembly (causes problems with deserialization of older assembly versions)
+- Set to Release mode instead of Debug
+- Generate EXE + Installer
+* Update License inside .ZIP file, and
+* Update License in RAR Self-Extracting settings.
+
+III.- DEPLOYMENT
+- 1: Setup as EXE and ZIP
+- 2: .VER file (must be after)
+- 3: .XML with PAD information
+- 4: .PDF manual
+- 5: Readme.txt
+- 6: Upload
+- 7: Product capabilities.
+
+IV.- OTHERS
+- Perform a Backup of the source code and the deployable content.
+- Announce in Blog

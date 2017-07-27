@@ -1,0 +1,27 @@
+﻿<Button x:Class="Instrumind.Common.Visualization.Widgets.PaletteDropColorizerButton"
+             x:Name="ThisControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:imcv="clr-namespace:Instrumind.Common.Visualization.Widgets"
+             Width="Auto" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top"
+             Loaded="ThisControl_Loaded" Click="Button_Click" LostFocus="ThisControl_LostFocus">
+    <!-- Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"-->
+    <DockPanel x:Name="WholePanel">
+        <Button x:Name="BtnDropper" DockPanel.Dock="Right" Padding="-1,1,0,0" Margin="-1,-2,-2,-2"
+                Width="14" BorderBrush="Transparent" Click="BtnDropper_Click">
+            <Polygon Stroke="Black" Fill="Black" Points="2,0 8,0, 5,6" />
+        </Button>
+        <!--IMPORTANT: Start transparent to denote no-brush yet established.-->
+        <Border x:Name="ImageBackgroundBorder" Background="Transparent"
+                MinHeight="16" MinWidth="16" Margin="2,0,2,0"/>
+        <Popup x:Name="PopupArea" DockPanel.Dock="Bottom"
+               PlacementTarget="{Binding ElementName=ThisControl}"
+               MinWidth="{Binding Path=Width, ElementName=ThisControl}"
+               Opened="PopupArea_Opened" Closed="PopupArea_Closed"
+               MouseDown="PopupArea_MouseDown">
+            <imcv:BrushSelector x:Name="Colorizer" />
+        </Popup>
+    </DockPanel>
+</Button>

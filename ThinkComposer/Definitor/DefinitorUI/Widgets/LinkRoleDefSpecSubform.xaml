@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="Instrumind.ThinkComposer.Definitor.DefinitorUI.Widgets.LinkRoleDefSpecSubform"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:imcv="clr-namespace:Instrumind.Common.Visualization.Widgets;assembly=Instrumind.Common"
+             xmlns:this="clr-namespace:Instrumind.ThinkComposer.Definitor.DefinitorUI.Widgets"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             Background="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type imcv:EntitledPanel}, ResourceId=FormBodyBrush}}"
+             mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="410">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisCollConverter" />
+    </UserControl.Resources>
+    <DockPanel>
+        <CheckBox x:Name="ChkboxIsDirectional" DockPanel.Dock="Top" Margin="4"
+                  Content="Relationship is Directional" FontWeight="Bold" FontSize="11"
+                  IsChecked="{Binding Path=RelationshipIsDirectional, RelativeSource={RelativeSource FindAncestor, AncestorType=this:LinkRoleDefSpecSubform, AncestorLevel=1}}"
+                  Visibility="{Binding Path=CanSpecifyDirectionType, RelativeSource={RelativeSource FindAncestor, AncestorType=this:LinkRoleDefSpecSubform, AncestorLevel=1}, Converter={StaticResource BoolToVisCollConverter}}"
+                  ToolTip="Therefore it has Origin and Target roles. Else is non-directional: only having the Participant role." />
+        <DockPanel x:Name="EditingPanel">
+            <imcv:FormalElementGeneralSubform x:Name="FormalElementWidget" DockPanel.Dock="Top" />
+            <StackPanel DockPanel.Dock="Top">
+                <!-- This property should be shown here
+                        <imcv:EntityPropertyExpositor x:Name="ExpoRoleType" ExposedProperty="RoleType" TabOrder="0"
+                                        LabelMinWidth="150" />-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    
+                    <!--NOTE: MaxConnections is invisibilized for Simple relationships-->
+                    <imcv:EntityPropertyExpositor x:Name="ExpoMaxConnections" Grid.Column="0"
+                                            ExposedProperty="MaxConnections" TabOrder="1" LabelMinWidth="150" />
+                    
+                    <imcv:EntityPropertyExpositor x:Name="ExpoRelatedIdeasAreOrdered" Grid.Column="1"
+                                            ExposedProperty="RelatedIdeasAreOrdered" TabOrder="2" LabelMinWidth="150" />
+                </Grid>
+            </StackPanel>
+            <Grid Background="WhiteSmoke">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <!--POSTPONED: Predefined intented Link-names
+                                (e.g: Conditional 'yes'/'no' or 'then'/'else', Familiar 'father' and 'mother')
+                <StackPanel Grid.Column="0">
+                    <imcv:EntityPropertyExpositor x:Name="ExpoIntentedLinks" ExposedProperty="AssociableIntents" TabOrder="4"
+                                                LabelMinWidth="150" Orientation="Vertical" />
+                </StackPanel>-->
+                <imcv:EntityPropertyExpositor Grid.Column="0" x:Name="ExpoAllowedVariants" ExposedProperty="AllowedVariants" TabOrder="3"
+                                                LabelMinWidth="150" Orientation="Vertical" Margin="0,0,0,2" />
+                <imcv:EntityPropertyExpositor Grid.Column="1" x:Name="ExpoAssociableIdeaDefs" ExposedProperty="AssociableIdeaDefs" TabOrder="4"
+                                                LabelMinWidth="150" Orientation="Vertical" />
+            </Grid>
+        </DockPanel>
+    </DockPanel>
+</UserControl>

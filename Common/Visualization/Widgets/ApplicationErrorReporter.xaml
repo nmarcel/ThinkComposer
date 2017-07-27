@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="Instrumind.Common.Visualization.Widgets.ApplicationErrorReporter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:this="clr-namespace:Instrumind.Common.Visualization.Widgets"
+             Height="300" Width="600" Loaded="UserControl_Loaded"
+             Background="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type this:DialogOptionsWindow}, ResourceId=DialogFrameBrush}}">
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Bottom" >
+            <this:PaletteButton DockPanel.Dock="Right" x:Name="BtnCancel" ButtonText="Close" Click="BtnCancel_Click"
+                                MinWidth="70" Margin="2" TabIndex="1001" IsCancel="True" VerticalAlignment="Bottom"
+                                ButtonImage="/Instrumind.Common;component/Visualization/Images/cancel.png" />
+            <!--<TextBlock DockPanel.Dock="Top" Margin="2,8,2,2">
+                Please!, help us to solve the problem by reporting this error...
+            </TextBlock>-->
+            <StackPanel Orientation="Horizontal" Margin="2,2,40,2" HorizontalAlignment="Left">
+                <!--<this:PaletteButton x:Name="BtnSendReport" ButtonText="Send message to Instrumind Software" FontWeight="Bold"
+                                    TabIndex="1000" IsDefault="True" Click="BtnSendReport_Click" MinWidth="70" Margin="2,0,70,0"
+                                    ButtonImage="/Instrumind.Common;component/Visualization/Images/email_go.png"
+                                    ToolTip="Send the info using Outlook"/>-->
+
+                <this:PaletteButton x:Name="BtnCopyToClipboard" ButtonText="Copy to Clipboard"
+                                    TabIndex="1001" Click="BtnCopyToClipboard_Click" MinWidth="70" Margin="2,0,2,0"
+                                    ButtonImage="/Instrumind.Common;component/Visualization/Images/page_white_copy.png"
+                                    ToolTip="Copy the info and send it using your favorite e-mail client (to '[SUPPORT-EMAIL]')."/>
+            </StackPanel>
+        </DockPanel>
+        <Border Background="White" Margin="2" Padding="2">
+            <TabControl TabStripPlacement="Bottom">
+                <TabItem Header="Summary">
+                    <StackPanel>
+                        <Border DockPanel.Dock="Top" Background="Crimson" Padding="4" Margin="2">
+                            <TextBlock Text="{Binding Path=Title, Mode=OneWay, FallbackValue=[Title]}" TextAlignment="Center" Foreground="White"
+                                       FontSize="16" FontWeight="Bold" FontFamily="Tahoma"/>
+                        </Border>
+                        <TextBlock FontSize="14" Margin="2,8,2,2"
+                                   Text="{Binding Path=Subtitle, Mode=OneWay, FallbackValue=[Subtitle]}" />
+                        <TextBlock FontSize="14" FontWeight="Bold" Margin="2,8,2,2"
+                                   Text="{Binding Path=SourceException.Message, Mode=OneWay, FallbackValue=[Error Message]}" />
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Detailed Report">
+                    <TextBox x:Name="TxtDetailedReport" Margin="2" IsReadOnly="True" AcceptsReturn="True"
+                             FontFamily="Courier New" FontSize="11" Text="{Binding Path=DetailedReport, Mode=OneWay, FallbackValue=[Detailed-Report]}"
+                             VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Auto" />
+                </TabItem>
+            </TabControl>
+        </Border>
+    </DockPanel>
+</UserControl>

@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="Instrumind.Common.Visualization.Widgets.ComboMaintainer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:this="clr-namespace:Instrumind.Common.Visualization.Widgets"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Height="Auto" Width="Auto"
+             d:DesignWidth="300"
+             Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisCollConverter" />
+    </UserControl.Resources>
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+            <this:PaletteButton x:Name="BtnEditItem" ButtonText="" Margin="2,0,2,0" ToolTip="Edit"
+                                ButtonImage="/Instrumind.Common;component/Visualization/Images/page_white_edit.png"
+                                Visibility="{Binding Path=CanEdit, Converter={StaticResource BoolToVisCollConverter}}"
+                                Click="BtnEditItem_Click"/>
+            <this:PaletteButton x:Name="BtnAddItem" ButtonText="" Margin="2,0,2,0" ToolTip="Create"
+                                Visibility="{Binding Path=CanCreate, Converter={StaticResource BoolToVisCollConverter}}"
+                                ButtonImage="/Instrumind.Common;component/Visualization/Images/add.png"
+                                Click="BtnAddItem_Click"/>
+            <this:PaletteButton x:Name="BtnDeleteItem" ButtonText="" Margin="2,0,2,0" ToolTip="Delete"
+                                Visibility="{Binding Path=CanDelete, Converter={StaticResource BoolToVisCollConverter}}"
+                                ButtonImage="/Instrumind.Common;component/Visualization/Images/delete.png"
+                                Click="BtnDeleteItem_Click"/>
+        </StackPanel>
+        <ComboBox x:Name="CbxSelector" Height="24"
+                  SelectionChanged="CbxSelector_SelectionChanged"/>
+    </DockPanel>
+</UserControl>

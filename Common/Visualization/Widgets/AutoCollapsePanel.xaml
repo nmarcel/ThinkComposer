@@ -1,0 +1,102 @@
+﻿<UserControl x:Class="Instrumind.Common.Visualization.Widgets.AutoCollapsePanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:imcw="clr-namespace:Instrumind.Common.Visualization.Widgets"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"
+             Loaded="UserControl_Loaded" MouseEnter="UserControl_MouseEnter" MouseLeave="UserControl_MouseLeave"
+             d:DesignHeight="48" d:DesignWidth="625">
+    <UserControl.Template>
+        <ControlTemplate TargetType="{x:Type UserControl}">
+            <Border x:Name="BackBorder" CornerRadius="3" BorderBrush="LightGray" BorderThickness="1"
+                    Background="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type imcw:EntitledPanel}, ResourceId=HeaderBrush}}">
+                <Grid>
+                    <DockPanel>
+                        <Border x:Name="AltContentBorder" DockPanel.Dock="Left">
+                            <TextBlock Text="Alt-Content" Background="LightGray" Margin="4" />
+                        </Border>
+                        <ScrollViewer VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto">
+                            <ScrollViewer.Template>
+                                <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+
+                                        <ScrollContentPresenter Grid.Column="1" Grid.Row="1" />
+
+                                        <ScrollBar Name="PART_HorizontalScrollBar"
+                                                    HorizontalAlignment="Right" VerticalAlignment="Top"
+                                                    Orientation="Horizontal"
+                                                    Grid.Row="0"
+                                                    Grid.Column="1"
+                                                    Grid.RowSpan="2"
+                                                    MinWidth="100"
+                                                    Margin="0,3,22,0"
+                                                    Value="{TemplateBinding HorizontalOffset}"
+                                                    Maximum="{TemplateBinding ScrollableWidth}"
+                                                    ViewportSize="{TemplateBinding ViewportWidth}"
+                                                    Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
+                                        <!--This vertical scrollbar doesn't matter for this control (only horizontal scroll allowed)-->    
+                                        <ScrollBar Name="PART_VerticalScrollBar"
+                                                    HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                                                    Value="{TemplateBinding VerticalOffset}"
+                                                    Maximum="{TemplateBinding ScrollableHeight}"
+                                                    ViewportSize="{TemplateBinding ViewportHeight}"
+                                                    Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"/>
+
+                                    </Grid>
+                                
+                                </ControlTemplate>
+                            </ScrollViewer.Template>
+
+                            <ContentPresenter x:Name="Presenter" Margin="0,0,1,0"/>
+                  
+                        </ScrollViewer>
+                    </DockPanel>
+
+                    <ToggleButton x:Name="BtnPinPush" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="2,3,4,2"
+                                  IsChecked="{Binding Path=CanCollapse, RelativeSource={RelativeSource TemplatedParent}}">
+                        <ToggleButton.Template>
+                            <ControlTemplate TargetType="ToggleButton">
+                                <Grid>
+                                    <Ellipse Fill="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type imcw:DialogOptionsWindow}, ResourceId=DialogFrameBrush}}" Width="14" Height="14"/>
+                                    <Ellipse Stroke="LightGray" Width="14" Height="14"/>
+
+                                    <Grid x:Name="SwitchSymbol">
+                                        <Rectangle Margin="0,-2.5,0,0" Width="5.5" Height="5.5" Stroke="Gray" />
+                                        <Line X1="8" Y1="3.5" X2="8" Y2="8" Stroke="Gray" StrokeThickness="2" />
+                                        <Line X1="3" Y1="8" X2="11" Y2="8" Stroke="Gray" />
+                                        <Line X1="7" Y1="8" X2="7" Y2="11.5" Stroke="Gray" />
+                                    </Grid>
+
+                                    <Ellipse x:Name="EllForeground" Width="14" Height="14" Stroke="Black" Fill="LightGray" Opacity="0"/>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsChecked" Value="True">
+                                        <Setter TargetName="SwitchSymbol" Property="LayoutTransform">
+                                            <Setter.Value>
+                                                <RotateTransform Angle="90" />
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="EllForeground" Property="Opacity" Value="0.25" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </ToggleButton.Template>
+                    </ToggleButton>
+                
+                </Grid>
+            </Border>
+        </ControlTemplate>
+    </UserControl.Template>
+    <TextBlock Text="Content will be placed here" Background="WhiteSmoke" />
+</UserControl>

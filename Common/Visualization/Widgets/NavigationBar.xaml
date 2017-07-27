@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="Instrumind.Common.Visualization.Widgets.NavigationBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:this="clr-namespace:Instrumind.Common.Visualization.Widgets"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008">
+    <DockPanel>
+        <Button x:Name="NavRoot" ToolTip="Go to root container." DockPanel.Dock="Left" Height="18" Padding="1" Margin="1">
+            <Polygon Stroke="Black" Fill="Black" Points="0,0 2,0, 6,8 4,8 " />
+        </Button>
+        <Button x:Name="NavGoUp" ToolTip="Go to parent container." DockPanel.Dock="Right" Height="18" Padding="0,-2,0,0" FontFamily="Wingdings 3" FontSize="12" Content="p" Margin="1" />
+        <Border CornerRadius="3" Background="White" BorderBrush="DimGray" BorderThickness="1" Height="18">
+            <DockPanel x:Name="NavPath" Height="16">
+                <this:NavigationButton />
+                <this:NavigationButton />
+                <this:NavigationButton />
+                <TextBlock />
+            </DockPanel>
+        </Border>
+    </DockPanel>
+</UserControl>

@@ -1,0 +1,2 @@
+﻿Activate the DEBUG constant in Release mode to avoid problem with partial pages.
+See: http://www.nathanpjones.com/wp/2013/03/output-to-pdf-in-wpf-for-free/

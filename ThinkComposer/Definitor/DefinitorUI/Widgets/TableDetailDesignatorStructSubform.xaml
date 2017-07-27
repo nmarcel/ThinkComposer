@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="Instrumind.ThinkComposer.Definitor.DefinitorUI.Widgets.TableDetailDesignatorStructSubform"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:imvw="clr-namespace:Instrumind.Common.Visualization.Widgets;assembly=Instrumind.Common"
+             xmlns:this="clr-namespace:Instrumind.ThinkComposer.Definitor.DefinitorUI.Widgets"
+             MinHeight="100" MinWidth="400" >
+    <StackPanel>
+        <Border CornerRadius="5" Margin="2" Padding="2"
+                Background="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type imvw:EntitledPanel}, ResourceId=PanelBrush}}">
+            <DockPanel>
+                <RadioButton x:Name="RbReferenced" Margin="2" GroupName="StructDecl"
+                             DockPanel.Dock="Left" Width="180" Checked="RbReferenced_Checked">
+                    <TextBlock Text="Referenced" FontWeight="Bold"
+                               ToolTip="Points to and reuses a predefined Table-Structure."/>
+                </RadioButton>
+                <TextBlock x:Name="TxbReferencedTableStruct" Text="Table-Structure:" Width="80" FontSize="10" Margin="2" />
+                <ComboBox x:Name="CbxReferencedTableStruct" Height="24"/>
+            </DockPanel>
+        </Border>
+        <Border CornerRadius="5" Margin="2" Padding="2"
+                Background="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type imvw:EntitledPanel}, ResourceId=PanelBrush}}">
+            <StackPanel>
+                <DockPanel>
+                    <StackPanel>
+                        <DockPanel x:Name="PnlLocal">
+                            <RadioButton x:Name="RbOwned" Margin="2" GroupName="StructDecl"
+                                         DockPanel.Dock="Left" Width="180" Checked="RbOwned_Checked">
+                                <TextBlock Text="Owned" FontWeight="Bold"
+                                           ToolTip="Declares the Table-Structure as locally owned." />
+                            </RadioButton>
+                            <imvw:PaletteButton x:Name="BtnCopyFrom" DockPanel.Dock="Left" Click="BtnCopyFrom_Click" Width="80" Margin="2"
+                                                ButtonImage="/Instrumind.ThinkComposer;component/ApplicationProduct/Images/table_clone.png"
+                                                ButtonText="Copy from..." ToolTip="Copy an existent Table-Structure" />
+                            <ComboBox x:Name="CbxCopySourceTableStruct" Height="24" Visibility="Hidden"
+                                      SelectionChanged="CbxCopySourceTableStruct_SelectionChanged"/>
+                            <!-- Non-Sense
+                            <TextBlock Text="Descriptor:" Margin="2" DockPanel.Dock="Left" />
+                            <imvw:PaletteButton x:Name="BtnEditDescriptor" Click="BtnEditDescriptor_Click"
+                                                ButtonImage="/Instrumind.ThinkComposer;component/ApplicationProduct/Images/page_white_edit.png" DockPanel.Dock="Right"
+                                                ButtonText="" ToolTip="Edit descriptor" />
+                            <TextBlock Text="[Local]" Background="White" Padding="1" Margin="2" />-->
+                        </DockPanel>
+                        <this:TableStructureSubform x:Name="FrmTableStructEditor"
+                                                    MinHeight="150" MaxHeight="300" Margin="20,2,2,2" />
+                    </StackPanel>
+                </DockPanel>
+            </StackPanel>
+        </Border>
+        <StackPanel x:Name="PnlButtons" Orientation="Horizontal" HorizontalAlignment="Right">
+            <imvw:PaletteButton x:Name="BtnAccept" ButtonText="OK" ToolTip="Accept changes and exit." Margin="10,2,10,2" IsDefault="True"
+                                ButtonImage="/Instrumind.Common;component/Visualization/Images/accept.png"
+                                Click="BtnAccept_Click"/>
+            <!--NOTE: Dialog window already has a Cancel button. Sol... Do not set IsCancel=true for more than one button, else Esc key doesn't fires (only set focus)-->
+            <imvw:PaletteButton x:Name="BtnCancel" ButtonText="Cancel" ToolTip="Discard changes and exit." Margin="10,2,10,2"
+                                ButtonImage="/Instrumind.Common;component/Visualization/Images/cancel.png"
+                                Click="BtnCancel_Click"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Instrumind.Common.Visualization.Widgets.ProgressiveThreadedExecutorControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:imcv="clr-namespace:Instrumind.Common.Visualization.Widgets"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             Height="130" Width="500"
+             Loaded="UserControl_Loaded">
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Bottom">
+            <!--NOTE: Dialog window already has a Cancel button. Sol... Do not set IsCancel=true for more than one button, else Esc key doesn't fires (only set focus)-->
+            <imcv:PaletteButton x:Name="BtnCancel" DockPanel.Dock="Right"
+                            ButtonText="Cancel" ToolTip="Discard changes and exit." Margin="2"
+                            HorizontalAlignment="Right" VerticalAlignment="Center" Click="BtnCancel_Click"
+                            ButtonImage="/Instrumind.Common;component/Visualization/Images/cancel.png" />
+            <TextBlock Text="Please wait until completion or cancel..." FontSize="11" Foreground="DimGray"
+                       VerticalAlignment="Bottom" Margin="2" />
+        </DockPanel>
+
+        <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Stretch"
+                    Margin="0,4,0,4">
+            <StackPanel.Background>
+                <SolidColorBrush Color="WhiteSmoke" Opacity="0.5" />
+            </StackPanel.Background>
+            <!--<TextBlock x:Name="TxtMessage" Text="[Message]" TextAlignment="Center" TextWrapping="Wrap"
+                       FontSize="12" FontWeight="Bold" Margin="2" />-->
+            <TextBlock x:Name="TxtProgress" Text="[Progress]" TextWrapping="Wrap" FontSize="12" Height="55" Margin="2" />
+            <ProgressBar x:Name="PgsProgress" Margin="2" Height="14" />
+            <TextBlock x:Name="TxtPercentage" Text="0 %" FontWeight="Bold" HorizontalAlignment="Center" />
+        </StackPanel>
+    </DockPanel>
+</UserControl>

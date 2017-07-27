@@ -1,0 +1,44 @@
+﻿<Window x:Class="Instrumind.ThinkComposer.MetaModel.VisualMetaModel.SymbolsTester"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="GeometriesTester" 
+        Height="90" Width="160" >
+    <Grid Width="134" Height="50">
+        <Image Source="/Instrumind.ThinkComposer;component/ApplicationProduct/Images/Scalimeter_126x42.png" Width="134" Height="50" />
+        <Image Width="126" Height="42" Margin="3" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Image.Source>
+                <DrawingImage>
+                    <DrawingImage.Drawing>
+                        <GeometryDrawing Brush="Silver">
+                            <GeometryDrawing.Pen>
+                                <Pen Brush="Black" Thickness="1" LineJoin="Bevel" EndLineCap="Round" StartLineCap="Round" />
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Geometry>
+                                <GeometryGroup>
+                                    <!--********************************************************************************-->
+                                    <RectangleGeometry Rect="1,7,108,26" />
+                                    <PathGeometry>
+                                        <PathFigure StartPoint="0,20" IsClosed="True">
+                                            <LineSegment Point="0,6" />
+                                            <LineSegment Point="98,6" />
+                                            <LineSegment Point="92,0" />
+                                            <LineSegment Point="104,0" />
+                                            <LineSegment Point="124,20" />
+                                            <LineSegment Point="104,40" />
+                                            <LineSegment Point="92,40" />
+                                            <LineSegment Point="98,34" />
+                                            <LineSegment Point="0,34" />
+                                        </PathFigure>
+                                    </PathGeometry>
+
+
+                                    <!--********************************************************************************-->
+                                </GeometryGroup>
+                            </GeometryDrawing.Geometry>
+                        </GeometryDrawing>
+                    </DrawingImage.Drawing>
+                </DrawingImage>
+            </Image.Source>
+        </Image>
+    </Grid>
+</Window>

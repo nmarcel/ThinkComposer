@@ -1,0 +1,159 @@
+﻿<UserControl x:Class="Instrumind.ThinkComposer.ApplicationProduct.About"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:imcv="clr-namespace:Instrumind.Common.Visualization.Widgets;assembly=Instrumind.Common"
+             Height="550" Width="700"
+             mc:Ignorable="d">
+    <DockPanel>
+        <Border DockPanel.Dock="Top" Background="White" Height="80" Margin="-2,8,-2,4" >
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0">
+                    <Image x:Name="CompanyLogo" VerticalAlignment="Top"
+                                Source="/Instrumind.ThinkComposer;component/Instrumind_48x48.ico"/>
+                    <TextBlock HorizontalAlignment="Right" Margin="2" FontFamily="Venus Rising" FontSize="28" Text="Instrumind"
+                                Foreground="#FF95C2D9">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect ShadowDepth="3" Direction="330" Color="LightGray"
+                                                        Opacity="0.5" BlurRadius="3"/>
+                                </TextBlock.Effect>
+                    </TextBlock>
+                </StackPanel>
+                <TextBlock HorizontalAlignment="Right" FontFamily="voxBOX" FontSize="56" FontWeight="Normal" Text="ThinkComposer"
+                            Foreground="#FF95C2D9">
+                            <TextBlock.Effect>
+                                <DropShadowEffect ShadowDepth="3" Direction="330" Color="LightGray"
+                                                    Opacity="0.5" BlurRadius="3"/>
+                            </TextBlock.Effect>
+                </TextBlock>
+            </StackPanel>
+        </Border>
+        <!--<Image Source="/Instrumind.ThinkComposer;component/ApplicationShell/Images/Instrumind_ThinkComposer_Splash.png"
+                Stretch="None" Margin="4"/>-->
+        <StackPanel DockPanel.Dock="Top" Margin="2">
+            <TextBlock x:Name="AuthorText" Text="Copyright (C) [YEAR] [AUTHOR]"
+                        Foreground="Black" FontSize="12" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="ProductText" Text="Version [VERSION]"
+                        FontSize="12" FontWeight="700" Padding="2" HorizontalAlignment="Center"
+                        Foreground="Black" Cursor="Hand" IsEnabled="True" MouseLeftButtonUp="ProductText_MouseLeftButtonUp"/>
+        </StackPanel>
+        <DockPanel Margin="4">
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Center" Margin="4">
+                <TextBlock Text="Website: " Width="70" Margin="0,4,0,4"/>
+                <TextBlock x:Name="TxtWebsiteCompany" Text="[company-url]" Margin="0,4,0,4"
+                               TextDecorations="Underline" Cursor="Hand" Foreground="Blue"
+                               MouseLeftButtonDown="TxtWebsiteCompany_MouseLeftButtonDown"/>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Top" Margin="8,0,8,4">
+                <TextBlock Text="Legal Notice" FontWeight="700"/>
+                <TextBlock FontStyle="Italic">
+                    ThinkComposer is free software, provided as is and without any warranties.
+                    <LineBreak />
+                    You can redistribute and/or modify it under the terms of the GNU General Public License.
+                </TextBlock>
+            </StackPanel>
+
+            <DockPanel DockPanel.Dock="Bottom">
+                <Border Margin="8" BorderBrush="Green" BorderThickness="2" CornerRadius="5">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="LightGreen" Offset="0" />
+                            <GradientStop Color="Honeydew" Offset="0.5" />
+                            <GradientStop Color="LightGreen" Offset="1" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <imcv:PaletteButton x:Name="BtnCheckForNewRelease" ButtonText="Version Update" FontWeight="700" Margin="2"
+                        ButtonImage="/Instrumind.ThinkComposer;component/ApplicationProduct/Images/disk_black_magnify.png"
+                        ToolTip="Checks if a new version is available for download and update the product."
+                        Click="BtnCheckForNewRelease_Click" />
+                </Border>
+                <imcv:PaletteButton ButtonText="OK" Width="50" HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="700" Margin="8"
+                    IsDefault="True" IsCancel="True" ButtonImage="/Instrumind.ThinkComposer;component/ApplicationProduct/Images/accept.png" />
+            </DockPanel>
+            
+            <TabControl Margin="4" MinHeight="200">
+                <TabItem>
+                    <TabItem.Header>
+                        <TextBlock Text="License" FontWeight="700" Foreground="Navy" />
+                    </TabItem.Header>
+                    <DockPanel>
+                        <TextBox x:Name="TxtLicenseAgreement" IsReadOnly="True" Text="License-Agreement" TextWrapping="Wrap"
+                                     VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" />
+                        <!--<DockPanel DockPanel.Dock="Top">
+                            <TextBlock DockPanel.Dock="Left" Text="User: " Width="60"/>
+                            <TextBlock x:Name="TxtLicensedUser" Text="[User]" FontWeight="Bold" Foreground="Blue" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <DockPanel Width="260">
+                                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" >
+                                    <TextBlock Text="Type: " Width="60"/>
+                                    <TextBlock x:Name="TxtLicenseType" Text="[Type]" FontWeight="Bold"/>
+                                </StackPanel>
+                                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" >
+                                    <TextBlock Text="Edition: " Width="60"/>
+                                    <TextBlock x:Name="TxtLicenseEdition" Text="[Edition]" FontWeight="Bold"/>
+                                </StackPanel>
+                            </DockPanel>
+                            <DockPanel>
+                                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" >
+                                    <TextBlock Text="Mode: " Width="60"/>
+                                    <TextBlock x:Name="TxtLicenseMode" Text="[Mode]" FontWeight="Bold"/>
+                                </StackPanel>
+                                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" >
+                                    <TextBlock Text="Expiration: " Width="60"/>
+                                    <TextBlock x:Name="TxtLicenseExpiration" Text="[Expiration]" FontWeight="Bold"/>
+                                </StackPanel>
+                            </DockPanel>
+                        </DockPanel>
+                        <DockPanel>
+                            <TextBlock DockPanel.Dock="Top" Text="License:" FontWeight="700"
+                                       HorizontalAlignment="Left" Width="110" Margin="0,4,0,2"/>
+                        </DockPanel> -->
+                    </DockPanel>
+                </TabItem>
+                
+                <TabItem>
+                    <TabItem.Header>
+                        <TextBlock Text="Acknowledgements" FontWeight="700" Foreground="Navy" />
+                    </TabItem.Header>
+                    <StackPanel Margin="8,0,8,0">
+                        <TextBlock Text="This software uses the following third party components..."
+                                   FontStyle="Italic" Margin="0,3,0,4"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="u" Margin="3" FontSize="10" FontFamily="Wingdings" />
+                            <TextBlock x:Name="AckIconLibrary" Text="'Silk' icons library, by Mark James."
+                               TextDecorations="Underline" Cursor="Hand" MouseLeftButtonDown="AckIconLibrary_MouseLeftButtonDown"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="u" Margin="3" FontSize="10" FontFamily="Wingdings" />
+                            <TextBlock x:Name="AckIconLibrary2" Text="'Silk Companion' icons library extension, by Damien Guard."
+                               TextDecorations="Underline" Cursor="Hand" MouseLeftButtonDown="AckIconLibrary2_MouseLeftButtonDown"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="u" Margin="3" FontSize="10" FontFamily="Wingdings" />
+                            <TextBlock Text="'Venus Rising' font, by Ray Larabie."/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="u" Margin="3" FontSize="10" FontFamily="Wingdings" />
+                            <TextBlock Text="'voxBOX' font, by Iconian Fonts."/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="u" Margin="3" FontSize="10" FontFamily="Wingdings" />
+                            <TextBlock Text="'DotLiquid' library, by Formosatek Ltd and contributors. Used under the MS-PL license."/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="u" Margin="3" FontSize="10" FontFamily="Wingdings" />
+                            <TextBlock Text="'Avalon Edit' control, by Daniel Grunwald. Used under the GNU LGPL license."/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="u" Margin="3" FontSize="10" FontFamily="Wingdings" />
+                            <TextBlock Text="'PDFsharp' library, by Empira Software GmbH. Used under the MIT license."/>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
+            
+        </DockPanel>
+    </DockPanel>
+</UserControl>

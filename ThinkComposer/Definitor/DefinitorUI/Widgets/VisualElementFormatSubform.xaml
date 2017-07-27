@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="Instrumind.ThinkComposer.Definitor.DefinitorUI.Widgets.VisualElementFormatSubform"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:imcv="clr-namespace:Instrumind.Common.Visualization.Widgets;assembly=Instrumind.Common"
+             xmlns:itpw="clr-namespace:Instrumind.ThinkComposer.ApplicationProduct.Widgets"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <GroupBox Padding="0,2,0,0">
+            <GroupBox.Header>
+                <TextBlock Text="Style" FontWeight="Bold" />
+            </GroupBox.Header>
+            <StackPanel>
+                <imcv:EntityPropertyExpositor ExposedProperty="Opacity" LabelMinWidth="80" />
+                <DockPanel>
+                    <imcv:EntityPropertyExpositor x:Name="ExpoLineBrush" x:FieldModifier="public" DockPanel.Dock="Left" ExposedProperty="LineBrush"  LabelMinWidth="80"/>
+                    <imcv:EntityPropertyExpositor x:Name="ExpoMainBackground" x:FieldModifier="public" HorizontalAlignment="Right" ExposedProperty="MainBackground"  LabelMinWidth="80"/>
+                </DockPanel>
+                <imcv:EntityPropertyExpositor x:Name="ExpoLineDash" x:FieldModifier="public" ExposedProperty="LineDash"  LabelMinWidth="80"/>
+                <imcv:EntityPropertyExpositor x:Name="ExpoLineThickness" x:FieldModifier="public" ExposedProperty="LineThickness"  LabelMinWidth="80"/>
+                <!--POSTPONED <imcv:EntityPropertyExpositor ExposedProperty="HasShadow"  LabelMinWidth="100"/>-->
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</UserControl>

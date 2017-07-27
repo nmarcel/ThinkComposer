@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Instrumind.ThinkComposer.Composer.Generation.Widgets.FileGenerationPreviewer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:imcv="clr-namespace:Instrumind.Common.Visualization.Widgets;assembly=Instrumind.Common"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="300">
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                <!--<imcv:PaletteButton x:Name="BtnGenerate" ButtonText="Generate" Margin="2" Click="BtnGenerate_Click"
+                                    ButtonImage="/Instrumind.ThinkComposer;component/ApplicationProduct/Images/page_white_gear.png" />-->
+                <imcv:PaletteButton x:Name="BtnSave" ButtonText="Save..." Margin="2" Click="BtnSave_Click"
+                                    ButtonImage="/Instrumind.ThinkComposer;component/ApplicationProduct/Images/disk.png" />
+            </StackPanel>
+            <DockPanel>
+                <TextBlock DockPanel.Dock="Left" Text="Output File:" Margin="2"/>
+                <TextBlock x:Name="TxtFileName" Text="[...]" Background="White" Margin="3" />
+            </DockPanel>
+        </DockPanel>
+        <TextBox x:Name="TxbOutput" Margin="2" TextWrapping="NoWrap" IsReadOnly="True" FontFamily="Consolas"
+                 HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" />
+    </DockPanel>
+</UserControl>

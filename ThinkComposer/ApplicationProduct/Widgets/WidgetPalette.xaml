@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="Instrumind.ThinkComposer.ApplicationProduct.Widgets.WidgetPalette"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:wg="clr-namespace:Instrumind.Common.Visualization.Widgets;assembly=Instrumind.Common"
+             MouseEnter="UserControl_MouseEnter" Height="116"
+             Background="Transparent">
+    <!--Height for 3 rows = 96-->
+    <UserControl.Resources>
+        <Style TargetType="{x:Type TabItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <Grid Height="20" VerticalAlignment="Top">
+                            <Border Name="NormalBorder" Background="#FFE7EBED" BorderBrush="Transparent" BorderThickness="1,1,0,0" Margin="-2,0,14,-1"/>
+                            <Border Name="SkewedBorder" Background="#FFE7EBED" BorderBrush="Transparent" BorderThickness="0,1,1,0" Margin="-1,0,2,-1">
+                                <Border.LayoutTransform>
+                                    <SkewTransform AngleX="23" />
+                                </Border.LayoutTransform>
+                            </Border>
+                            <!--<Border Height="1" Background="Transparent" Margin="-1,18,3,-4.5" />-->
+                            <ContentPresenter x:Name="ContentSite" VerticalAlignment="Center" HorizontalAlignment="Left"
+                                              ContentSource="Header" Margin="1,2,10,3" TextElement.FontSize="11"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="ContentSite" Property="TextElement.FontWeight" Value="700" />
+                                <Setter TargetName="NormalBorder" Property="Background" Value="White" />
+                                <Setter TargetName="SkewedBorder" Property="Background" Value="White" />
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="False">
+                                <Setter TargetName="ContentSite" Property="TextElement.FontWeight" Value="400" />
+                                <Setter TargetName="NormalBorder" Property="Background" Value="#FFE7EBED" />
+                                <Setter TargetName="SkewedBorder" Property="Background" Value="#FFE7EBED" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="TabControl">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabControl">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TabPanel Grid.Row="0" Panel.ZIndex="1"  Margin="2,0,4,0" 
+                                      IsItemsHost="True" Background="Transparent" />
+                            <Border Grid.Row="1" Background="White" BorderBrush="Transparent" BorderThickness="1"
+                                    CornerRadius="0, 3, 3, 0" >
+                                <ContentPresenter ContentSource="SelectedContent" Margin="2" />
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid Margin="1">
+        <DockPanel x:Name="PalettePanel">
+            <Border Margin="0,0,-2,0" CornerRadius="3,0,0,3" BorderBrush="Transparent" BorderThickness="1,1,0,1"
+                    Background="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type wg:EntitledPanel}, ResourceId=PanelBrush}}">
+                <DockPanel x:Name="PaletteTitleContainer" MouseLeftButtonDown="PaletteTitleContainer_MouseLeftButtonDown">
+                    <Image x:Name="PaletteImage" DockPanel.Dock="Top" Margin="1,0,3,2" Width="16" Height="16"
+                           Source="/Instrumind.Common;component/Visualization/Images/Instrumind_48x48.png" >
+                        <Image.Effect>
+                            <DropShadowEffect Color="Gray" Opacity="0.5" ShadowDepth="3" />
+                        </Image.Effect>
+                    </Image>
+                    <TextBlock x:Name="PaletteTitle" Text="[Palette]"
+                               Foreground="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type wg:EntitledPanel}, ResourceId=PanelTextBrush}}"
+                               TextAlignment="Right" VerticalAlignment="Stretch" Padding="4,0,4,0">
+                            <TextBlock.LayoutTransform><RotateTransform Angle="-90"/></TextBlock.LayoutTransform>
+                    </TextBlock>
+                </DockPanel>
+            </Border>
+            <TabControl x:Name="PaletteTab" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch">
+                <TabItem Header="Primary">
+                    <WrapPanel Orientation="Vertical">
+                            <wg:PaletteButton ButtonText="One" ButtonOrientation="Horizontal" ButtonImageSize="16" ButtonImage="/Instrumind.Common;component/Visualization/Images/Instrumind_48x48.png"/>
+                            <wg:PaletteButton ButtonText="Two" ButtonOrientation="Horizontal" ButtonImageSize="16" ButtonImage="/Instrumind.Common;component/Visualization/Images/Instrumind_48x48.png"/>
+                            <wg:PaletteButton ButtonText="Three" ButtonOrientation="Horizontal" ButtonImageSize="16" ButtonImage="/Instrumind.Common;component/Visualization/Images/Instrumind_48x48.png"/>
+                            <wg:PaletteButton ButtonText="Four" ButtonOrientation="Horizontal" ButtonImageSize="16" ButtonImage="/Instrumind.Common;component/Visualization/Images/Instrumind_48x48.png"/>
+                    </WrapPanel>
+                </TabItem>
+                <TabItem Header="Secondary">
+                </TabItem>
+            </TabControl>
+        </DockPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!--NOTE: This Resource-Dictionary will be merged into that of the application (See the "App.xaml" file).-->
+    
+    <!--This is a trick to assign cursors. In the code, just load the text-block resource
+        and assign its Cursor property to the desired target.-->
+    <TextBlock x:Key="CursorLoaderArrowIdea" Cursor="/ApplicationProduct/Cursors/arrow_idea.cur" />
+    <TextBlock x:Key="CursorLoaderArrowMarker" Cursor="/ApplicationProduct/Cursors/arrow_marker.cur" />
+    <TextBlock x:Key="CursorLoaderArrowComplement" Cursor="/ApplicationProduct/Cursors/arrow_complement.cur" />
+    <TextBlock x:Key="CursorLoaderArrowShortcut" Cursor="/ApplicationProduct/Cursors/arrow_shortcut.cur" />
+
+</ResourceDictionary>

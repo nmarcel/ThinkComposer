@@ -1,0 +1,217 @@
+﻿<UserControl x:Class="Instrumind.Common.Visualization.Widgets.ColorSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             Background="White">
+    <UserControl.Resources>
+        <Style x:Key="BoxStyle" TargetType="Rectangle">
+            <EventSetter Event="MouseLeftButtonDown" Handler="Selector_MouseLeftButtonDown" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Width" Value="16" />
+            <Setter Property="Height" Value="14" />
+            <Setter Property="Stroke" Value="White" />
+            <Setter Property="StrokeThickness" Value="2" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Stroke" Value="Black" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <StackPanel Orientation="Horizontal">
+        <StackPanel x:Name="ColorsPanel" Orientation="Horizontal">
+            <StackPanel>
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="White" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Snow" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="GhostWhite" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="WhiteSmoke" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Gainsboro" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="LightGray" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Silver" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="DarkGray" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Gray" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="DimGray" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="LightSlateGray" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="SlateGray" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="DarkSlateGray" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Black" />
+            </StackPanel>
+            <StackPanel>
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Yellow" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Ivory" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="LightYellow" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="LightGoldenrodYellow" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="LemonChiffon" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="PapayaWhip" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Wheat" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="PaleGoldenrod" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Khaki" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Gold" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="DarkKhaki" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Olive" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="DarkOliveGreen" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="OliveDrab" />
+            </StackPanel>
+            <StackPanel>
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="DarkGoldenrod" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Cornsilk" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Beige" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Linen" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="BlanchedAlmond" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Moccasin" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="BurlyWood" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Tan" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Goldenrod" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Peru" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Chocolate" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="RosyBrown" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Sienna" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="SaddleBrown" />
+            </StackPanel>
+            <StackPanel>
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Orange" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="FloralWhite" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="SeaShell" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="AntiqueWhite" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Bisque" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="PeachPuff" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="NavajoWhite" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="SandyBrown" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="DarkOrange" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="LightSalmon" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="DarkSalmon" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Salmon" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Coral" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="#FFFF6650" />
+            </StackPanel>
+            <StackPanel>
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Red" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="LavenderBlush" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="MistyRose" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Pink" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="LightCoral" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="PaleVioletRed" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="IndianRed" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Tomato" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="OrangeRed" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Crimson" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Firebrick" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Brown" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="DarkRed" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Maroon" />
+            </StackPanel>
+            <StackPanel>
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Magenta" Tag="Fuchsia" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="LightPink" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="HotPink" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="DeepPink" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Orchid" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="MediumVioletRed" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="MediumSlateBlue" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="SlateBlue" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="LightSteelBlue" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="DarkSlateBlue" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="MidnightBlue" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Navy" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="DarkBlue" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="MediumBlue" />
+            </StackPanel>
+            <StackPanel>
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Blue" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="AliceBlue" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Azure" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="LightCyan" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="PowderBlue" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="PaleTurquoise" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="LightBlue" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="SteelBlue" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="SkyBlue" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="LightSkyBlue" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="DeepSkyBlue" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="DodgerBlue" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="CornflowerBlue" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="RoyalBlue" />
+            </StackPanel>
+            <StackPanel>
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Cyan" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="MintCream" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Honeydew" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="#FF01FFCF" Tag="Aqua=Cyan:Red+1" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Aquamarine" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="MediumAquamarine" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Turquoise" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="MediumTurquoise" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="DarkTurquoise" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="LightSeaGreen" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="SeaGreen" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="CadetBlue" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Teal" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="DarkCyan" />
+            </StackPanel>
+            <StackPanel>
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Green" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="PaleGreen" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="LightGreen" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="MediumSpringGreen" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="SpringGreen" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="GreenYellow" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Chartreuse" Tag="LawnGreen=124,252,0" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="Lime" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="YellowGreen" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="LimeGreen" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="DarkSeaGreen" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="MediumSeaGreen" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="ForestGreen" />
+                <Rectangle Style="{StaticResource BoxStyle}" Fill="DarkGreen" />
+            </StackPanel>
+        </StackPanel>
+        
+        <Border x:Name="FineSelectionBorder" Width="22" Background="LightGray" Margin="1" Cursor="Cross"
+                MouseLeftButtonDown="FineSelectionBorder_MouseLeftButtonDown"/>
+       
+        <!--<Slider Minimum="0" Maximum="255" Value="127" TickPlacement="None" TickFrequency="8" Margin="0,2,0,2">
+            <Slider.LayoutTransform>
+                <ScaleTransform ScaleX="1" ScaleY="0.5" />
+            </Slider.LayoutTransform>
+        </Slider>
+        <Slider Minimum="0" Maximum="255" Value="127" TickPlacement="None" TickFrequency="8" Margin="0,2,0,2">
+            <Slider.LayoutTransform>
+                <ScaleTransform ScaleX="1" ScaleY="0.5" />
+            </Slider.LayoutTransform>
+        </Slider>-->
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Bottom">
+                <TextBlock Text="RGB" FontWeight="Bold" Margin="2" />
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="TxtRgbRed" Text="255" FontSize="11" Padding="-1" MaxLength="3" HorizontalAlignment="Center"
+                             Width="24" Margin="1" LostFocus="TxtRgbRed_LostFocus" />
+                    <TextBox x:Name="TxtRgbGreen" Text="255" FontSize="11" Padding="-1" MaxLength="3" TextAlignment="Center"
+                             Width="24" Margin="1" LostFocus="TxtRgbGreen_LostFocus" />
+                    <TextBox x:Name="TxtRgbBlue" Text="255" FontSize="11" Padding="-1" MaxLength="3" TextAlignment="Center"
+                             Width="24" Margin="1" LostFocus="TxtRgbBlue_LostFocus" />
+                </StackPanel>
+                <TextBlock Text="(Hex)" Margin="2,4,2,2" />
+                <TextBox x:Name="TxtRgbHex" Text="FFFFFF" MaxLength="6" TextAlignment="Center"
+                         Margin="2" LostFocus="TxtRgbHex_LostFocus" />
+            </StackPanel>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Border x:Name="FineSelectionRedBorder" Grid.Column="0" Background="Red" Margin="0,1,1,1" Cursor="Cross"
+                    MouseLeftButtonDown="FineSelectionBorder_MouseLeftButtonDown"/>
+
+                <Border x:Name="FineSelectionGreenBorder" Grid.Column="1" Background="Green" Margin="0.5,1,0.5,1" Cursor="Cross"
+                    MouseLeftButtonDown="FineSelectionBorder_MouseLeftButtonDown"/>
+
+                <Border x:Name="FineSelectionBlueBorder" Grid.Column="2" Background="Blue" Margin="1,1,0,1" Cursor="Cross"
+                    MouseLeftButtonDown="FineSelectionBorder_MouseLeftButtonDown"/>
+            </Grid>
+
+        </DockPanel>
+    </StackPanel>
+</UserControl>

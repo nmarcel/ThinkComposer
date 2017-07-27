@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="Instrumind.Common.Visualization.Widgets.OrientationSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             Width="32" Height="32"
+             MouseLeftButtonDown="UserControl_MouseLeftButtonDown"
+             ToolTip="Gradient orientation: Vertical or Horizontal.">
+    <Grid>
+        <!-- HORIZONTAL Top-Left Triangle-->
+        <Polygon x:Name="OrientationSelectorHorizontal" Points="0,0 31,0 0,31" Stroke="Gray" Fill="White" />
+        <!--Horizontal Double-Arrow-->
+        <!--<Line X1="2" Y1="5" X2="22" Y2="5" Stroke="Black" StrokeThickness="1.5"/>-->
+        <Polyline Points="6,2 2,5 6,8" Stroke="Black" StrokeThickness="1.5" />
+        <!--<Polyline Points="18,2 22,5 18,8" Stroke="Black" StrokeThickness="1.5" />-->
+        <!--Horizontal "H" Letter-->
+        <!--<Line X1="2" Y1="14" X2="2" Y2="22" Stroke="Black" StrokeThickness="1.5"/>
+        <Line X1="6" Y1="14" X2="6" Y2="22" Stroke="Black" StrokeThickness="1.5"/>
+        <Line X1="2" Y1="18" X2="6" Y2="18" Stroke="Black" StrokeThickness="1.5"/>-->
+
+        <!-- VERTICAL Bottom-Right Triangle-->
+        <Polygon x:Name="OrientationSelectorVertical" Points="0,31 31,0 31,31" Stroke="Gray" Fill="LightGray" />
+        <!--Vertical Double-Arrow-->
+        <!--<Line X1="26" Y1="9" X2="26" Y2="29" Stroke="Black" StrokeThickness="1.5"/>-->
+        <!--<Polyline Points="23,14 26,9 29,14" Stroke="Black" StrokeThickness="1.5" />-->
+        <Polyline Points="23,25 26,29 29,25" Stroke="Black" StrokeThickness="1.5" />
+        <!--Vertical "V" Letter-->
+        <!--<Line X1="10" Y1="23" X2="13" Y2="30" Stroke="Black" StrokeThickness="1.5"/>
+        <Line X1="16" Y1="23" X2="13" Y2="30" Stroke="Black" StrokeThickness="1.5"/>-->
+
+        <Path Stroke="Black" StrokeThickness="1.5">
+            <Path.Data>
+                <PathGeometry>
+                    <PathGeometry.Figures>
+                        <PathFigureCollection>
+                            <PathFigure StartPoint="2,5">
+                                <ArcSegment Point="26,29" SweepDirection="Clockwise" Size="22,22" />
+                            </PathFigure>
+                        </PathFigureCollection>
+                    </PathGeometry.Figures>
+                </PathGeometry>
+            </Path.Data>
+        </Path>
+    </Grid>
+</UserControl>

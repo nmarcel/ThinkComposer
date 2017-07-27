@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="Instrumind.Common.Visualization.Widgets.FormalElementGeneralSubform"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:this="clr-namespace:Instrumind.Common.Visualization.Widgets"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             Background="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type this:EntitledPanel}, ResourceId=FormBodyBrush}}"
+             MinWidth="400" MinHeight="200">
+    <DockPanel>
+        <this:EntityPropertyExpositor x:Name="ExpoPictogram" x:FieldModifier="public" DockPanel.Dock="Right"
+                                      ExposedProperty="Pictogram" Orientation="Vertical" LabelMinWidth="50" TabOrder="99"/>
+        <this:EntityPropertyExpositor DockPanel.Dock="Top" x:Name="ExpoName" ExposedProperty="Name" TabOrder="0"/>
+        <this:EntityPropertyExpositor DockPanel.Dock="Top" x:Name="ExpoTechName" ExposedProperty="TechName" TabOrder="1" />
+        <this:EntityPropertyExpositor DockPanel.Dock="Bottom" x:Name="ExpoGlobalId" ExposedProperty="GlobalId" TabOrder="2" />
+        <this:EntityPropertyExpositor x:Name="ExpoSummary" ExposedProperty="Summary" TabOrder="10" />
+    </DockPanel>
+</UserControl>

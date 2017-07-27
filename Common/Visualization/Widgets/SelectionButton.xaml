@@ -1,0 +1,25 @@
+﻿<Button x:Class="Instrumind.Common.Visualization.Widgets.SelectionButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             Width="Auto" MaxHeight="36"
+             HorizontalContentAlignment="Left" HorizontalAlignment="Stretch" VerticalAlignment="Top"
+             Click="Button_Click" MouseEnter="Button_MouseEnter" GotFocus="Button_GotFocus"
+             Loaded="Button_Loaded">
+    <!--IMPORTANT: Do not set Style = ToolBar.Style for this button.-->
+    <StackPanel x:Name="BackPanel" Orientation="Horizontal">
+        <Image x:Name="BtnImage" HorizontalAlignment="Center" Margin="2,0,2,0" Width="64" Height="24"
+               Source="/Instrumind.Common;component/Visualization/Images/Instrumind_16x16.png" Stretch="Uniform" >
+            <Image.Effect>
+                <DropShadowEffect Color="Gray" Opacity="0.5" ShadowDepth="3" />
+            </Image.Effect>
+        </Image>
+        <StackPanel>
+            <TextBlock x:Name="BtnText" FontSize="11" FontWeight="700" TextAlignment="Left" VerticalAlignment="Center" Margin="2,0,2,0" Padding="2,0,2,0" TextWrapping="Wrap"
+                       Text="Button's Option" />
+            <TextBlock x:Name="BtnSummary" FontSize="11" TextAlignment="Left" VerticalAlignment="Center" Margin="2,0,2,0" Padding="2,0,2,0" TextWrapping="Wrap"
+                       Text="This is the option button's summary." />
+        </StackPanel>
+    </StackPanel>
+</Button>

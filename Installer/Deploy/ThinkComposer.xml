@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML_DIZ_INFO>
+  <MASTER_PAD_VERSION_INFO>
+    <MASTER_PAD_VERSION>3.11</MASTER_PAD_VERSION>
+    <MASTER_PAD_EDITOR>PADManager 2.0.69</MASTER_PAD_EDITOR>
+    <MASTER_PAD_EDITOR_URL>http://robosoft.rudenko.com</MASTER_PAD_EDITOR_URL>
+    <MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://www.asp-shareware.org/pad</MASTER_PAD_INFO>
+  </MASTER_PAD_VERSION_INFO>
+  <RoboSoft>
+    <Company_UIN>CMP-00B60FD8C9F</Company_UIN>
+    <Company_Description>Instrumind Software SpA. is a company focused on empowering users to do their complex work, by giving them rich, meaningful and flexible tools.</Company_Description>
+    <Product_UIN>APP-00B60FA3531</Product_UIN>
+    <Search_String>ThinkComposer</Search_String>
+    <Publish_on_CD>FALSE</Publish_on_CD>
+    <RSProductType></RSProductType>
+    <Press_Release_Search_String></Press_Release_Search_String>
+    <NewsFeed_Search_String></NewsFeed_Search_String>
+    <Search_Engine_Search_String></Search_Engine_Search_String>
+    <Web_Directories_Search_String></Web_Directories_Search_String>
+    <Search_String_Unique></Search_String_Unique>
+    <Comments_For_Reviewer></Comments_For_Reviewer>
+    <Backlink></Backlink>
+  </RoboSoft>
+  <Company_Info>
+    <Company_Name>Instrumind Software S.p.A.</Company_Name>
+    <Address_1>Av. Beauchef 1325 Dp. 1907</Address_1>
+    <Address_2></Address_2>
+    <City_Town>Santiago</City_Town>
+    <State_Province>RM</State_Province>
+    <Zip_Postal_Code>8370612</Zip_Postal_Code>
+    <Country>Chile</Country>
+    <Company_WebSite_URL>http://www.instrumind.com</Company_WebSite_URL>
+    <Contact_Info>
+      <Contact_First_Name>Nestor</Contact_First_Name>
+      <Contact_Last_Name>Sanchez</Contact_Last_Name>
+      <Contact_Email>contact@instrumind.com</Contact_Email>
+      <Author_First_Name>Nestor</Author_First_Name>
+      <Author_Last_Name>Sanchez</Author_Last_Name>
+      <Author_Email>contact@instrumind.com</Author_Email>
+    </Contact_Info>
+    <Support_Info>
+      <Sales_Email>contact@instrumind.com</Sales_Email>
+      <Support_Email>contact@instrumind.com</Support_Email>
+      <General_Email>contact@instrumind.com</General_Email>
+      <Sales_Phone></Sales_Phone>
+      <Support_Phone></Support_Phone>
+      <General_Phone></General_Phone>
+      <Fax_Phone></Fax_Phone>
+    </Support_Info>
+  </Company_Info>
+  <NewsFeed>
+    <NewsFeed_FORM>Y</NewsFeed_FORM>
+    <NewsFeed_VERSION>1.0</NewsFeed_VERSION>
+    <NewsFeed_URL>http://Submit-Everywhere.com/extensions/NewsFeed.htm</NewsFeed_URL>
+    <NewsFeed_DESCRIPTION>This PAD extension allows you to add your RSS and Atom news feeds info into your PAD file. This info can be used by RSS feed submission software or by feed directories themselves.</NewsFeed_DESCRIPTION>
+    <NewsFeed_Type>RSS 0.90</NewsFeed_Type>
+    <NewsFeed_Language>English</NewsFeed_Language>
+    <NewsFeed_Purpose>News</NewsFeed_Purpose>
+    <NewsFeed_Author_First_Name>Nestor</NewsFeed_Author_First_Name>
+    <NewsFeed_Author_Last_Name>Sanchez</NewsFeed_Author_Last_Name>
+    <NewsFeed_Author_Email>contact@instrumind.com</NewsFeed_Author_Email>
+    <NewsFeed_Feed_URL></NewsFeed_Feed_URL>
+    <NewsFeed_Site_Name></NewsFeed_Site_Name>
+    <NewsFeed_Site_URL></NewsFeed_Site_URL>
+    <NewsFeed_Title></NewsFeed_Title>
+    <NewsFeed_Description_70></NewsFeed_Description_70>
+    <NewsFeed_Description_250></NewsFeed_Description_250>
+  </NewsFeed>
+  <Site>
+    <Site_FORM>Y</Site_FORM>
+    <Site_VERSION>1.0</Site_VERSION>
+    <Site_URL>http://Submit-Everywhere.com/extensions/Site.htm</Site_URL>
+    <Site_DESCRIPTION>This PAD extension allows you to add your site info into your PAD file. This info can be used by site submission software or by web directories themselves.</Site_DESCRIPTION>
+    <Site_Contact_First_Name>Nestor</Site_Contact_First_Name>
+    <Site_Contact_Last_Name>Sanchez</Site_Contact_Last_Name>
+    <Site_Contact_Email>contact@instrumind.com</Site_Contact_Email>
+    <Site_Site_URL>http://www.thinkcomposer.com</Site_Site_URL>
+    <Site_Site_Title>Instrumind ThinkComposer</Site_Site_Title>
+    <Site_Keywords>concept mapping, mind mapping, diagramming, modeling, visual thinking, knowledge visualization</Site_Keywords>
+    <Site_Description_450>The Visual Thinking tool for Understand Problems, Design Solutions and Express Knowledge. Outline a vision of your business by generating ideas and combining multiple information resources. Increase productivity and conquer complexity by better organizing your thoughts. Define a Visual Language to share a mutual understanding on your specialized Domain. Create Concept Maps, Mind Maps, Models and general purpose Diagrams, with detailed content.</Site_Description_450>
+    <Site_Description_250>The Visual Thinking tool for Understand Problems, Design Solutions and Express Knowledge.</Site_Description_250>
+    <Site_Description_100>Visual Think tool for Understand Problems, Design Solutions &amp; Express Knowledge.</Site_Description_100>
+  </Site>
+  <ASBMPlannerID1stRound>1</ASBMPlannerID1stRound>
+  <Issues>0</Issues>
+  <Program_Info>
+    <Program_Name>ThinkComposer</Program_Name>
+    <Program_Version>1.5.150200</Program_Version>
+    <Program_Release_Month>02</Program_Release_Month>
+    <Program_Release_Day>24</Program_Release_Day>
+    <Program_Release_Year>2015</Program_Release_Year>
+    <Program_Cost_Dollars>0</Program_Cost_Dollars>
+    <Program_Type>Freeware</Program_Type>
+    <Program_Release_Status>Major Update</Program_Release_Status>
+    <Program_Install_Support>Install and Uninstall</Program_Install_Support>
+    <Program_OS_Support>WinXP,WinVista,WinVista x64,Win7 x32,Win7 x64</Program_OS_Support>
+    <Program_Language>English</Program_Language>
+    <Program_Change_Info>Version 1.5.1502;
+- SINCE FEBRUARY-2015 THINKCOMPOSER IS OPEN-SOURCE SOFTWARE
+- PDF generation is now based on an open-source library (PDFsharp) instead of a commercial product.
+- Fixed: Link descriptor are lost for new links after copy+paste.</Program_Change_Info>
+    <Program_System_Requirements>2GB of RAM, 2.2 GHz of speed, 500MB of Disk, 1024x768 Screen, .NET Framework 4.0 (full) preinstalled</Program_System_Requirements>
+    <Program_Category_Class>Graphic Apps::Other</Program_Category_Class>
+    <File_Info>
+      <File_Size_Bytes>8140428</File_Size_Bytes>
+      <File_Size_K>7949</File_Size_K>
+      <File_Size_MB>7.76</File_Size_MB>
+      <Filename_Versioned></Filename_Versioned>
+      <Filename_Previous></Filename_Previous>
+      <Filename_Generic></Filename_Generic>
+      <Filename_Long></Filename_Long>
+    </File_Info>
+    <Expire_Info>
+      <Has_Expire_Info>N</Has_Expire_Info>
+      <Expire_Based_On>Days</Expire_Based_On>
+      <Expire_Count></Expire_Count>
+      <Expire_Other_Info></Expire_Other_Info>
+      <Expire_Month></Expire_Month>
+      <Expire_Day></Expire_Day>
+      <Expire_Year></Expire_Year>
+    </Expire_Info>
+    <Program_Categories>Productivity :: Diagrams and Flowcharts,Productivity :: Concept Mapping &amp; Mind Mapping,Productivity :: Information Models &amp; Knowledge Maps,Business &amp; Finance :: Presentation Tools,Business &amp; Finance :: PIMS &amp; Organizers,Business &amp; Finance :: Office Tools,Business &amp; Finance :: Misc. Business,Education :: Teaching,Home &amp; Hobby :: Education,Home &amp; Hobby :: Genealogy,Multimedia and Design :: Presentations,Multimedia and Design :: Illustration,Programming :: Tools and Editors,Home &amp; Hobby :: Misc. Home</Program_Categories>
+    <Limitations>None</Limitations>
+    <Program_Cost_Other_Code></Program_Cost_Other_Code>
+    <Program_Cost_Other></Program_Cost_Other>
+    <Awards></Awards>
+    <Program_Specific_Category></Program_Specific_Category>
+    <Includes_JAVA_VM></Includes_JAVA_VM>
+    <Includes_VB_Runtime></Includes_VB_Runtime>
+    <Includes_DirectX></Includes_DirectX>
+  </Program_Info>
+  <Web_Info>
+    <Application_URLs>
+      <Application_Info_URL>http://www.thinkcomposer.com</Application_Info_URL>
+      <Application_Order_URL>http://www.thinkcomposer.com/Home/Buy</Application_Order_URL>
+      <Application_Screenshot_URL>http://instrumind.blob.core.windows.net/thinkcomposer/imtc_ss_thinkcomposer_colored_800x450.png</Application_Screenshot_URL>
+      <Application_Icon_URL>http://instrumind.blob.core.windows.net/thinkcomposer/Instrumind_ThinkComposer_PAD.gif</Application_Icon_URL>
+      <Application_XML_File_URL>http://instrumind.blob.core.windows.net/thinkcomposer/ThinkComposer.xml</Application_XML_File_URL>
+    </Application_URLs>
+    <Download_URLs>
+      <Primary_Download_URL>http://instrumind.blob.core.windows.net/thinkcomposer/setup_imtc.exe</Primary_Download_URL>
+      <Secondary_Download_URL></Secondary_Download_URL>
+      <Additional_Download_URL_1></Additional_Download_URL_1>
+      <Additional_Download_URL_2></Additional_Download_URL_2>
+    </Download_URLs>
+  </Web_Info>
+  <Permissions>
+    <Distribution_Permissions>ThinkComposer can be freely distributed for trial purposes.</Distribution_Permissions>
+    <EULA>Instrumind ThinkComposer
+Copyright (C) 2012-2013 Instrumind Software S.p.A.
+
+END USER LICENSE AGREEMENT.
+
+Important - Please read carefully before installing the Software.
+
+NOTICE: By downloading, clicking "I AGREE", installing, using or copying the Licensed Software, You accept the terms of this End User License Agreement.
+If you do not understand and accept all of the following terms and conditions or if you do not accept this Agreement, then you must not download, install, use or copy the Licensed Software.
+
+1. DEFINITIONS
+1.1. "End User License Agreement" and/or "Agreement" and/or "EULA" shall mean this document and all other documents incorporated by reference.
+1.2. "Licensee" and/or "The User" and/or "You" and/or "Your" shall mean the individual or legal entity exercising rights under, and complying with all of the terms of, this Agreement.
+1.3. "Software" and/or "Licensed Software" shall mean the ThinkComposer software product, related documentation, multimedia and any updates thereto. This excludes any third party software component used.
+1.4. "Instrumind" and/or "Instrumind Software" shall mean Instrumind Software S.p.A.
+
+2. LICENSE
+2.1. The Software is licensed and not sold.
+2.2. Instrumind Software S.p.A., subject to the terms of this Agreement, hereby grants You a perpetual, non-transferable and non-exclusive license to use the Software, in object code form, solely for the purpose of fulfilling you personal or business needs.
+2.3. The Software is licensed with one of the following license Types depending on the usage purpose:
+(a) Commercial: The Software will be used for profit either in a company/organization or by a person on their paid job.
+(b) Non-Commercial: The Software will be used in non-profit organizations and by persons out of their paid job.
+2.4. The Software is licensed with one of the following Editions: Free, Standard, Professional and Ultimate; which provide from basic to unlimited feature and capacity sets.
+2.5. Each combination of license Types and Editions have a different price, which is properly stated in the Instrumind website, and You declare to know them at the moment of purchase.
+2.6. You can use the Software, free of any charge, for an initial evaluation period of 30 days.
+2.7. You should successfully test the Software product in your target computer(s), during the evaluation period, in order to ensure it runs without problems.
+2.8. If during the evaluation period the Software product has problems, crashes or not runs on your target computer(s), you should not buy the software.
+2.9. After the end of the evaluation period, the Software will reduce its functionality by converting into a Free edition for Non-Commercial use.
+2.10. The Free edition can be used free of charges for non-commercial purposes only.
+2.11. All other combinations of usage purpose and edition types requires You to purchase a license key.
+2.12. After purchasing a license key, Instrumind software will send you, either directly on its website or via e-mail or via its authorized reseller, a valid license key code in the form of a file or a text sequence.
+2.13. You must register your copy and enter your license key into the Software to continue using it and unlock the features corresponding to the license Type and Edition you purchased.
+2.14. This software product is copyrighted by Instrumind Software S.p.A., except the components listed in the "Acknowledgement of third party components" section of this document.
+
+3. RESTRICTIONS
+You acknowledge and agree that You shall not do any of the following activities:
+3.1. Sell, rent, sublicense or charge in any way for the use of the Software.
+3.2. Change the Software, including its program, libraries, documents, images and other of its files.
+3.3. Decompile, disassemble or reverse engineer the Software.
+3.4. Remove or change any copyright, patent, trademark or other intellectual property notices of the Software.
+3.5. Create derivative works from the Software or its documentation.
+3.6. Use the Software, directly or indirectly, for life support or safety critical applications.
+3.7. Use the Software, directly or indirectly, for illegal activities.
+3.8. Use the evaluation edition of the Software beyond its allowed evaluation period.
+
+4. DISCLAIMER OF WARRANTY
+4.1. This Software product is provided "AS IS", without explicit or implied warranties of any kind.
+4.2. The entire risk arising out of the use of the Software or documentation remains with You.
+4.3. In no event shall Instrumind Software S.p.A. or its suppliers or licensors be liable for any damages, including but not limited to any consequential, incidental, direct, special, punitive or other damages whatsoever.
+4.4. Instrumind Software S.p.A.'s liability, whether in contract, tort or otherwise, arising out of or in connection with the Licensed Software or this Agreement shall not exceed the amounts paid to Instrumind Software S.p.A. by Licensee for Licensed Software that gave rise to such claim.
+
+5. ACKNOWLEDGMENT OF THIRD PARTY COMPONENTS
+This software product uses the following third party components:
+5.1 "Silk" icons library, by Mark James.
+5.2. "Silk Companion" icons library extension, by Damien Guard.
+5.3. "Venus Rising" font, by Ray Larabie.
+5.4. "voxBOX" font, by Iconian Fonts.
+5.5. "DotLiquid" library, by Formosatek Ltd and contributors. Used under the MS-PL license (see the "DotLiquid.LICENSE.txt" file).
+5.6. "Avalon Edit" control, by Daniel Grunwald. Used under the GNU LGPL license (see the "AvalonEdit.LICENSE.txt" file).
+
+6. OTHER
+6.1. This Agreement constitutes the entire agreement between the parties concerning the subject matter hereof.
+6.2. This Agreement may be amended only by a writing signed by both parties.
+6.3. This Agreement shall be governed by the laws of Chile, including the applicable international treaties in force.
+
+=====================================================
+CONTACT INFORMATION
+
+Company: Instrumind Software S.p.A.
+Address: Av. Beauchef 1325 Dp. 1907, Santiago Centro.
+	 CP: 837-0612. RM. Santiago, Chile.
+ E-Mail: contact@instrumind.com
+Website: http://www.instrumind.com
+
+-END-</EULA>
+  </Permissions>
+  <Program_Descriptions>
+    <English>
+      <Keywords>concept map, mind map, diagram, model, flowchart, bpm, uml, concept mapping, mind mapping, diagramming, modeling, visual thinking, knowledge visualization, knowledge representation, code generation.</Keywords>
+      <Char_Desc_45>Expressive Tool, which Adapts to Your World</Char_Desc_45>
+      <Char_Desc_80>Create Deep Diagrams with this expressive Tool, which adapts to Your World!</Char_Desc_80>
+      <Char_Desc_250>Create deep Concept Maps, Mind Maps, Diagrams and Models, all as expressive Visual Documents which can adapt to your world. Understand Complex Problems, Design Precise Solutions and Express Detailed Knowledge.</Char_Desc_250>
+      <Char_Desc_450>Create deep Diagrams with this Expressive Visual Tool, which Adapts to Your World! Outline a vision of your business by generating ideas and combining multiple information resources. Increase productivity and conquer complexity by better organizing your thoughts. Define a Visual Language to share a mutual understanding on your specialized Domain. Create Concept Maps, Mind Maps, Models and general purpose Diagrams, with detailed content.</Char_Desc_450>
+      <Char_Desc_2000>Create deep Diagrams with this Expressive Visual Tool, which Adapts to Your World!
+A Visual Thinking tool for Understand Complex Problems, Design Precise Solutions and Express Valuable Knowledge.
+Create Multilevel and Rich Detailed Concept Maps, Mind Maps, Models and Diagrams, all Based on Custom Defined Types of Your Specialized Domain, Business or Field of Knowledge.
+You can...
+- Outline a vision of your business by generating ideas and combining multiple information resources.
+- Increase productivity and conquer complexity by better organizing your thoughts.
+- Leverage coherent results with your people by using a common and flexible semantic basis.
+- Expose graphic, descriptive and structured information, revealing flows and dependencies.
+- Define a Visual Language to share a mutual understanding on your specialized Domain.
+- Generate code and files (xml, txt, etc.) from your Ideas, based on Templates (using the Liquid markup language).</Char_Desc_2000>
+    </English>
+  </Program_Descriptions>
+</XML_DIZ_INFO>

@@ -1,0 +1,33 @@
+﻿%%:FileName={{ TechName }}.txt
+********************************************************************************
+COMPOSITION
+
+Name.....: {{ Name }}
+Tech-Name: {{ TechName }}
+Global-Id: {{ GlobalId }}
+Summary..: {{ Summary }}
+
+Version Sequence.........: {{ Version.VersionSequence }}
+Version Number...........: {{ Version.VersionNumber }}
+Version Creation.........: {{ Version.Creation }}
+Version Creator..........: {{ Version.Creator }}
+Version Last-Modification: {{ Version.LastModification }}
+Version Last-Modifier....: {{ Version.LastModifier }}
+Version Annotation.......: {{ Version.Annotation }}
+
+{% if TechSpec != null and TechSpec != '' -%}
+Tech-Spec:
+{{ TechSpec }}
+{% endif -%}
+
+{% if Description != null and Description != '' -%}
+Description:
+{{ Description | ToUnformattedText }}
+{% endif -%}
+
+{%- comment -%}
+{% if Pictogram != null -%}
+Pictogram:
+{{ Pictogram | ToBase64 }}
+{% endif -%}
+{%- endcomment -%}

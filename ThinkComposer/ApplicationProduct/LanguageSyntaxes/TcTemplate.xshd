@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<SyntaxDefinition name="TcTemplate" extensions=".tct" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+  <Color name="TcConfig" foreground="Blue" background="LightCyan" exampleText="%%:FileName={{TechName}}.sql" />
+  <Color name="DotLiquidOutput" foreground="Black" background="PaleTurquoise" exampleText="{{Idea.Name}}" />
+  <Color name="DotLiquidTag" foreground="Black" background="PaleGreen" exampleText="{% for Idea in DeclaredIdeas %}" /> 
+  <RuleSet ignoreCase="true">
+    <Span color="TcConfig" begin="%%:" />
+    <Span color="DotLiquidOutput" multiline="true" begin="{{" end="}}" />
+    <Span color="DotLiquidTag" multiline="true" begin="{%" end="%}" />
+    <Import ruleSet="HTML/" />
+  </RuleSet>
+  <RuleSet name="TcTemplate">
+    <Import ruleSet="C#/" />
+  </RuleSet>
+</SyntaxDefinition>

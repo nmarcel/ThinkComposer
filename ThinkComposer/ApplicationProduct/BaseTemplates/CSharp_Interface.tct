@@ -1,0 +1,79 @@
+﻿%%:FileName={{ TechName }}.cs
+{%- if OwnerComposition.CompositionDefinitor.BaseContentRoot['ReferencedNamespaces'].Count > 0 -%}
+{%- for Namespace in OwnerComposition.CompositionDefinitor.BaseContentRoot['ReferencedNamespaces'].Records -%}
+using {{ Namespace.FullName }};
+{% endfor -%}
+{%- endif -%}
+
+{%- if OwnerContainer.Summary.Any -%}// {{ OwnerContainer.Summary }}{% endif %}
+namespace {{ OwnerComposition.TechName }}.{{ ContainmentRouteByTechName | Replace:'\\','.' }}
+{
+{%- if Summary.Any -%}
+    /// <Summary>
+    /// {{ Summary | StripNewLines }}
+    /// </Summary>
+{%- endif -%}
+{%- assign GenTypeParams = This['GenericTypeParams'].Records -%}
+{%- if GenTypeParams.Any -%}
+{% for GenParam in GenTypeParams -%}
+{%- if GenParam.Description.Any -%}
+    /// <typeparam name="{{ GenParam.Name }}">{{ GenParam.Description }}</typeparam>
+{%- endif -%}
+{% endfor -%}
+{%- endif -%}
+{%- assign RelatedTargets = LinkingTo | GetIdeasDefinedAs:'Generalization;Realization' | SelectMany:'TargetIdeas' -%}
+    public interface {{ TechName }}{% if GenTypeParams.Any -%}
+<{% for GenTypeParam in GenTypeParams %}{{ GenTypeParam.Name -}}
+{% unless forloop.last %}, {% endunless %}{% endfor %}>{% endif -%}
+{% if RelatedTargets.Any %} :{%- for RelatedTarget in RelatedTargets -%}
+ {{ RelatedTarget.TechName }}{%- unless forloop.last -%},{%- endunless -%}
+{%- endfor -%}
+{%- endif %}
+    {
+    {%- if This['Properties'].Records.Any -%}
+    {% for Property in This['Properties'].Records -%}
+    {% if Property.Description.Any %}
+        /// <Summary>
+        /// {{ Property.Description | StripNewLines }}
+        /// </Summary>
+    {%- endif -%}
+        {{ Property.Type }} {{ Property.Name }}    { {% if Property.Get or Property.Set -%}
+{% if Property.Get -%}get; {% endif -%}
+{%- if Property.Set -%}set; {% endif -%}
+{%- else -%}get; set; {% endif %}}
+    {%- endfor -%}
+    {%- endif -%}
+    {%- if This['Operations'].Records.Any -%}
+    {%- for Operation in This['Operations'].Records %}
+    {%- if Operation.Description.Any -%}
+        /// <Summary>
+        /// {{ Operation.Description | StripNewLines }}
+        /// </Summary>
+    {%- endif -%}
+    {%- assign OpGenTypeParams = Operation['GenericTypeParameters'].Records -%}
+    {%- if OpGenTypeParams.Any -%}
+    {%- for GenTypeParam in OpGenTypeParams -%}
+    {%- if GenTypeParam.Description.Any -%}
+        /// <typeparam name="{{ GenTypeParam.Name }}">{{ GenTypeParam.Description }}</typeparam>
+    {%- endif -%}
+    {%- endfor -%}
+    {%- endif -%}
+    {%- if Operation.Parameters.Records.Any -%}
+    {%- for Parameter in Operation.Parameters.Records -%}
+    {%- if Parameter.Description.Any -%}
+        /// <param name="{{ Parameter.Name }}">{{ Parameter.Description }}</param>
+    {%- endif -%}
+    {%- endfor -%}
+    {%- endif -%}
+        {% if Operation.Access.Keyword.Any %}{{ Operation.Access.Keyword }} {% endif -%}
+{{ Operation.ReturnType }} {{ Operation.Name -}}{% if OpGenTypeParams.Any -%}
+<{% for OpGenTypeParam in OpGenTypeParams %}{{ OpGenTypeParam.Name -}}
+{% unless forloop.last %}, {% endunless %}{% endfor %}>{% endif -%}({%- if Operation.Parameters.Records.Any -%}
+    {%- for Parameter in Operation.Parameters.Records -%}
+{{ Parameter.Type }} {{ Parameter.Name }}{%- unless forloop.last -%}, {% endunless -%}
+    {%- endfor -%}
+    {%- endif -%});
+    {%- endfor %}
+    {%- endif -%}
+    }
+}

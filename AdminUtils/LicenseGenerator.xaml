@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="AdminUtils.LicenseGenerator"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Width="750" Height="400"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" Text="Generate License"
+                       TextAlignment="Center" FontWeight="Bold" Background="LightYellow" Padding="4" />
+        <DockPanel DockPanel.Dock="Top" Margin="2,2,2,8">
+            <StackPanel DockPanel.Dock="Right">
+                <Button x:Name="BtnGenerate" Margin="4" Content="Generate License Document" Click="BtnGenerate_Click" />
+            </StackPanel>
+            <Grid DockPanel.Dock="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="User:" />
+                <TextBox x:Name="TxtUser" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Margin="2" />
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Type:" />
+                <ComboBox x:Name="CbxType" Grid.Row="1" Grid.Column="1" Margin="2" />
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Edition:" />
+                <ComboBox x:Name="CbxEdition" Grid.Row="2" Grid.Column="1" Margin="2" />
+                <TextBlock Grid.Row="1" Grid.Column="2" Text="Mode:" />
+                <ComboBox x:Name="CbxMode" Grid.Row="1" Grid.Column="3" Margin="2" />
+                <TextBlock Grid.Row="2" Grid.Column="2" Text="Expiration:" />
+                <TextBox x:Name="TxtExpiration" Text="00010101" Grid.Row="2" Grid.Column="3" Margin="2"
+                                    ToolTip="Never = '00010101' (EMPTY-DATE)"/>
+            </Grid>
+        </DockPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <DockPanel Grid.Column="0">
+                <DockPanel DockPanel.Dock="Top">
+                    <Button DockPanel.Dock="Right" x:Name="BtnValDocAndTransToKey" Margin="4" Content="Validate, Extract Info and Generate Key Code" Click="BtnValDocAndTransToKey_Click" />
+                    <TextBlock DockPanel.Dock="Top" Text="Document..." FontWeight="Bold" VerticalAlignment="Bottom" />
+                </DockPanel>
+                <TextBox x:Name="TxtLicenseDocument" TextWrapping="Wrap" AcceptsReturn="True" Margin="4" VerticalScrollBarVisibility="Visible"
+                 IsReadOnly="False" FontFamily="Courier New" FontSize="11" />
+            </DockPanel>
+            <DockPanel Grid.Column="1">
+                <DockPanel DockPanel.Dock="Top">
+                    <Button DockPanel.Dock="Right" x:Name="BtnSave" Margin="4" Content="Generate Document and Save License File" Click="BtnSave_Click" />
+                    <TextBlock DockPanel.Dock="Top" Text="Key Code..." FontWeight="Bold" VerticalAlignment="Bottom"/>
+                </DockPanel>
+                <TextBox x:Name="TxtLicenseKeyCode" TextWrapping="Wrap" AcceptsReturn="True" Margin="4" VerticalScrollBarVisibility="Visible"
+                 IsReadOnly="False" FontFamily="Courier New" FontSize="11" />
+            </DockPanel>
+        </Grid>
+    </DockPanel>
+</UserControl>

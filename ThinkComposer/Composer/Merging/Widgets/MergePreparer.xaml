@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="Instrumind.ThinkComposer.Composer.Merging.Widgets.MergePreparer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:imcw="clr-namespace:Instrumind.Common.Visualization.Widgets;assembly=Instrumind.Common"
+             xmlns:this="clr-namespace:Instrumind.ThinkComposer.Composer.Merging.Widgets"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignHeight="570" d:DesignWidth="850"
+             Loaded="UserControl_Loaded">
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <TextBlock DockPanel.Dock="Left" Text="Please select (or exclude) the content to be merged*..." FontSize="12.5"
+                       VerticalAlignment="Bottom" Margin="2" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                <imcw:PaletteButton x:Name="BtnSelectAllIdeas" ButtonText="Select all" Margin="2,0,2,0" VerticalAlignment="Bottom"
+                                    ButtonImage="/Instrumind.Common;component/Visualization/Images/select_all.png"
+                                    Click="BtnSelectAllIdeas_Click"/>
+                <imcw:PaletteButton x:Name="BtnSelectAllConcepts" ButtonText="Concepts" ToolTip="Selects all the Concepts" Margin="2,0,2,0" VerticalAlignment="Bottom"
+                                    ButtonImage="/Instrumind.ThinkComposer;component/ApplicationProduct/Images/select_all_concepts.png"
+                                    Click="BtnSelectAllConcepts_Click"/>
+                <imcw:PaletteButton x:Name="BtnSelectAllRelationships" ButtonText="Relationships" ToolTip="Selects all the Relationships" Margin="2,0,2,0" VerticalAlignment="Bottom"
+                                    ButtonImage="/Instrumind.ThinkComposer;component/ApplicationProduct/Images/select_all_relationships.png"
+                                    Click="BtnSelectAllRelationships_Click"/>
+                <imcw:PaletteButton x:Name="BtnUnselectAll" ButtonText="Unselect all" Margin="2,0,2,0" VerticalAlignment="Bottom"
+                                    ButtonImage="/Instrumind.Common;component/Visualization/Images/unselect_all.png"
+                                    Click="BtnUnselectAll_Click"/>
+            </StackPanel>
+        </DockPanel>
+        
+        <TextBlock DockPanel.Dock="Bottom" Margin="2,4,2,2"
+                   Text="*Note: Required dependent objects will be automatically included." />
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.7*" />
+                <RowDefinition Height="0.3*" />
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" CornerRadius="3" Background="WhiteSmoke" Padding="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <this:MergerCompositionBrowser x:Name="MergerCompoBrowserSource" Grid.Column="0" />
+                    <!--<Border Grid.Column="0" CornerRadius="3" Padding="1" Background="WhiteSmoke">
+                       
+                    </Border>-->
+                    <GridSplitter Grid.Column="0" ResizeDirection="Columns" Width="3" Background="Transparent"
+                                  VerticalAlignment="Stretch" HorizontalAlignment="Right" />
+                    <this:MergerCompositionBrowser x:Name="MergerCompoBrowserTarget" Grid.Column="1" />
+                    <!--<Border Grid.Column="1" CornerRadius="3" Padding="1" Background="WhiteSmoke">
+                    </Border>-->
+                </Grid>
+            </Border>
+            <GridSplitter Grid.Row="0" ResizeDirection="Rows" Height="3" Background="Transparent"
+                          HorizontalAlignment="Stretch" VerticalAlignment="Bottom" />
+            <this:MergerPropertiesComparer x:Name="MergerPropertiesComparer" Grid.Row="1" Background="WhiteSmoke" />
+            <!--<Border Grid.Row="1" CornerRadius="3" Background="Gainsboro" Padding="1">
+            </Border>-->
+        </Grid>
+    </DockPanel>
+</UserControl>

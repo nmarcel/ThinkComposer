@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="Instrumind.Common.Visualization.Widgets.EntityEditPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:this="clr-namespace:Instrumind.Common.Visualization.Widgets"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             MinHeight="170" MinWidth="420" Height="auto" >
+    <UserControl.Template>
+        <ControlTemplate TargetType="{x:Type UserControl}">
+            <DockPanel>
+                <!--IMPORTANT: This header border must be shown (at least in transparent) to be rendered and processed by the template-->
+                <Border DockPanel.Dock="Top" x:Name="BrdHeader" />
+                <!--PREVIOUS: Background="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type this:DialogOptionsWindow}, ResourceId=DialogFrameBrush}}"-->
+                <Border DockPanel.Dock="Bottom" Margin="0" Padding="4">
+                    <DockPanel>
+                        <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" HorizontalAlignment="Right">
+                            <!-- POSTPONED: IS TOO EXPENSIVE FOR NON SIMPLE MaintainerS (EXTRA TABS SUCH AS RICHTEXT, VERSIONING, DETAILS-Maintainer, ETC.)
+                            <this:PaletteButton x:Name="BtnRefresh" ButtonText="Refresh" TabIndex="1010" Click="BtnRefresh_Click" ToolTip="Reloads data."
+                                                MinWidth="70"  Margin="2,0,2,0" ButtonImage="/Instrumind.Common;component/Visualization/Images/arrow_refresh.png"/> -->
+                            <this:PaletteButton x:Name="BtnApply" ButtonText="Apply" TabIndex="1011" Click="BtnApply_Click" ToolTip="Apply changes." Visibility="Visible"
+                                                MinWidth="70" Margin="2,0,24,0" ButtonImage="/Instrumind.Common;component/Visualization/Images/disk_edit.png" /> <!-- lightning.png -->
+                            <this:PaletteButton x:Name="BtnOK" ButtonText="OK" TabIndex="1000" IsDefault="True" Click="BtnOK_Click" ToolTip="Apply changes and close window."
+                                                MinWidth="70" Margin="2,0,2,0" ButtonImage="/Instrumind.Common;component/Visualization/Images/accept.png" />
+                            <this:PaletteButton x:Name="BtnCancel" ButtonText="Cancel" TabIndex="1001" IsCancel="True" Click="BtnCancel_Click" ToolTip="Discard unsaved changes and close window"
+                                                MinWidth="70" Margin="2,0,2,0" ButtonImage="/Instrumind.Common;component/Visualization/Images/cancel.png" />
+                        </StackPanel>
+                        <StackPanel DockPanel.Dock="Left" Orientation="Horizontal" HorizontalAlignment="Left">
+                            <this:PaletteToggleButton x:Name="BtnAdvanced" MinWidth="24"  Margin="2,0,2,0" TabIndex="1021" ButtonText="" ToolTip="Show/hide advanced properties"
+                                                Click="BtnAdvanced_Click" ButtonImage="/Instrumind.Common;component/Visualization/Images/application_form_add.png" />
+                            <this:PaletteButton x:Name="BtnHelp" MinWidth="24" Margin="2,0,2,0" TabIndex="1021" ButtonText="" ToolTip="Help"
+                                                Click="BtnHelp_Click" ButtonImage="/Instrumind.Common;component/Visualization/Images/help.png" />
+                        </StackPanel>
+                        <StackPanel x:Name="PnlButtons" DockPanel.Dock="Left" Orientation="Horizontal" HorizontalAlignment="Left" />
+                    </DockPanel>
+                </Border>
+                <ContentPresenter/>
+            </DockPanel>
+        </ControlTemplate>
+    </UserControl.Template>
+    <TextBlock>Content will be placed here</TextBlock>
+</UserControl>

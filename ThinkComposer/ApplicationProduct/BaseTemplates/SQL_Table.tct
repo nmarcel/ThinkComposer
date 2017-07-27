@@ -1,0 +1,14 @@
+﻿%%:FileName={{ TechName }}.sql
+{% comment %}
+This template is only applicable to a system 'DataModel.tdom' domain,
+or to one having the same Details from wich obtain the 'Fields' declarations
+{% endcomment %}
+CREATE TABLE {{ TechName }}
+(
+{%- for Field in This['Fields'].Records -%}
+    {{ Field.Name }} {{ Field.Type.Label }}{%- if Field.Length > 0 %}({{ Field.Length }}{% if Field.Decs > 0 %},{{ Field.Decs }}{% endif %}){% endif -%}
+    {%- if Field.Required %} NOT NULL{% else %} NULL{% endif -%}
+    {%- if Field.PK > 0 %} PRIMARY KEY{% endif -%}
+    {%- unless forloop.last %},{% endunless %}
+{%- endfor -%}
+);

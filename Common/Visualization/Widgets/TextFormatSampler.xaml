@@ -1,0 +1,18 @@
+﻿<Border x:Class="Instrumind.Common.Visualization.Widgets.TextFormatSampler"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" BorderBrush="Transparent" CornerRadius="3" Margin="1"
+             d:DesignHeight="50" d:DesignWidth="200">
+    <Border.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="WhiteSmoke" Offset="0" />
+            <GradientStop Color="DarkGray" Offset="0.5" />
+            <GradientStop Color="WhiteSmoke" Offset="1" />
+        </LinearGradientBrush>
+    </Border.Background>
+    <!--Maybe no text should be shown, until a format is actually assigned-->
+    <TextBlock x:Name="SampleText" Foreground="Gray" VerticalAlignment="Center" Margin="4"
+                        Text="AaBbCc 01234" FontSize="10" />
+</Border>

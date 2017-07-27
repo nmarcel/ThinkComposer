@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="Instrumind.Common.Visualization.Widgets.TextStyleSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+    <UserControl.Resources>
+        <Style TargetType="Border">
+            <EventSetter Event="MouseLeftButtonDown" Handler="Selector_MouseLeftButtonDown" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Margin" Value="1" />
+        </Style>
+        <Style TargetType="Image">
+            <!--<Setter Property="IsHitTestVisible" Value="False" />-->
+            <Setter Property="Stretch" Value="None" />
+        </Style>
+    </UserControl.Resources>
+    <StackPanel x:Name="ContainerPanel" Orientation="Horizontal">
+        <Border x:Name="SelectorBold" >
+            <Image Source="/Instrumind.Common;component/Visualization/Images/text_bold.png" />
+        </Border>
+
+        <Border x:Name="SelectorItalic" >
+            <Image Source="/Instrumind.Common;component/Visualization/Images/text_italic.png" />
+        </Border>
+        
+        <Border x:Name="SelectorUnderline" >
+            <Image Source="/Instrumind.Common;component/Visualization/Images/text_underline.png" />
+        </Border>
+        
+        <Border x:Name="SelectorStrikethrough" >
+            <Image Source="/Instrumind.Common;component/Visualization/Images/text_strikethrough.png" />
+        </Border>
+    </StackPanel>
+</UserControl>

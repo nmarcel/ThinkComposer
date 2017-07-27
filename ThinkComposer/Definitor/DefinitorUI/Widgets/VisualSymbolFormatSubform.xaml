@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="Instrumind.ThinkComposer.Definitor.DefinitorUI.Widgets.VisualSymbolFormatSubform"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:imcv="clr-namespace:Instrumind.Common.Visualization.Widgets;assembly=Instrumind.Common"
+             xmlns:this="clr-namespace:Instrumind.ThinkComposer.Definitor.DefinitorUI.Widgets"
+             mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="500">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Left">
+            <DockPanel>
+                <StackPanel DockPanel.Dock="Right">
+                    <imcv:EntityPropertyExpositor ExposedProperty="InitiallyFlippedHorizontally" HorizontalAlignment="Right" />
+                    <imcv:EntityPropertyExpositor ExposedProperty="InitiallyFlippedVertically" HorizontalAlignment="Right" />
+                    <imcv:EntityPropertyExpositor ExposedProperty="InitiallyTilted" HorizontalAlignment="Right" />
+                    <imcv:EntityPropertyExpositor ExposedProperty="AsMultiple" HorizontalAlignment="Right" />
+                    <imcv:EntityPropertyExpositor ExposedProperty="UsePictogramAsSymbol" LabelMinWidth="200" />
+                    <imcv:EntityPropertyExpositor ExposedProperty="UseDefinitorPictogramAsNullDefault" LabelMinWidth="200" />
+                </StackPanel>
+                <StackPanel>
+                    <imcv:EntityPropertyExpositor ExposedProperty="ShowGlobalDetailsFirst" LabelMinWidth="150" />
+                    <imcv:EntityPropertyExpositor ExposedProperty="SubtitleVisualDisposition" LabelMinWidth="150" />
+                    <imcv:EntityPropertyExpositor ExposedProperty="UseNameAsMainTitle" LabelMinWidth="150" />
+                    <imcv:EntityPropertyExpositor ExposedProperty="InPlaceEditingIsMultiline" LabelMinWidth="150" />
+                    <imcv:EntityPropertyExpositor ExposedProperty="PictogramVisualDisposition" LabelMinWidth="150" />
+                    <!-- POSTPONED: <imcv:EntityPropertyExpositor ExposedProperty="PictogramStretch" LabelMinWidth="200" />-->
+                 </StackPanel>
+            </DockPanel>
+            <DockPanel>
+                <StackPanel DockPanel.Dock="Right">
+                    <imcv:EntityPropertyExpositor ExposedProperty="HasFixedWidth" LabelText="Fixed Width" Height="30" HorizontalAlignment="Right"/>
+                    <imcv:EntityPropertyExpositor ExposedProperty="HasFixedHeight" LabelText="Fixed Height" Height="30" HorizontalAlignment="Right"/>
+                </StackPanel>
+                <StackPanel>
+                    <imcv:EntityPropertyExpositor ExposedProperty="InitialWidth"  LabelMinWidth="80" Height="30"/>
+                    <imcv:EntityPropertyExpositor ExposedProperty="InitialHeight"  LabelMinWidth="80" Height="30"/>
+                </StackPanel>
+            </DockPanel>
+            <StackPanel>
+                <GroupBox Margin="2,6,2,2">
+                    <GroupBox.Header>
+                        <TextBlock Text="Details..." FontWeight="Bold" />
+                    </GroupBox.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel>
+                            <imcv:EntityPropertyExpositor ExposedProperty="DetailsPosterIsHanging" LabelMinWidth="100" LabelText="Poster is Hanging"/>
+                            <imcv:EntityPropertyExpositor ExposedProperty="DetailHeadingForeground" LabelMinWidth="100" LabelText="Heading Foreground"/>
+                            <imcv:EntityPropertyExpositor ExposedProperty="DetailHeadingBackground" LabelMinWidth="100" LabelText="Heading Background"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <imcv:EntityPropertyExpositor ExposedProperty="IncludeDetailsSeparators" LabelMinWidth="100" LabelText="Separate with Lines"/>
+                            <imcv:EntityPropertyExpositor ExposedProperty="DetailCaptionForeground" LabelMinWidth="100" LabelText="Caption Foreground"/>
+                            <imcv:EntityPropertyExpositor ExposedProperty="DetailCaptionBackground" LabelMinWidth="100" LabelText="Caption Background"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,26,0,0">
+                            <imcv:EntityPropertyExpositor ExposedProperty="DetailContentForeground" LabelMinWidth="100" LabelText="Content Foreground"/>
+                            <imcv:EntityPropertyExpositor ExposedProperty="DetailContentBackground" LabelMinWidth="100" LabelText="Content Background"/>
+                        </StackPanel>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox MinWidth="360" Margin="2,4,2,2" VerticalAlignment="Bottom">
+                    <GroupBox.Header>
+                        <TextBlock Text="Group Region/Line..." FontWeight="Bold" />
+                    </GroupBox.Header>
+                    <StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0">
+                                <imcv:EntityPropertyExpositor ExposedProperty="RegionBackground" LabelText="Background"/>
+                                <imcv:EntityPropertyExpositor ExposedProperty="RegionDash" LabelText="Dash"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1">
+                                <imcv:EntityPropertyExpositor ExposedProperty="RegionForeground" LabelText="Foreground"/>
+                                <imcv:EntityPropertyExpositor ExposedProperty="RegionThickness" LabelText="Thickness"/>
+                            </StackPanel>
+                        </Grid>
+                        <imcv:EntityPropertyExpositor ExposedProperty="InitialGroupRegionPlacementHorizontal" Width="220" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel>
+            <this:VisualElementFormatSubform x:Name="VisualElementFormatter" x:FieldModifier="public"/>
+            <this:TextFormatsMaintainer x:Name="TextFormatter" Margin="2,4,2,2"/>
+        </StackPanel>
+    </DockPanel>
+    </ScrollViewer>
+</UserControl>

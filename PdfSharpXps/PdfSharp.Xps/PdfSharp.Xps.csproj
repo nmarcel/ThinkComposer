@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0BC3964B-A3BC-49D5-9B7C-463299B5A166}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PdfSharp.Xps</RootNamespace>
+    <AssemblyName>PdfSharp.Xps</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>StrongnameKey.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="ReachFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.FixedDocument.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.FixedDocumentSequence.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.TableCellStructure.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.StoryFragmentReference.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.StoryFragment.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.Story.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.SpotLocation.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.SignatureDefinition.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.PageContent.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.OutlineEntry.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.NamedElement.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.ListItemStructure.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.LinkTarget.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.DocumentStructure.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.DocumentReference.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.DocumentOutline.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.Template.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.Visual.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\ElementNames.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\ParserHelper.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.ArcSegment.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.Brush.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.Canvas.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.FixedPage.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.Glyphs.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.GradientStop.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.GradientStops.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.ImageBrush.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.LinearGradientBrush.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.MatrixTransform.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.Path.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.PathFigure.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.PathGeometry.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.PolyBezierSegment.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.PolyLineSegment.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.PolyQuadraticBezierSegment.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.RadialGradientBrush.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.ResourceDictionary.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.SolidColorBrush.cs" />
+    <Compile Include="PdfSharp.Xps.Parsing\XpsParser.VisualBrush.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\BuilderBase.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\PdfContentWriter-Glyphs.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\RadialShadingBuilder.cs" />
+    <Compile Include="PdfSharp.Xps\DevHelper.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\XPGlyphs.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\XPCanvas.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\XPPath.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\XPVisual.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\XPRadialGradientBrush.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\XPLinearGradientBrush.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\XPGradientBrush.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\XPFont.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\XPImage.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\XPVisualBrush.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\XPBrush.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\XPTilingBrush.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\XPImageBrush.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\XPObject.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\XFormBuilder.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\ImageBuilder.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\PdfPart.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\LinearShadingBuilder.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\DocumentRenderingContext.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\PdfGraphicsState-ImageBrush.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\PdfGraphicsState-VisualBrush.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\TilingPatternBuilder.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\Utils.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\enums\RenderMode.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\PdfContentWriter-Writer.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\enums\RenderingComplexity.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\PdfGraphicsState-LinearGradientBrush.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\enums\PdfTraceLevel.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\PdfRenderer.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\WpfUtils.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\PdfContentWriter.cs" />
+    <Compile Include="PdfSharp.Xps.Rendering\PdfGraphicsState.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\ArcSegment.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\Brush.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\Canvas.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\Color.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\Comment.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\GlyphIndices.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\FixedPageCollection.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\FixedDocumentCollection.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\Font.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\FixedPayload.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\XpsDocument.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\TableStructure.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\TableRowStructure.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\TableRowGroupStructure.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\TableCellStructure.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\StoryFragmentReference.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\StoryFragment.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\Story.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\SpotLocation.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\SignatureDefinition.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\SectionStructure.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\ParagraphStructure.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\PageContent.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\OutlineEntry.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\NamedElement.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\ListStructure.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\ListItemStructure.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\LinkTarget.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\FixedDocumentSequence.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\FixedDocument.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\FigureStructure.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\DocumentStructure.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\DocumentReference.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\DocumentOutline.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\DiscardControl.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\Discard.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\Template.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\PathFigureCollection.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\PathSegmentCollection.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\XpsElementCollection.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\PointCollection.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\enums\ClrIntMode.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\enums\ColorType.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\enums\DashCap.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\enums\EdgeMode.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\enums\FillRule.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\enums\LineCap.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\enums\LineJoin.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\enums\MappingMode.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\enums\SpreadMethod.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\enums\StyleSimulations.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\enums\SweepDirection.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\enums\TileMode.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\enums\ViewUnits.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\FixedPage.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\Glyphs.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\GradientStopCollection.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\GradientStops.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\ImageBrush.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\LinearGradientBrush.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\Matrix.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\MatrixTransform.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\Path.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\PathFigure.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\PathGeometry.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\PathSegment.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\Point.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\PolyBezierSegment.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\PolyLineSegment.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\PolyQuadraticBezierSegment.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\RadialGradientBrush.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\Rect.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\ResourceDictionary.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\Size.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\SolidColorBrush.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\Visual.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\VisualBrush.cs" />
+    <Compile Include="PdfSharp.Xps.XpsModel\XpsElement.cs" />
+    <Compile Include="PdfSharp.Xps\XpsConverter.cs" />
+    <Compile Include="PdfSharp.Xps\XpsRenderer.cs" />
+    <Compile Include="PdfSharp\enums\PSXMsgID.cs" />
+    <Compile Include="PdfSharp\PSXSR.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StrongnameKey.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Development-Notes.txt" />
+    <Content Include="license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PdfSharp\PdfSharp-WPF.csproj">
+      <Project>{02FCC0BB-2AA2-43BA-8D2F-66D168B87A1D}</Project>
+      <Name>PdfSharp-WPF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

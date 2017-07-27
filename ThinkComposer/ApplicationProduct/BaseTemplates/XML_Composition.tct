@@ -1,0 +1,30 @@
+﻿%%:FileName={{ TechName }}.xml
+<?xml version="1.0" encoding="UTF-16"?>
+<Composition>
+  <GlobalId>{{ GlobalId }}</GlobalId>
+  <Name>{{ Name | Escape }}</Name>
+  <TechName>{{ TechName }}</TechName>
+  <Summary>
+    {{ Summary | Escape }}
+  </Summary>
+  <TechSpec>
+    {{ TechSpec | Escape }}
+  </TechSpec>
+  <Description>
+    {{ Description | ToUnformattedText | Escape }}
+  </Description>
+  <Pictogram>
+    {{ Pictogram | ToBase64 }}
+  </Pictogram>
+  <Version>
+    <Sequence>{{ Version.VersionSequence }}</Sequence>
+    <Number>{{ Version.VersionNumber | Escape }}</Number>
+    <Creation>{{ Version.Creation }}</Creation>
+    <Creator>{{ Version.Creator | Escape }}</Creator>
+    <LasModification>{{ Version.LastModification }}</LasModification>
+    <LastModifier>{{ Version.LastModifier | Escape }}</LastModifier>
+    <Annotation>
+      {{ Version.Annotation }}
+    </Annotation>
+  </Version>
+</Composition>

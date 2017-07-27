@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Instrumind.ThinkComposer.Composer.ComposerUI.Widgets.RecordFieldExpositor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:imcw="clr-namespace:Instrumind.Common.Visualization.Widgets;assembly=Instrumind.Common"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             Margin="2" Width="Auto" Height="Auto" mc:Ignorable="d">
+    <Border Padding="2" CornerRadius="3"
+            Background="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type imcw:EntitledPanel}, ResourceId=ExpositorBrush}}">
+        <Grid>
+            <!--FOR TEST
+            <TextBlock x:Name="TxtTest" Text="00000000" Foreground="Red" FontSize="10" Margin="0,-3,0,0" />-->
+        <DockPanel>
+            <DockPanel x:Name="ExpoLabelPanel" DockPanel.Dock="Left" Height="20" VerticalAlignment="Top">
+                <TextBlock x:Name="LabelExpositor" Text="Label" Height="16" Margin="1,0,4,0" FontSize="10" MinWidth="60"
+                           Foreground="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type imcw:EntitledPanel}, ResourceId=ExpositorTextBrush}}"/>
+            </DockPanel>
+            <DockPanel x:Name="ExpoValuePanel">
+                <Border x:Name="ValueEditorBorder" Width="Auto" Height="Auto" Margin="1,0,1,0"
+                        HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <!--This TextBox will be replaced by the appropriate control-->
+                    <TextBox Text="Value" FontSize="10" Height="18"
+                             Foreground="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type imcw:EntitledPanel}, ResourceId=ExpositorTextBrush}}"/>
+                </Border>
+            </DockPanel>
+        </DockPanel>
+        </Grid>
+    </Border>
+</UserControl>

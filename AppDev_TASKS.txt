@@ -1,0 +1,145 @@
+PENDINGS...
+===========
+
+- New: Merge the current Composition/Domain with an external one.
+
+Done:
+- already open: Fix: Open composite view from shortcut does not work.
+- Move by arrow-keys 1 pixel at a time, [Ctrl]+[Arrow-Key] 5 or 10 pixels at a time, etc. Precise positioning (by 1 or 10 pixels) by pressing arrow-keys and ctrl and/or shift.
+- Accept multi-line Idea's name/title by pressing [Alt+Enter] or something alike.
+- IMPROVE connection handlers (they appear mispositioned too close to symbol's centers)
+- Auto-resize depending on entered text
+- Force edit-in-place accept with [Ctrl]+[Enter] when multiline is predefined.
+- Doc closing order (first the active!)
+
+PENDING:
+- Mind-Mapping (Concepts auto-creation) better consistent using tab and enter keys.
+- SOLVE UI "state-machine" problem when switching context.
+- Live preview for format change.
+- Add statement in Select Domain start window indicating "these are examples of what you can create"
+- Allow multiple Output-Templates per external language at Composition and Idea-Def levels.
+- Include floating (in the same layer as edit-in-place text) help cues.
+- Send, thru e-mail, using clients other than Outlook (i.e. Thunderbird)
+- "Line" to "Border Line"?
+- a la Office stroke format floating -one click- applier
+
+-----
+
+Solved(?):
+20130723 045004361	ERR	System.Windows.Media.VisualCollection.Insert	ERROR: El Visual especificado ya es un objeto secundario de otro Visual o la raíz de un CompositionTarget.
+	CALLS:    en System.Windows.Media.VisualCollection.Insert(Int32 index, Visual visual)
+   en System.Windows.Documents.AdornerLayer.AddAdornerToVisualTree(AdornerInfo adornerInfo, Int32 zOrder)
+   en System.Windows.Documents.AdornerLayer.Add(Adorner adorner, Int32 zOrder)
+   en System.Windows.Documents.AdornerLayer.Add(Adorner adorner)
+   en Instrumind.ThinkComposer.Model.VisualModel.ViewPresenter.PutVisual(VisualObject Depiction, EVisualLevel InitialLevel)
+   en Instrumind.ThinkComposer.Model.VisualModel.View.Show(VisualObject Depiction)
+   en Instrumind.ThinkComposer.Model.VisualModel.View.ShowRepresentator(VisualRepresentation Representator, Nullable`1 PartType)
+   en Instrumind.ThinkComposer.Model.VisualModel.VisualRepresentation.Render()
+   en Instrumind.ThinkComposer.Model.VisualModel.VisualElement.RenderRepresentatedObject()
+   en Instrumind.ThinkComposer.Composer.ComposerUI.ViewManipulationManager.ApplySelection(VisualObject TargetObject, Boolean SwitchSelection, Boolean ContinueSelection)
+   en Instrumind.ThinkComposer.Composer.ComposerUI.ViewManipulationManager.Manipulate(ViewManipulationAdorner Modifier, Boolean IsMouseLeftButtonUp, Boolean IsMouseLeftButtonClicked, Boolean IsMouseRightButtonClicked, Boolean IsKeyControlPressed, Boolean IsKeyShiftPressed, Boolean IsKeyAltPressed, Boolean IsMouseLeftDoubleClicked)
+   en Instrumind.ThinkComposer.Composer.ComposerUI.ViewManipulationAdorner.OnMouseLeftButtonUp(MouseButtonEventArgs e)
+
+- PENDING: Editable nomenclature.
+- Output-Templates tab must be Advanced.
+- PENDING?: Ignore Output-Template lines starting with "%%:" prefix, which are unuseful
+- Improved navigation: prev-pos, next-pos (breadcrumb?)
+- HTML Report lacks Pictogram in Idea's cards.  (verify the same in PDF/XPS?)
+-? When downgraded (or already downgraded) to FREE edition... ask for e-mail to continue use.
+- Auto numbering style "2.4.3.5"
+
+Application Development - TASKS
+*******************************
+
+REMEMBER:
+- Registered defined Ideas of Idea Definitions MUST BE DELETED after Idea deletion in Composition.
+
+=========================================================================================
+
+0.- GLOBAL POLICIES
+- Carefully use Equals or General.IsEquivalent for comparing Composition/Ideas vs Domain/Definitions objects.
+- Use Undoable/Readoable commands in dialogs (see Start/End Interaction method calls).
+
+--------------------------------------------
+1.- POSTPONED NON-FUNCTIONAL FEATURES
+- Use of WeakEvents
+- Configuration options should have centralized initial/default-values... to be shown at editing (consider not-yet-saved values).
+- Serialization to XML (change BinaryFormatter by SoapFormatter?) and in standard format.
+- Unique-Key re-validaton and re-generation in Table.ApplyStructuralAlter()
+
+--------------------------------------------
+2.- PENDING FEATURES:
+
+- Presentation command.
+- Redisplay command.
+- Printing in multiple sheets and its preview.
+- Pick Image calling Google
+
+--------------------------------------------
+3.- VALIDATIONS
+- Reject Empty Names and Tech-Names.
+- Reject Duplicate Names and Tech-Names within a Scope.
+
+--------------------------------------------
+4.- FIXES
+- Call Dispose() on all IDisposable implementors (such as Pens, Brushes, etc.) because GDI+ resources can be emptied.
+See: http://stackoverflow.com/questions/2548664/long-overdue-for-me-question-about-disposing-managed-objects-in-net-vb-net
+
+- Improve string Pluralization (externalize or consider grammatical rules plus non-english languages)
+- Update VersionCard data, propagating upwards in hierarchy, after updates.
+- Indicate acutely when Composition changes (for the "*" indicating modified doc.).
+
+--------------------------------------------
+5.- TESTS
+- Each entity must have a static definitor + instance controller
+- Entity controllers must be available after deserialization.
+- Test with different DPI and font scales.
+
+--------------------------------------------
+
+***********************************************************************************************************************************************************************
+QUICK-GUIDE SCRIPT
+==================
+
+* Intro
+New Basic Compo
+	- Basic Properties (Name, summary)
+	- Show advanced properties
+
+Create Concept with Pictogram
+
+- Pan
+- Zoom
+- Symbol Resize
+	- Symmetric resize
+- Alignment
+- Region Group
+- Style apply
+
+* Shortcuts
+
+* Markers
+- Markers Definitions
+
+* Creating Idea Definitions
+- Select Shape and Style
+
+* Concepts
+- Automatic Creation
+
+* Relationships
+- Multiple Targets and Origins
+- Simple
+- Auto-Reference
+
+* Details
+- Attachments
+- Links
+- Tables
+- Custom Fields
+
+* Complements
+- Group Regions
+- Group Lines
+
+***********************************************************************************************************************************************************************

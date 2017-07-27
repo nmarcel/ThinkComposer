@@ -1,0 +1,151 @@
+﻿<UserControl x:Class="Instrumind.ThinkComposer.ApplicationProduct.Widgets.WidgetNavTree"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:imceb="clr-namespace:Instrumind.Common.EntityBase;assembly=Instrumind.Common"
+             xmlns:imcv="clr-namespace:Instrumind.Common.Visualization;assembly=Instrumind.Common"
+             xmlns:imcw="clr-namespace:Instrumind.Common.Visualization.Widgets;assembly=Instrumind.Common"
+             xmlns:tcc="clr-namespace:Instrumind.ThinkComposer.Composer"
+             xmlns:tcm="clr-namespace:Instrumind.ThinkComposer.Model"
+             xmlns:tcmgm="clr-namespace:Instrumind.ThinkComposer.Model.GraphModel"
+             xmlns:tcmim="clr-namespace:Instrumind.ThinkComposer.Model.InformationModel"
+             xmlns:tcmvm="clr-namespace:Instrumind.ThinkComposer.Model.VisualModel"
+             xmlns:my="clr-namespace:Instrumind.ThinkComposer.ApplicationProduct"
+             mc:Ignorable="d" Height="Auto" Width="Auto" Cursor="Hand"
+             d:DesignHeight="300" d:DesignWidth="300" >
+    <!--CANCELLED/POSTPONED: For searching the TreeView should be expandend to reach the deepest levels and found items would be opening views (problematic)
+    <Grid>...
+    <TextBox x:Name="TxtNavFind" Margin="2,-17,2,2" VerticalAlignment="Top" HorizontalAlignment="Right"
+                Text="..." Padding="0,-2,0,0" FontSize="9" Width="100" Height="14"
+                GotFocus="TxtNavFind_GotFocus" LostFocus="TxtNavFind_LostFocus"
+                TextChanged="TxtNavFind_TextChanged">
+        <TextBox.Background>
+            <SolidColorBrush Color="White" Opacity="0.5" />
+        </TextBox.Background>
+    </TextBox>-->
+    <TreeView x:Name="NavTree"
+              BorderThickness="0" HorizontalContentAlignment="Stretch" Padding="-4,0,0,0"
+              Background="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type imcw:EntitledPanel}, ResourceId=PanelBrush}}"
+              ItemsSource="{Binding}" SelectedItemChanged="NavTree_SelectedItemChanged"
+              VirtualizingStackPanel.IsVirtualizing="True"
+              VirtualizingStackPanel.VirtualizationMode="Recycling"
+              MouseEnter="NavTree_MouseEnter" MouseLeave="NavTree_MouseLeave" MouseMove="NavTree_MouseMove"
+              PreviewMouseLeftButtonDown="NavTree_PreviewMouseLeftButtonDown" MouseLeftButtonUp="NavTree_MouseLeftButtonUp"
+              MouseRightButtonDown="NavTree_MouseRightButtonDown"  MouseRightButtonUp="NavTree_MouseRightButtonUp">
+        <TreeView.Style>
+            <!--This Style is for hiding the ugly last-selected-item color marking that WPF uses to put.-->
+            <Style>
+                <Style.Resources>
+                    <!--SelectedItem with focus-->
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent" />
+                    <!--SelectedItem without focus (looks bad, and is not synchronized with selection)
+                    <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="DodgerBlue" /> -->
+                </Style.Resources>
+            </Style>
+        </TreeView.Style>
+        <TreeView.Resources>
+            <imcv:EmptyStringToNullConverter x:Key="EmptyTextToNullConverter" />
+
+            <Style x:Key="StyItem" TargetType="{x:Type Border}">
+                <Setter Property="CornerRadius" Value="3" />
+                <!-- <Setter Property="Height" Value="18" />
+                <Setter Property="Margin" Value="1" /> -->
+                <Setter Property="ToolTip" Value="{Binding Summary, Converter={StaticResource EmptyTextToNullConverter}}" />
+                <Setter Property="Background"
+                        Value="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type imcw:EntitledPanel}, ResourceId=ItemBrush}}" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                        <Setter Property="Background" Value="LightSkyBlue" />
+                    </DataTrigger>
+                    <!--<DataTrigger Binding="{Binding IsSelected}" Value="False">
+                        <Setter Property="Background" Value="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type imcw:EntitledPanel}, ResourceId=ItemBrush}}" />
+                    </DataTrigger>-->
+                </Style.Triggers>
+            </Style>
+
+            <!--<HierarchicalDataTemplate DataType="{x:Type tcc:CompositionEngine}" ItemsSource="{Binding TargetComposition.CompositeIdeas}">-->
+            <!--<HierarchicalDataTemplate DataType="{x:Type tcc:CompositionEngine}" ItemsSource="{Binding TargetComposition.NavigableElements}">
+                <Border x:Name="BrdForCompositionItem" CornerRadius="3" Padding="2" Background="SkyBlue" ToolTip="{Binding Summary}"
+                        BorderThickness="1.0" BorderBrush="Transparent">
+                    <DockPanel>
+                        <Image DockPanel.Dock="Left" Source="{Binding Pictogram}" Width="16" Height="16" Stretch="Uniform" Margin="1" />
+                        <TextBlock DockPanel.Dock="Right" Text="{Binding NameCaption}" FontSize="10" ToolTip="{Binding Summary}" Margin="2,0,0,0" />
+                    </DockPanel>
+                </Border>
+            </HierarchicalDataTemplate>-->
+            <HierarchicalDataTemplate DataType="{x:Type tcmvm:View}">
+                <Border x:Name="BrdForViewItem" Style="{StaticResource StyItem}"
+                        BorderThickness="1.0" BorderBrush="Transparent">
+                    <DockPanel>
+                        <Image DockPanel.Dock="Left" Source="{Binding Pictogram}" Width="32" Height="16" Stretch="Uniform" Margin="1" >
+                            <Image.Effect>
+                                <DropShadowEffect Color="Gray" Opacity="0.5" ShadowDepth="3" />
+                            </Image.Effect>
+                        </Image>
+                        <!-- Not for the Views (it appears duplicated)
+                        <Image DockPanel.Dock="Left" Source="{Binding Pictogram}" MaxWidth="32" MaxHeight="16" Stretch="Uniform" Margin="1" /> -->
+                        <TextBlock DockPanel.Dock="Right" Text="{Binding NameCaption}" FontSize="10" Margin="2,0,2,0" />
+                    </DockPanel>
+                </Border>
+            </HierarchicalDataTemplate>
+            
+            <!--PENDING: Move this as items template to a Details Listbox in the Property Panel
+            <HierarchicalDataTemplate DataType="{x:Type tcmim:ContainedDetail}">
+                <Border x:Name="BrdForDetailItem" Style="{StaticResource StyItem}"
+                        BorderThickness="1.0" BorderBrush="Transparent">
+                    <DockPanel>
+                        <Image DockPanel.Dock="Left" Source="{Binding Designation.Pictogram}" Width="32" Height="16" Stretch="Uniform" Margin="1,0,1,0" >
+                            <Image.Effect>
+                                <DropShadowEffect Color="Gray" Opacity="0.5" ShadowDepth="3" />
+                            </Image.Effect>
+                        </Image>
+                        <Image DockPanel.Dock="Left" Source="{Binding Pictogram}" MaxWidth="32" MaxHeight="16" Stretch="Uniform" Margin="1" />
+                        <TextBlock DockPanel.Dock="Right" Text="{Binding Designation.NameCaption}" FontSize="9" Margin="2,0,2,0" />
+                    </DockPanel>
+                </Border>
+            </HierarchicalDataTemplate>-->
+
+            <HierarchicalDataTemplate DataType="{x:Type tcmgm:Concept}" ItemsSource="{Binding NavigableElements}">
+                <Border x:Name="BrdForConceptItem" Style="{StaticResource StyItem}"
+                        BorderThickness="1.0" BorderBrush="Transparent">
+                    <DockPanel> <!--Previous binding against: Definitor.Pictogram-->
+                        <Image DockPanel.Dock="Left" Source="{Binding RepresentativePicture}" Width="32" Height="16" Stretch="Uniform" Margin="1" >
+                            <Image.Effect>
+                                <DropShadowEffect Color="Gray" Opacity="0.5" ShadowDepth="3" />
+                            </Image.Effect>
+                        </Image>
+                        <Image DockPanel.Dock="Left" Source="{Binding Pictogram}" MaxWidth="32" MaxHeight="16" Stretch="Uniform" Margin="1" />
+                        <TextBlock DockPanel.Dock="Right" Text="{Binding NameCaption}" FontSize="10" Margin="2,0,2,0" />
+                    </DockPanel>
+                </Border>
+            </HierarchicalDataTemplate>
+
+            <HierarchicalDataTemplate DataType="{x:Type tcmgm:Relationship}" ItemsSource="{Binding NavigableElements}">
+                <Border x:Name="BrdForRelationshipItem" Style="{StaticResource StyItem}"
+                        BorderThickness="1.0" BorderBrush="Transparent">
+                    <DockPanel>
+                        <Image DockPanel.Dock="Left" Source="{Binding RepresentativePicture}" Width="32" Height="16" Stretch="Uniform" Margin="1" >
+                            <Image.Effect>
+                                <DropShadowEffect Color="Gray" Opacity="0.5" ShadowDepth="3" />
+                            </Image.Effect>
+                        </Image>
+                        <Image DockPanel.Dock="Left" Source="{Binding Pictogram}" MaxWidth="32" MaxHeight="16" Stretch="Uniform" Margin="1" />
+                        <TextBlock DockPanel.Dock="Right" Text="{Binding DescriptiveCaption}" FontSize="10" FontStyle="Italic" Opacity="0.5" Margin="8,0,2,0" />
+                        <TextBlock DockPanel.Dock="Right" Text="{Binding NameCaption}" FontSize="10" Margin="2,0,2,0" />
+                    </DockPanel>
+                </Border>
+            </HierarchicalDataTemplate>
+
+        </TreeView.Resources>
+        
+        <!-- THIS IS VERY SLOW WHEN "INTELLITRACE" IS ON...-->
+        <TreeView.ItemContainerStyle>
+            <Style TargetType="{x:Type TreeViewItem}">
+                <Setter Property="IsExpanded" Value="True"/>
+                <!--It is very important to let this as One-Way binding to not unselect nodes from the TreeView-->
+                <!--<EventSetter Event="PreviewMouseLeftButtonDown" Handler="OnItemPreviewMouseLeftButtonDown" /> // WORKS BY TUNNELING-->
+            </Style>
+        </TreeView.ItemContainerStyle>
+    </TreeView>
+</UserControl>

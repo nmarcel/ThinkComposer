@@ -1,0 +1,104 @@
+﻿<UserControl x:Class="Instrumind.ThinkComposer.Composer.ComposerUI.Widgets.MarkingsEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:imcv="clr-namespace:Instrumind.Common.Visualization;assembly=Instrumind.Common"
+             xmlns:imcw="clr-namespace:Instrumind.Common.Visualization.Widgets;assembly=Instrumind.Common"
+             xmlns:tcmg="clr-namespace:Instrumind.ThinkComposer.Model.GraphModel"
+             mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="800"
+             Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <imcv:BooleanToInverseConverter x:Key="BoolToInverseConverter" />
+        <BooleanToVisibilityConverter x:Key="BoolToVisCollConverter" />
+        <imcv:BooleanToVisibilityHiddenConverter x:Key="BoolToVisHiddConverter" />
+        <Style x:Key="ListboxStyle">
+            <Style.Resources>
+                <!-- Background of selected item when focussed -->
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#FFBFD2DB" />
+                <!-- Background of selected item when not focussed -->
+                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="#FFBFD2DB" />
+            </Style.Resources>
+        </Style>
+        <DataTemplate x:Key="MarkerDataTemplate" DataType="{x:Type tcmg:MarkerAssignment}">
+            <DockPanel>
+                <Polygon x:Name="CurrentRowArrow" DockPanel.Dock="Left" Points="2,4 18,10 2,16" Visibility="Hidden"
+                         Fill="#FFE9F2F2" />
+                <Border x:Name="RowBorder" Background="Transparent" CornerRadius="3" Margin="1,1,1,1" Height="26"
+                        BorderBrush="Transparent" BorderThickness="1">
+                    <DockPanel>
+                        <ComboBox x:Name="ComboMarkingDefinitor" DockPanel.Dock="Left"
+                                  ItemsSource="{Binding AvailableMarkerDefinitors}"
+                                  ItemTemplate="{StaticResource TplSimplePresentationElement}"
+                                  Loaded="ComboMarkingDefinitor_Loaded"
+                                  SelectionChanged="ComboMarkingDefinitor_SelectionChanged"
+                                  HorizontalContentAlignment="Stretch" Width="178" Margin="1" FontSize="10"
+                                  ToolTip="Changes the assigned marker." />
+                        <CheckBox x:Name="CbxMarkerHasDescriptor" DockPanel.Dock="Left" IsChecked="{Binding MarkerHasDescriptor}"
+                                  HorizontalContentAlignment="Center" Width="16" Margin="4,4,1,2"
+                                  Click="CbxMarkerHasDescriptor_Click"
+                                  ToolTip="Indicates whether to include a descriptor." />
+
+                        <Border Margin="2" Background="Transparent"
+                                MouseLeftButtonDown="DescriptorContainer_MouseLeftButtonDown"
+                                ToolTip="Current descriptor (double-click to edit)." >
+                            <DockPanel>
+                                <TextBlock DockPanel.Dock="Left" Text="{Binding Descriptor.Name}" MinWidth="150" Height="16" Margin="1" />
+                                <Image DockPanel.Dock="Left" Source="{Binding Descriptor.Pictogram}" Width="16" Height="16" Margin="2,1,2,1" />
+                                <DockPanel>
+                                    <!--<TextBlock DockPanel.Dock="Right" Text="{Binding Descriptor.TechName}" MinWidth="150" Background="LightGray" Margin="1" />-->
+                                    <TextBlock Text="{Binding Descriptor.Summary}" MinWidth="250" Height="16" Margin="1" />
+                                </DockPanel>
+                            </DockPanel>
+                        </Border>
+                    </DockPanel>
+                </Border>
+            </DockPanel>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ListBoxItem}},Path=IsSelected}" Value="True">
+                    <Setter TargetName="CurrentRowArrow" Property="Visibility" Value="Visible" />
+                    <Setter TargetName="RowBorder" Property="Background"
+                            Value="#FFBFD2DB" />
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+    </UserControl.Resources>
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <TextBlock DockPanel.Dock="Left" Text="Definitor" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Bottom"
+                       Foreground="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type imcw:EntitledPanel}, ResourceId=PanelTextBrush}}"
+                       Margin="2,1,2,1" Width="180" />
+            <StackPanel>
+                <Border DockPanel.Dock="Right" BorderThickness="0,0,0,1"
+                        BorderBrush="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type imcw:EntitledPanel}, ResourceId=PanelTextBrush}}">
+                    <TextBlock Text="Descriptor" FontWeight="Bold" TextAlignment="Center" Margin="1"
+                               Foreground="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type imcw:EntitledPanel}, ResourceId=PanelTextBrush}}"/>
+                </Border>
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Left" Text="ü" FontFamily="Wingdings" TextAlignment="Center" Margin="1" Width="22"
+                               Foreground="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type imcw:EntitledPanel}, ResourceId=PanelTextBrush}}"/>
+                    <TextBlock DockPanel.Dock="Left" Text="Name" FontSize="11" TextAlignment="Center" Margin="1" MinWidth="170" 
+                               Foreground="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type imcw:EntitledPanel}, ResourceId=PanelTextBrush}}"/>
+                    <TextBlock DockPanel.Dock="Left" Text="J" FontFamily="Wingdings" FontSize="14" TextAlignment="Center" Margin="1" Width="16"
+                               Foreground="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type imcw:EntitledPanel}, ResourceId=PanelTextBrush}}"/>
+                    <!--<TextBlock DockPanel.Dock="Right" Text="Tech-Name" FontSize="11" TextAlignment="Center" Margin="1" MinWidth="150"
+                                   Foreground="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type imcw:EntitledPanel}, ResourceId=PanelTextBrush}}"/>-->
+                    <TextBlock Text="Summary" TextAlignment="Center" FontSize="11" Margin="1" MinWidth="250"
+                               Foreground="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type imcw:EntitledPanel}, ResourceId=PanelTextBrush}}"/>
+                </DockPanel>
+            </StackPanel>
+        </DockPanel>
+        <Border DockPanel.Dock="Top" CornerRadius="5,5,0,0"
+                Background="#FFE9F2F2">
+            <imcw:CollectionEditingToolPanel x:Name="MarkingsToolPanel" Title="Current markers..."
+                                             CanDefine="False" TitleBrush="Black"
+                                             EditClicked="MarkingsToolPanel_EditClicked"
+                                             AddClicked="MarkingsToolPanel_AddClicked" DeleteClicked="MarkingsToolPanel_DeleteClicked"/>
+        </Border>
+        <ListBox x:Name="MarkingsListBox" HorizontalContentAlignment="Stretch" BorderThickness="0"
+                 ItemTemplate="{StaticResource MarkerDataTemplate}" Style="{StaticResource ListboxStyle}"
+                 Background="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type imcw:EntitledPanel}, ResourceId=PanelBrush}}"
+                 SelectionChanged="MarkingsListBox_SelectionChanged" IsSynchronizedWithCurrentItem="True">
+        </ListBox>
+    </DockPanel>
+</UserControl>

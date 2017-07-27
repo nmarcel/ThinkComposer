@@ -1,0 +1,106 @@
+<!--NOTE: The only WindowStyle allowed for AllowsTransparency=true is "None". Else a crash happens.-->
+<Window x:Class="Instrumind.ThinkComposer.ApplicationShell.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wg="clr-namespace:Instrumind.Common.Visualization.Widgets;assembly=Instrumind.Common"
+        xmlns:this="clr-namespace:Instrumind.ThinkComposer.ApplicationShell"
+        Title="Instrumind ThinkComposer"
+        Background="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type wg:BasicWindow}, ResourceId=GeneralBodyBrush}}"
+        Width="1440" Height="810" WindowStartupLocation="CenterScreen"
+        ResizeMode="CanResize" WindowStyle="SingleBorderWindow" AllowsTransparency="False"
+        BorderBrush="Black" BorderThickness="0"
+        Icon="/Instrumind.ThinkComposer;component/ApplicationProduct/Images/Instrumind_ThinkComposer.ico"
+        Loaded="Window_Loaded" StateChanged="Window_StateChanged"
+        Closing="Window_Closing" Closed="Window_Closed">
+    <!--Standard size: 1600x900 (for screenshots use: 1400x915)
+        For YouTube videos use 16x9 aspect ratios: 1920*1080, 1600*900,  1280*720, [1440*810], 1024*576, 800*450, 720*405 (standard Youtube HD) -->
+    <Grid>
+        <Border x:Name="WorkingAreaBorder" Margin="0,21,0,0"
+                Background="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type wg:BasicWindow}, ResourceId=GeneralBodyBrush}}">
+            <DockPanel>
+                <DockPanel x:Name="BottomContainer" DockPanel.Dock="Bottom" Height="70">
+                    <DockPanel x:Name="StatusContainer" DockPanel.Dock="Right"
+                                Background="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type wg:BasicWindow}, ResourceId=GeneralBottomBrush}}">
+                        <TextBlock Text="StatusContainer" />
+                    </DockPanel>
+                    <DockPanel x:Name="MessagingContainer" Width="Auto" Margin="0,0,0,1"
+                                Background="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type wg:BasicWindow}, ResourceId=GeneralBottomBrush}}">
+                        <TextBlock Text="MessagingContainer" />
+                    </DockPanel>
+                </DockPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="294"/>
+                        <ColumnDefinition MinWidth="200"/>
+                        <ColumnDefinition Width="284"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0" Margin="0,0,2,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.5*" MinHeight="20"/>
+                            <RowDefinition Height="0.5*" MinHeight="20"/>
+                            <!--<RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*" MinHeight="50"/>-->
+                        </Grid.RowDefinitions>
+                        <DockPanel x:Name="NavigationTopContainer" Grid.Row="0" Margin="1"
+                                   Height="Auto" MinHeight="100" Width="Auto">
+                            <TextBlock Text="NavigationTopContainer" />
+                        </DockPanel>
+                        <GridSplitter Grid.Row="0" ResizeDirection="Rows" Height="3" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                                      Background="Transparent"/>
+                        <DockPanel x:Name="NavigationBottomContainer" Grid.Row="1" Margin="1"
+                                   Height="Auto" Width="Auto">
+                            <TextBlock Text="NavigationBottomContainer" />
+                        </DockPanel>
+                    </Grid>
+                    <GridSplitter Grid.Column="0" ResizeDirection="Columns" Width="2"
+                                  HorizontalAlignment="Right" VerticalAlignment="Stretch" Background="Transparent"/>
+                    <!--<Grid Grid.Column="1" Margin="0,0,3,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="600" MinHeight="100"/>
+                            <RowDefinition Height="*" MinHeight="20" />
+                        </Grid.RowDefinitions>-->
+                        <DockPanel x:Name="DocumentContainer" Grid.Column="1" Margin="0,0,0,2"
+                                   Height="Auto" Width="Auto">
+                            <TextBlock Text="DocumentContainer" />
+                        </DockPanel>
+                        <!--<GridSplitter Grid.Row="0" ResizeDirection="Rows" Height="3" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="Transparent"/>-->
+                    <!--</Grid>-->
+                    <GridSplitter Grid.Column="1" ResizeDirection="Columns" Width="2" HorizontalAlignment="Right" VerticalAlignment="Stretch" Background="Transparent"/>
+                    <Grid Grid.Column="2" Margin="2,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.58*" MinHeight="20"/>
+                            <RowDefinition Height="0.22*" MinHeight="20"/>
+                            <RowDefinition Height="0.2*" MinHeight="20"/>
+                            <RowDefinition Height="124" MinHeight="20"/>
+                        </Grid.RowDefinitions>
+                        <DockPanel x:Name="EditingTopContainer" Grid.Row="0" Margin="1"
+                                    Height="Auto" MinHeight="100" Width="Auto">
+                            <TextBlock Text="EditingTopContainer" />
+                        </DockPanel>
+                        <GridSplitter Grid.Row="0" ResizeDirection="Rows" Height="3" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                                      Background="Transparent"/>
+                        <DockPanel x:Name="EditingMediumUpperContainer" Grid.Row="1" Margin="1"
+                                    Height="Auto" Width="Auto">
+                            <TextBlock Text="EditingMediumUpperContainer" />
+                        </DockPanel>
+                        <GridSplitter Grid.Row="1" ResizeDirection="Rows" Height="3" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                                      Background="Transparent"/>
+                        <DockPanel x:Name="EditingMediumLowerContainer" Grid.Row="2" Margin="1"
+                                    Height="Auto" Width="Auto">
+                            <TextBlock Text="EditingMediumLowerContainer" />
+                        </DockPanel>
+                        <GridSplitter Grid.Row="2" ResizeDirection="Rows" Height="3" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                                      Background="Transparent"/>
+                        <DockPanel x:Name="EditingBottomContainer" Grid.Row="3" Margin="1"
+                                    Height="Auto" Width="Auto">
+                            <TextBlock Text="EditingBottomContainer" />
+                        </DockPanel>
+                    </Grid>
+                </Grid>
+            </DockPanel>
+        </Border>
+        <this:MainWindowHeader x:Name="WinHeader" VerticalAlignment="Top" HorizontalAlignment="Stretch"
+                               Dragging="WinHeader_Dragging" Minimizing="WinHeader_Minimizing"
+                               RestoringOrMaximizing="WinHeader_RestoringOrMaximizing"/>
+    </Grid>
+</Window>

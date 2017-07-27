@@ -1,0 +1,19 @@
+﻿<Application x:Class="Instrumind.ThinkComposer.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:imc="clr-namespace:Instrumind.Common;assembly=Instrumind.Common"
+             StartupUri="ApplicationShell/MainWindow.xaml" ShutdownMode="OnMainWindowClose">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--IMPORTANT: Remember to update the Aero assembly version if necessary.-->
+                <ResourceDictionary Source="/PresentationFramework.Aero;V4.0.30319.1;31bf3856ad364e35;component/themes/Aero.NormalColor.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Instrumind.Common;component/Themes/Generic.xaml"/>
+                <ResourceDictionary Source="ApplicationProduct/Cursors/AppCursors.xaml"/>
+                <ResourceDictionary Source="MetaModel/VisualMetaModel/DecoratorGeometries.xaml" />
+                <ResourceDictionary Source="MetaModel/VisualMetaModel/SymbolGeometries.xaml" />
+                <ResourceDictionary Source="MetaModel/VisualMetaModel/PlugGeometries.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Instrumind.ThinkComposer.ApplicationShell.MainWindowHeader"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:iv="clr-namespace:Instrumind.Common.Visualization;assembly=Instrumind.Common"
+             xmlns:wg="clr-namespace:Instrumind.Common.Visualization.Widgets;assembly=Instrumind.Common"
+             xmlns:im="clr-namespace:Instrumind.Common;assembly=Instrumind.Common"
+             xmlns:ap="clr-namespace:Instrumind.ThinkComposer.ApplicationProduct"
+             mc:Ignorable="d" d:DesignWidth="800"
+             Loaded="UserControl_Loaded"
+             MouseDown="MainWindowHeader_MouseDown">
+    <Grid>
+        <Border x:Name="BackBorder" Padding="0"
+                Background="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type wg:BasicWindow}, ResourceId=GeneralTopBrush}}"
+                VerticalAlignment="Top" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="285*" />
+                    <ColumnDefinition Width="411*" />
+                </Grid.ColumnDefinitions>
+                <wg:AutoCollapsePanel x:Name="PaletteSupraContainer" Orientation="Horizontal"
+                            CollapsedSize="20" Margin="1"
+                            VerticalAlignment="Top" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Grid.ColumnSpan="2">
+                    <TextBlock Text="Main Menu-Palette Floating Container" Foreground="WhiteSmoke" Padding="1" />
+                </wg:AutoCollapsePanel>
+
+                <Border Background="Transparent" BorderBrush="Transparent"
+                        BorderThickness="1" CornerRadius="3" Width="108" Height="24"
+                        Margin="250,-1,0,-2" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2">
+                    <StackPanel x:Name="QuickToolPanel" VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Horizontal">
+                        <wg:PaletteButton ButtonText="" ButtonImage="/Instrumind.ThinkComposer;component/Instrumind_48x48.ico" Margin="-1"/>
+                        <wg:PaletteButton ButtonText="" ButtonImage="/Instrumind.ThinkComposer;component/Instrumind_48x48.ico" Margin="-1"/>
+                        <wg:PaletteButton ButtonText="" ButtonImage="/Instrumind.ThinkComposer;component/Instrumind_48x48.ico" Margin="-1"/>
+                        <wg:PaletteButton ButtonText="" ButtonImage="/Instrumind.ThinkComposer;component/Instrumind_48x48.ico" Margin="-1"/>
+                    </StackPanel>
+                </Border>
+
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

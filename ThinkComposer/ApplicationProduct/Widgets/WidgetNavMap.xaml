@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="Instrumind.ThinkComposer.ApplicationProduct.Widgets.WidgetNavMap"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Height="200" Width="200"
+             d:DesignHeight="200" d:DesignWidth="200">
+    <Grid>
+        <Viewbox x:Name="ViewboxMap" Margin="8">
+            <Grid>
+                <Rectangle Width="{Binding MapSource.Content.ActualWidth}" Height="{Binding MapSource.Content.ActualHeight}">
+                    <Rectangle.Fill>
+                        <VisualBrush Visual="{Binding MapSource.Content}" />
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Border BorderThickness="1"
+                        Background="Yellow" Opacity="0.5"
+                        Width="{Binding MapSource.ViewportWidth}" Height="{Binding MapSource.ViewportHeight}"
+                        HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Border.RenderTransform>
+                        <TranslateTransform X="{Binding MapSource.HorizontalOffset}" Y="{Binding MapSource.VerticalOffset}" />
+                    </Border.RenderTransform>
+                </Border>
+            </Grid>
+        </Viewbox>
+    </Grid>
+</UserControl>

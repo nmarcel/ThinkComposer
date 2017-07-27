@@ -1,0 +1,31 @@
+﻿<Button x:Class="Instrumind.Common.Visualization.Widgets.PaletteDropButton"
+        x:Name="ThisControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:imcv="clr-namespace:Instrumind.Common.Visualization.Widgets"
+             Width="Auto" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top"
+             Click="Button_Click">
+    <!-- Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"-->
+    <DockPanel x:Name="WholePanel">
+        <Button x:Name="BtnDropper" DockPanel.Dock="Right" Padding="-1,0,0,0" Margin="0,-2,-2,-2"
+                Width="16" BorderBrush="Transparent"
+                Click="BtnDropper_Click">
+            <Polygon Stroke="Gray" Fill="Black" Points="2,0 8,0, 5,6" />
+        </Button>
+        <StackPanel x:Name="BackPanel" Orientation="Horizontal">
+            <imcv:ImprovedImage x:Name="BtnImage"
+                                    HorizontalAlignment="Center" Margin="2,0,2,0"
+                                    Source="/Instrumind.Common;component/Visualization/Images/Instrumind_16x16.png" Stretch="None" />
+            <TextBlock x:Name="BtnText"
+                       FontSize="10" TextAlignment="Center" VerticalAlignment="Center" Margin="2,0,2,0" Padding="2,0,2,0" TextWrapping="Wrap">Button</TextBlock>
+        </StackPanel>
+        <Popup x:Name="PopupOptions" DockPanel.Dock="Bottom"
+               PlacementTarget="{Binding ElementName=ThisControl}"
+               PopupAnimation="None" StaysOpen="False"
+               MinWidth="{Binding Path=Width, ElementName=ThisControl}">
+            <ListBox x:Name="LstboxOptionButtons" SelectionChanged="LstboxOptionButtons_SelectionChanged" />
+        </Popup>
+    </DockPanel>
+</Button>

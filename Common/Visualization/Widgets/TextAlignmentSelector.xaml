@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="Instrumind.Common.Visualization.Widgets.TextAlignmentSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+    <UserControl.Resources>
+        <Style TargetType="Border">
+            <EventSetter Event="MouseLeftButtonDown" Handler="Selector_MouseLeftButtonDown" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Margin" Value="1" />
+        </Style>
+        <Style TargetType="Image">
+            <!--<Setter Property="IsHitTestVisible" Value="False" />-->
+            <Setter Property="Stretch" Value="None" />
+        </Style>
+    </UserControl.Resources>
+    <StackPanel x:Name="ContainerPanel" Orientation="Horizontal">
+        <Border BorderBrush="Black" >
+            <Image Source="/Instrumind.Common;component/Visualization/Images/text_align_left.png" />
+        </Border>
+
+        <Border>
+            <Image Source="/Instrumind.Common;component/Visualization/Images/text_align_center.png" />
+        </Border>
+        
+        <Border>
+            <Image Source="/Instrumind.Common;component/Visualization/Images/text_align_right.png" />
+        </Border>
+        
+        <Border>
+            <Image Source="/Instrumind.Common;component/Visualization/Images/text_align_justify.png" />
+        </Border>
+    </StackPanel>
+</UserControl>

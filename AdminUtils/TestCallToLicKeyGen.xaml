@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="AdminUtils.TestCallToLicKeyGen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" Text="Target address..." />
+        <TextBox DockPanel.Dock="Top" x:Name="TxbTargetAddress" Margin="4" />
+        <TextBlock DockPanel.Dock="Top" Text="Parameters..." />
+        <Grid DockPanel.Dock="Top">
+            <!--PENDING: Add fields-->
+        </Grid>
+        <Button DockPanel.Dock="Top" x:Name="BtnCall" Click="BtnCall_Click"
+                Content="Call!" Width="100" HorizontalAlignment="Right" Margin="4" IsDefault="True" />
+        <TextBlock DockPanel.Dock="Top" Text="Response..." />
+        <TextBox x:Name="TxbResponse" IsReadOnly="True" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Auto" />
+    </DockPanel>
+</UserControl>

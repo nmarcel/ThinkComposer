@@ -1,0 +1,20 @@
+﻿# 1.5.1604
+- Fixed: Name of a global Detail designator is no longer changed when editing an empty link after trying to access it.
+- Fixed: Views can be exported as image in PDF format again.
+- Fixed: Application crashes when Finding text (the problem is detected and crash prevented).
+
+# 1.5.1502
+- PDF generation is now based on an open-source library (PDFsharp) instead of a commercial product.
+- Fixed: Link descriptor are lost for new links after copy+paste.
+===============================================================================================================
+SINCE FEBRUARY-2015 THINKCOMPOSER IS OPEN-SOURCE SOFTWARE
+===============================================================================================================
+
+# 1.5.1230
+- New: Default grid size now can be specified in Domain properties.
+- New: While creating new Concepts, by dropping their Definition from the Concepts palette, press [Ctrl-Left] to open the properties editor instead of just edit the name/title over the symbol.
+- Changed: Markers palette display order is changed to show User-Defined Markers on top.
+- Fixed: Change to Symbol Format properties 'Flip Horizontal/Vertical' does not propagate instantly.
+- Fixed: Crash when trying to attach notes to Ideas.
+
+(last 3 updates shown. See the "Readme.txt" file for the complete list)

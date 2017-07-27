@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Instrumind.ThinkComposer.Definitor.DefinitorUI.Widgets.TemplateTester"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:imcw="clr-namespace:Instrumind.Common.Visualization.Widgets;assembly=Instrumind.Common"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignHeight="400" d:DesignWidth="500"
+             Loaded="UserControl_Loaded">
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <imcw:PaletteButton DockPanel.Dock="Left" x:Name="BtnSaveTo" Click="BtnSaveTo_Click"
+                                ButtonText="" Margin="4,2,24,2" ToolTip="Save to file"
+                                ButtonImage="/Instrumind.ThinkComposer;component/ApplicationProduct/Images/page_white_save.png" />
+            <TextBlock DockPanel.Dock="Left" Text="Source:" Margin="4,4,2,2" />
+            <imcw:TreeItemSelector x:Name="TisSourceSelector" Margin="2" />
+        </DockPanel>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
+            <!--<imcw:PaletteButton x:Name="BtnOK" Click="BtnOK_Click"
+                                ButtonText="OK" Margin="2" ToolTip="Cancel."
+                                ButtonImage="/Instrumind.Common;component/Visualization/Images/accept.png" />-->
+            <imcw:PaletteButton x:Name="BtnCancel" Click="BtnCancel_Click" IsCancel="True" IsDefault="True"
+                                ButtonText="Close" Margin="32,2,2,2" ToolTip="Apply selected brush."
+                                ButtonImage="/Instrumind.Common;component/Visualization/Images/cancel.png" />
+        </StackPanel>
+        <TextBlock DockPanel.Dock="Top" x:Name="TxtStatus" Text="[Test-Status]" Margin="2" Padding="2" Background="LightGreen" />
+        <TextBox x:Name="TxbPreview" FontFamily="Consolas" FontSize="11" IsReadOnly="True" Margin="2"
+                 ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Auto" />
+    </DockPanel>
+</UserControl>

@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="Instrumind.Common.Visualization.Widgets.MaskEditDateTime"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:my="clr-namespace:Instrumind.Common.Visualization.Widgets"
+             Loaded="UserControl_Loaded"
+             KeyDown="UserControl_KeyDown">
+    <UserControl.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="10" />
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="Padding" Value="-1" />
+            <Setter Property="AutoWordSelection" Value="True" />
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="10" />
+            <Setter Property="Margin" Value="0,1,0,1" />
+        </Style>
+    </UserControl.Resources>
+    <StackPanel Orientation="Horizontal">
+        <StackPanel x:Name="DatePanel" Orientation="Horizontal">
+            <TextBox x:Name="ValueMonth" Text="01"
+                     LostFocus="ValueMonth_LostFocus" MaxLength="2" />
+            <TextBlock Text="{Binding Path=DateSeparator, FallbackValue=/, RelativeSource={RelativeSource FindAncestor, AncestorType=my:MaskEditDateTime, AncestorLevel=1}}"
+                       Margin="1"/>
+            <TextBox x:Name="ValueDay" Text="01"
+                     LostFocus="ValueDay_LostFocus" MaxLength="2" />
+            <TextBlock Text="{Binding Path=DateSeparator, FallbackValue=/, RelativeSource={RelativeSource FindAncestor, AncestorType=my:MaskEditDateTime, AncestorLevel=1}}"
+                       Margin="1"/>
+            <TextBox x:Name="ValueYear" Text="2000"
+                     LostFocus="ValueYear_LostFocus" MaxLength="4" />
+            <Image x:Name="DatePictogram" Source="/Instrumind.Common;component/Visualization/Images/type_date.png" Margin="1,0,0,0"
+                   Stretch="None" MouseLeftButtonDown="DatePictogram_MouseLeftButtonDown" Cursor="Hand" />
+            <Popup x:Name="PopupCalendar"
+                PlacementTarget="{Binding ElementName=DatePanel}" AllowsTransparency="True" 
+                PopupAnimation="None" MinWidth="{Binding Path=Width, ElementName=DatePanel}" Closed="PopupCalendar_Closed">
+                <Calendar x:Name="DatePartCalendar" Focusable="False"
+                          SelectedDate="{Binding Path=EditingValue, RelativeSource={RelativeSource FindAncestor, AncestorType=my:MaskEditDateTime, AncestorLevel=1}, Mode=TwoWay}"
+                          SelectedDatesChanged="DatePartCalendar_SelectedDatesChanged" />
+            </Popup>
+        </StackPanel>
+        <TextBlock x:Name="PartsSeparator" Text="·"  Margin="1" />
+        <StackPanel x:Name="TimePanel" Orientation="Horizontal">
+            <TextBox x:Name="ValueHour" Text="22"
+                     LostFocus="ValueHour_LostFocus" MaxLength="2" />
+            <TextBlock Text="{Binding Path=TimeSeparator, FallbackValue=:, RelativeSource={RelativeSource FindAncestor, AncestorType=my:MaskEditDateTime, AncestorLevel=1}}"
+                        Margin="1"/>
+            <TextBox x:Name="ValueMinute" Text="59"
+                     LostFocus="ValueMinute_LostFocus" MaxLength="2" />
+            <TextBlock Text="{Binding Path=TimeSeparator, FallbackValue=:, RelativeSource={RelativeSource FindAncestor, AncestorType=my:MaskEditDateTime, AncestorLevel=1}}"
+                       Margin="1"/>
+            <TextBox x:Name="ValueSecond" Text="59"
+                     LostFocus="ValueSecond_LostFocus" MaxLength="2" />
+            <!--<Image x:Name="TimePictogram" Source="/Instrumind.Common;component/Visualization/Images/type_time.png" Margin="1,0,0,0" Stretch="None" />-->
+        </StackPanel>
+        <!--<Image x:Name="DateTimePictogram" Source="/Instrumind.Common;component/Visualization/Images/type_datetime.png" Stretch="None" />-->
+    </StackPanel>
+</UserControl>

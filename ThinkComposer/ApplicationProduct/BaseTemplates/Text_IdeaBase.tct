@@ -1,0 +1,77 @@
+﻿%%:FileName={{ TechName }}.txt
+********************************************************************************
+Name.....: {{ Name }}
+Tech-Name: {{ TechName }}
+Global-Id: {{ GlobalId }}
+Summary..: {{ Summary }}
+
+{% if TechSpec != null and TechSpec != '' -%}
+Tech-Spec:
+{{ TechSpec }}
+{% endif -%}
+
+{% if Description != null and Description != '' -%}
+Description:
+{{ Description | ToUnformattedText }}
+{% endif -%}
+
+{%- comment -%}
+{% if Pictogram != null -%}
+Pictogram:
+{{ Pictogram | ToBase64 }}
+{% endif -%}
+{%- endcomment -%}
+
+{%- if Markings.Size > 0 -%}
+--------------------------------------------------------------------------------
+MARKINGS ({{ Markings.Size }})
+{%- for Mark in Markings -%}
+    * {{ Mark.Definitor.Name }} ({{ Mark.Definitor.Summary }})
+    {%- if Mark.Descriptor != null -%}
+        Descriptor: {{ Mark.Descriptor.Name }} -- {{ Mark.Descriptor.Summary }}
+    {%- endif -%}
+{%- endfor -%}
+{%- endif -%}
+
+{%- if Details.Size > 0 -%}
+--------------------------------------------------------------------------------
+DETAILS ({{ Details.Count }})
+{%- for Detail in Details -%}
+    Desigantion: {{ Detail.Designation.Name }}
+    Kind.......: {{ Detail.Kind.Name }}
+    
+  {%- case Detail.Kind.TechName -%}
+  {%- when 'Table' -%}
+    Records ({{ Detail.Count }})...
+    {%- for Record in Detail.Records -%}
+        #{{ forloop.index }}: {%- for FieldDef in Detail.Definition.FieldDefinitions -%}'{{ FieldDef.Name }}'=[{{ Record[FieldDef.TechName] }}]; {%- endfor %}
+    {%- endfor -%}
+
+  {%- when 'Link' -%}
+    Target: {{ Detail.TargetAddress }}
+  {%- when 'Attachment' -%}
+    Source: {{ Detail.Source }}
+    {% comment -%} This can be huge for attached images
+    Content: {{ Detail.Content | ToPlainText }}
+    {%- endcomment -%}
+  {%- endcase %}
+  ................................
+{%- endfor -%}
+{%- endif -%}
+
+{%- if RelatedFrom.Any or RelatingTo.Any -%}
+--------------------------------------------------------------------------------
+{%- if RelatedFrom.Any -%}
+RELATED FROM...
+{%- for Relationship in LinkedFrom -%}
+    * '{{ Relationship.Name }}' ==>> {%- for Idea in Relationship.OriginIdeas -%} '{{ Idea.Name }}'; {%- endfor -%}.
+{%- endfor -%}
+{%- endif -%}
+
+{%- if RelatingTo.Any -%}
+RELATING TO...
+{%- for Relationship in LinkingTo -%}
+    * '{{ Relationship.Name }}' ==>> {%- for Idea in Relationship.TargetIdeas -%} '{{ Idea.Name }}'; {%- endfor -%}.
+{%- endfor -%}
+{%- endif -%}
+{%- endif -%}

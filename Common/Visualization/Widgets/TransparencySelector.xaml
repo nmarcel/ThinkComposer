@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="Instrumind.Common.Visualization.Widgets.TransparencySelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008">
+    <UserControl.Resources>
+        <Style x:Key="Hovering" TargetType="Rectangle">
+            <Setter Property="Fill" Value="White" />
+            <Style.Triggers>
+                <Trigger Property="Control.IsMouseOver" Value="True">
+                    <Setter Property="Fill" Value="Silver" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid HorizontalAlignment="Center" Background="Gray">
+        <Rectangle Width="148" Height="18" Stroke="LightGray" StrokeThickness="2" />
+
+        <StackPanel Orientation="Horizontal" Margin="2">
+            <Rectangle Width="12" Height="14" Style="{StaticResource Hovering}" MouseLeftButtonDown="Selector_MouseLeftButtonDown" ToolTip="Opaque. No transparency." />
+            <Rectangle Width="12" Height="14" Style="{StaticResource Hovering}" MouseLeftButtonDown="Selector_MouseLeftButtonDown" ToolTip="5% transparent." />
+            <Rectangle Width="12" Height="14" Style="{StaticResource Hovering}" MouseLeftButtonDown="Selector_MouseLeftButtonDown" ToolTip="10% transparent." />
+            <Rectangle Width="12" Height="14" Style="{StaticResource Hovering}" MouseLeftButtonDown="Selector_MouseLeftButtonDown" ToolTip="20% transparent." />
+            <Rectangle Width="12" Height="14" Style="{StaticResource Hovering}" MouseLeftButtonDown="Selector_MouseLeftButtonDown" ToolTip="30% transparent." />
+            <Rectangle Width="12" Height="14" Style="{StaticResource Hovering}" MouseLeftButtonDown="Selector_MouseLeftButtonDown" ToolTip="40% transparent." />
+            <Rectangle Width="12" Height="14" Style="{StaticResource Hovering}" MouseLeftButtonDown="Selector_MouseLeftButtonDown" ToolTip="50% transparent." />
+            <Rectangle Width="12" Height="14" Style="{StaticResource Hovering}" MouseLeftButtonDown="Selector_MouseLeftButtonDown" ToolTip="60% transparent." />
+            <Rectangle Width="12" Height="14" Style="{StaticResource Hovering}" MouseLeftButtonDown="Selector_MouseLeftButtonDown" ToolTip="70% transparent." />
+            <Rectangle Width="12" Height="14" Style="{StaticResource Hovering}" MouseLeftButtonDown="Selector_MouseLeftButtonDown" ToolTip="80% transparent." />
+            <Rectangle Width="12" Height="14" Style="{StaticResource Hovering}" MouseLeftButtonDown="Selector_MouseLeftButtonDown" ToolTip="90% transparent." />
+            <Rectangle Width="12" Height="14" Style="{StaticResource Hovering}" MouseLeftButtonDown="Selector_MouseLeftButtonDown" ToolTip="Transparent." />
+        </StackPanel>
+
+        <Rectangle Width="146" Height="4" Fill="LightGray" Stroke="LightGray" IsHitTestVisible="False" />
+        <StackPanel x:Name="SelectorsPanel" Orientation="Horizontal" Margin="2" IsHitTestVisible="False" >
+            <Ellipse Width="10" Height="10" Margin="1" Fill="Black" IsHitTestVisible="False" Opacity="1" />
+            <Ellipse Width="10" Height="10" Margin="1" Fill="Black" IsHitTestVisible="False" Opacity="0.95" />
+            <Ellipse Width="10" Height="10" Margin="1" Fill="Black" IsHitTestVisible="False" Opacity="0.9" />
+            <Ellipse Width="10" Height="10" Margin="1" Fill="Black" IsHitTestVisible="False" Opacity="0.8" />
+            <Ellipse Width="10" Height="10" Margin="1" Fill="Black" IsHitTestVisible="False" Opacity="0.7" />
+            <Ellipse Width="10" Height="10" Margin="1" Fill="Black" IsHitTestVisible="False" Opacity="0.6" />
+            <Ellipse Width="10" Height="10" Margin="1" Fill="Black" IsHitTestVisible="False" Opacity="0.5" />
+            <Ellipse Width="10" Height="10" Margin="1" Fill="Black" IsHitTestVisible="False" Opacity="0.4" />
+            <Ellipse Width="10" Height="10" Margin="1" Fill="Black" IsHitTestVisible="False" Opacity="0.3" />
+            <Ellipse Width="10" Height="10" Margin="1" Fill="Black" IsHitTestVisible="False" Opacity="0.2" />
+            <Ellipse Width="10" Height="10" Margin="1" Fill="Black" IsHitTestVisible="False" Opacity="0.1" />
+            <Ellipse Width="10" Height="10" Margin="1" Fill="Black" IsHitTestVisible="False" Opacity="0.0" />
+        </StackPanel>
+
+        <Canvas x:Name="SelectionIndicationCanvas" Margin="2" IsHitTestVisible="False">
+            <Rectangle x:Name="SelectionIndicator" Canvas.Left="0" IsHitTestVisible="False"
+                       Width="12" Height="14" Fill="Transparent" Stroke="Black" />
+        </Canvas>
+    </Grid>
+</UserControl>
