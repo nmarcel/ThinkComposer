@@ -718,9 +718,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </None>
-    <None Include="app.log">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <EmbeddedResource Include="ApplicationProduct\LanguageSyntaxes\TcTemplate.xshd">
       <SubType>Designer</SubType>
     </EmbeddedResource>
