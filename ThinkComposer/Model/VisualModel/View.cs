@@ -680,54 +680,61 @@ namespace Instrumind.ThinkComposer.Model.VisualModel
         /// </summary>
         public void SendUpwards(VisualObject Target, bool PutOnTop = false)
         {
-            var CurrentIndex = this.ViewChildren.IndexOfMatch(reg => reg.Key.IsEqual(Target));
-
-            // Notice that the item at index zero (the background sheet) is omitted
-            if (CurrentIndex <= 0)
-                return;
-
-            var Limit = (CurrentIndex <= this.VisualLevelForBackground
-                         ? this.VisualLevelForBackground
-                         : (CurrentIndex <= this.VisualLevelForRegions
-                            ? this.VisualLevelForRegions
-                            : (CurrentIndex <= (this.ViewChildren.Count - (this.VisualCountOfFloatings + this.Presenter.TransientObjectsCount)) - 1
-                               ? (this.ViewChildren.Count - (this.VisualCountOfFloatings + this.Presenter.TransientObjectsCount)) - 1
-                               : (CurrentIndex <= (this.ViewChildren.Count - this.Presenter.TransientObjectsCount) - 1
-                                  ? (this.ViewChildren.Count - this.Presenter.TransientObjectsCount) - 1
-                                  : this.ViewChildren.Count - 1))));
-
-            if (CurrentIndex >= Limit)
-                return;
-
-            var LocalCommand = !this.EditEngine.IsVariating;
-            if (LocalCommand)
-                this.EditEngine.StartCommandVariation("Bring To-Front/Upwards");
-
-            var TempSended = this.ViewChildren[CurrentIndex];
-            this.ViewChildren[CurrentIndex] = null;
-
-            if (PutOnTop)
+            try
             {
-                for (int MovingIndex = CurrentIndex; MovingIndex < Limit; MovingIndex++)
+                var CurrentIndex = this.ViewChildren.IndexOfMatch(reg => reg.Key.IsEqual(Target));
+
+                // Notice that the item at index zero (the background sheet) is omitted
+                if (CurrentIndex <= 0)
+                    return;
+
+                var Limit = (CurrentIndex <= this.VisualLevelForBackground
+                             ? this.VisualLevelForBackground
+                             : (CurrentIndex <= this.VisualLevelForRegions
+                                ? this.VisualLevelForRegions
+                                : (CurrentIndex <= (this.ViewChildren.Count - (this.VisualCountOfFloatings + this.Presenter.TransientObjectsCount)) - 1
+                                   ? (this.ViewChildren.Count - (this.VisualCountOfFloatings + this.Presenter.TransientObjectsCount)) - 1
+                                   : (CurrentIndex <= (this.ViewChildren.Count - this.Presenter.TransientObjectsCount) - 1
+                                      ? (this.ViewChildren.Count - this.Presenter.TransientObjectsCount) - 1
+                                      : this.ViewChildren.Count - 1))));
+
+                if (CurrentIndex >= Limit || Limit >= this.ViewChildren.Count)
+                    return;
+
+                var LocalCommand = !this.EditEngine.IsVariating;
+                if (LocalCommand)
+                    this.EditEngine.StartCommandVariation("Bring To-Front/Upwards");
+
+                var TempSended = this.ViewChildren[CurrentIndex];
+                this.ViewChildren[CurrentIndex] = null;
+
+                if (PutOnTop)
                 {
-                    var TempShifted = this.ViewChildren[MovingIndex + 1];
-                    this.ViewChildren[MovingIndex + 1] = null;
-                    this.ViewChildren[MovingIndex] = ViewChild.Create(TempShifted);
+                    for (int MovingIndex = CurrentIndex; MovingIndex < Limit; MovingIndex++)
+                    {
+                        var TempShifted = this.ViewChildren[MovingIndex + 1];
+                        this.ViewChildren[MovingIndex + 1] = null;
+                        this.ViewChildren[MovingIndex] = ViewChild.Create(TempShifted);
+                    }
+
+                    this.ViewChildren[Limit] = ViewChild.Create(TempSended);
+                }
+                else
+                {
+                    var TempShifted = this.ViewChildren[CurrentIndex + 1];
+                    this.ViewChildren[CurrentIndex + 1] = TempSended;
+                    this.ViewChildren[CurrentIndex] = ViewChild.Create(TempShifted);
                 }
 
-                this.ViewChildren[Limit] = ViewChild.Create(TempSended);
+                if (LocalCommand)
+                {
+                    this.UpdateVersion();
+                    this.EditEngine.CompleteCommandVariation();
+                }
             }
-            else
+            catch(Exception error)
             {
-                var TempShifted = this.ViewChildren[CurrentIndex + 1];
-                this.ViewChildren[CurrentIndex + 1] = TempSended;
-                this.ViewChildren[CurrentIndex] = ViewChild.Create(TempShifted);
-            }
-
-            if (LocalCommand)
-            {
-                this.UpdateVersion();
-                this.EditEngine.CompleteCommandVariation();
+                Console.WriteLine("Internal Error: " + error.Message);
             }
         }
 
@@ -736,52 +743,59 @@ namespace Instrumind.ThinkComposer.Model.VisualModel
         /// </summary>
         public void SendBackwards(VisualObject Target, bool PutOnBottom = false)
         {
-            var CurrentIndex = this.ViewChildren.IndexOfMatch(reg => reg.Key.IsEqual(Target));
-            if (CurrentIndex < 0)
-                return;
-
-            var Limit = (CurrentIndex > (this.ViewChildren.Count - this.Presenter.TransientObjectsCount) - 1
-                         ? (this.ViewChildren.Count - this.Presenter.TransientObjectsCount) - 1
-                         : (CurrentIndex > (this.ViewChildren.Count - (this.VisualCountOfFloatings + this.Presenter.TransientObjectsCount)) - 1
-                            ? (this.ViewChildren.Count - (this.VisualCountOfFloatings + this.Presenter.TransientObjectsCount)) - 1
-                            : (CurrentIndex > this.VisualLevelForRegions
-                               ? this.VisualLevelForRegions + 1
-                               : (CurrentIndex > this.VisualLevelForBackground
-                                  ? this.VisualLevelForBackground + 1
-                                  : 1))));  // Do not allow to send backwards the Background sheet
-
-            if (CurrentIndex <= Limit)
-                return;
-
-            var LocalCommand = !this.EditEngine.IsVariating;
-            if (LocalCommand)
-                this.EditEngine.StartCommandVariation("Send To-Back/Backwards");
-
-            var TempSended = this.ViewChildren[CurrentIndex];
-            this.ViewChildren[CurrentIndex] = null;
-
-            if (PutOnBottom)
+            try
             {
-                for (int MovingIndex = CurrentIndex; MovingIndex > Limit; MovingIndex--)
+                var CurrentIndex = this.ViewChildren.IndexOfMatch(reg => reg.Key.IsEqual(Target));
+                if (CurrentIndex < 0)
+                    return;
+
+                var Limit = (CurrentIndex > (this.ViewChildren.Count - this.Presenter.TransientObjectsCount) - 1
+                             ? (this.ViewChildren.Count - this.Presenter.TransientObjectsCount) - 1
+                             : (CurrentIndex > (this.ViewChildren.Count - (this.VisualCountOfFloatings + this.Presenter.TransientObjectsCount)) - 1
+                                ? (this.ViewChildren.Count - (this.VisualCountOfFloatings + this.Presenter.TransientObjectsCount)) - 1
+                                : (CurrentIndex > this.VisualLevelForRegions
+                                   ? this.VisualLevelForRegions + 1
+                                   : (CurrentIndex > this.VisualLevelForBackground
+                                      ? this.VisualLevelForBackground + 1
+                                      : 1))));  // Do not allow to send backwards the Background sheet
+
+                if (CurrentIndex <= Limit || Limit <= 1)
+                    return;
+
+                var LocalCommand = !this.EditEngine.IsVariating;
+                if (LocalCommand)
+                    this.EditEngine.StartCommandVariation("Send To-Back/Backwards");
+
+                var TempSended = this.ViewChildren[CurrentIndex];
+                this.ViewChildren[CurrentIndex] = null;
+
+                if (PutOnBottom)
                 {
-                    var TempShifted = this.ViewChildren[MovingIndex - 1];
-                    this.ViewChildren[MovingIndex - 1] = null;
-                    this.ViewChildren[MovingIndex] = ViewChild.Create(TempShifted);
+                    for (int MovingIndex = CurrentIndex; MovingIndex > Limit; MovingIndex--)
+                    {
+                        var TempShifted = this.ViewChildren[MovingIndex - 1];
+                        this.ViewChildren[MovingIndex - 1] = null;
+                        this.ViewChildren[MovingIndex] = ViewChild.Create(TempShifted);
+                    }
+
+                    this.ViewChildren[Limit] = ViewChild.Create(TempSended);
+                }
+                else
+                {
+                    var TempShifted = this.ViewChildren[CurrentIndex - 1];
+                    this.ViewChildren[CurrentIndex - 1] = TempSended;
+                    this.ViewChildren[CurrentIndex] = ViewChild.Create(TempShifted);
                 }
 
-                this.ViewChildren[Limit] = ViewChild.Create(TempSended);
+                if (LocalCommand)
+                {
+                    this.UpdateVersion();
+                    this.EditEngine.CompleteCommandVariation();
+                }
             }
-            else
+            catch (Exception error)
             {
-                var TempShifted = this.ViewChildren[CurrentIndex - 1];
-                this.ViewChildren[CurrentIndex - 1] = TempSended;
-                this.ViewChildren[CurrentIndex] = ViewChild.Create(TempShifted);
-            }
-
-            if (LocalCommand)
-            {
-                this.UpdateVersion();
-                this.EditEngine.CompleteCommandVariation();
+                Console.WriteLine("Internal Error: " + error.Message);
             }
         }
 

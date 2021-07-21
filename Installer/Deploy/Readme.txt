@@ -1,4 +1,4 @@
-﻿Instrumind ThinkComposer v1.5.1604
+﻿Instrumind ThinkComposer v1.5.1605
 ==================================
 
 Copyright (C) 2011-2016 Néstor Marcel Sánchez Ahumada
@@ -26,6 +26,9 @@ http://www.microsoft.com/download/en/details.aspx?displaylang=en&id=17851
 
 VERSIONS HISTORY:
 *****************
+Version 1.5.1605;
+- Fixed: Crash when creating, sending upwards or sending backwards a symbol in some compositions.
+
 Version 1.5.1604;
 - Fixed: Name of a global Detail designator is no longer changed when editing an empty link after trying to access it.
 - Fixed: Views can be exported as image in PDF format again.

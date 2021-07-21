@@ -1,4 +1,7 @@
-﻿# 1.5.1604
+﻿# 1.5.1605
+- Fixed: Crash when creating, sending upwards or sending backwards a symbol in some compositions.
+
+# 1.5.1604
 - Fixed: Name of a global Detail designator is no longer changed when editing an empty link after trying to access it.
 - Fixed: Views can be exported as image in PDF format again.
 - Fixed: Application crashes when Finding text (the problem is detected and crash prevented).
