@@ -1,4 +1,4 @@
-﻿Instrumind ThinkComposer v1.5.1605
+﻿Instrumind ThinkComposer v1.5.1606
 ==================================
 
 Copyright (C) 2011-2016 Néstor Marcel Sánchez Ahumada
@@ -24,8 +24,13 @@ http://www.microsoft.com/download/en/details.aspx?displaylang=en&id=17851
 
 --------------------------------------------------------------------------------------
 
+KNOWN ISSUES: Installer is alerted as untrusted software by web Browsers and Windows.
+
 VERSIONS HISTORY:
 *****************
+Version 1.5.1606;
+- Fixed: Send to Back command not working in first layer over background.
+
 Version 1.5.1605;
 - Fixed: Crash when creating, sending upwards or sending backwards a symbol in some compositions.
 

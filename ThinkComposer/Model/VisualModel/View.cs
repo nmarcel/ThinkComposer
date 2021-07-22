@@ -759,7 +759,7 @@ namespace Instrumind.ThinkComposer.Model.VisualModel
                                       ? this.VisualLevelForBackground + 1
                                       : 1))));  // Do not allow to send backwards the Background sheet
 
-                if (CurrentIndex <= Limit || Limit <= 1)
+                if (CurrentIndex <= Limit || Limit <= 0)
                     return;
 
                 var LocalCommand = !this.EditEngine.IsVariating;
