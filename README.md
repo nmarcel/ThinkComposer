@@ -5,4 +5,4 @@ The Visual Thinking tool for Understand Problems, Design Solutions and Express K
 
 Create Concept Maps, Mind Maps, Models and general purpose Diagrams, with detailed content.
 
-For more info, please visit the [ThinkComposer Wiki]([http://www.thinkcomposer.com](https://github.com/nmarcel/ThinkComposer/wiki))
+For more info, please visit the [ThinkComposer Wiki](https://github.com/nmarcel/ThinkComposer/wiki)
